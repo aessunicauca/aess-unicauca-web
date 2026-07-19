@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2020 - Galería - AESS Unicauca</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../menu/galeria-page.css">
+</head>
+
+<body>
+
+    <section class="hero">
+
+        <nav>
+            <div class="logo">
+                <img src="../imagess/Logo2Circ.png" alt="AESS Unicauca">
+            </div>
+
+            <div class="menu">
+                <a href="../index.html">Inicio</a>
+                <a href="../menu/historia.html">Historia</a>
+                <a href="../menu/divisiones.html">Divisiones</a>
+                <a href="../menu/proyectos.html">Proyectos</a>
+                <a href="../menu/eventos.html">Eventos</a>
+                <a href="../menu/noticias.html">Noticias</a>
+                <a href="../menu/galeria.html" class="active">Galería</a>
+                <a href="../menu/nosotros.html">Nosotros</a>
+            </div>
+
+            <div class="join">
+                <a href="#">ÚNETE A AESS &rarr;</a>
+            </div>
+
+            <div class="socials">
+                <a href="https://www.instagram.com/aessunicauca" target="_blank" rel="noopener noreferrer">IG</a>
+                <a href="https://www.youtube.com/@aessunicauca" target="_blank" rel="noopener noreferrer">YT</a>
+                <a href="https://www.linkedin.com/company/aessunicauca" target="_blank" rel="noopener noreferrer">IN</a>
+                <a href="https://github.com/aessunicauca" target="_blank" rel="noopener noreferrer">GH</a>
+            </div>
+        </nav>
+
+        <div class="main-content main-content--scroll">
+
+            <div class="gyear-page">
+
+                <span class="eyebrow">Álbum · 2020</span>
+
+                <div class="gyear-hero">
+                    <div class="gyear-hero__img" style="background-image:url('../imagess/portada (1).png')"></div>
+                    <div class="gyear-hero__tint"></div>
+                    <div class="gyear-hero__shade"></div>
+                    <div class="gyear-hero__content">
+                        <h1>El año de <span class="grad">nuestra fundación</span></h1>
+                    </div>
+                </div>
+
+                <p class="gyear-intro">
+                    El primer equipo, el PEU-UNAM, el Festival de Astronomía Digital y el NASA Space Apps
+                    Challenge — así se vio el 2020 fundacional del capítulo. Haz clic en cualquier foto
+                    para verla en grande.
+                </p>
+
+                <div class="photo-grid" id="photo-grid">
+                    <button class="photo-item span-2x2" data-index="0">
+                        <img src="../imagess/portada (1).png" alt="Equipo AESS Unicauca 2020" loading="lazy">
+                        <span class="photo-caption">Equipo fundador AESS Unicauca</span>
+                    </button>
+                    <button class="photo-item" data-index="1">
+                        <img src="../imagess/NASA3.jpeg" alt="NASA Space Apps Challenge 2020" loading="lazy">
+                        <span class="photo-caption">NASA Space Apps Challenge</span>
+                    </button>
+                    <button class="photo-item" data-index="2">
+                        <img src="../imagess/largo.png" alt="Actividad AESS 2020" loading="lazy">
+                        <span class="photo-caption">Jornada de trabajo del equipo</span>
+                    </button>
+                    <button class="photo-item" data-index="3">
+                        <img src="../imagess/carruselvert/foto1.jpg" alt="Actividad AESS 2020" loading="lazy">
+                        <span class="photo-caption">Actividades del capítulo</span>
+                    </button>
+                    <button class="photo-item" data-index="4">
+                        <img src="../imagess/carruselvert/foto2.jpeg" alt="Actividad AESS 2020" loading="lazy">
+                        <span class="photo-caption">Actividades del capítulo</span>
+                    </button>
+                    <button class="photo-item span-2x1" data-index="5">
+                        <img src="../imagess/carruselvert/foto3.jpeg" alt="Actividad AESS 2020" loading="lazy">
+                        <span class="photo-caption">Actividades del capítulo</span>
+                    </button>
+                    <button class="photo-item" data-index="6">
+                        <img src="../imagess/carruselvert/foto4.jpeg" alt="Actividad AESS 2020" loading="lazy">
+                        <span class="photo-caption">Actividades del capítulo</span>
+                    </button>
+                </div>
+
+                <a href="../menu/galeria.html" class="back-link">&larr; Volver a la Galería</a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ============ LIGHTBOX ============ -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox__frame">
+            <button class="lightbox__close" id="lb-close" aria-label="Cerrar">&times;</button>
+            <button class="lightbox__prev" id="lb-prev" aria-label="Anterior">&larr;</button>
+            <button class="lightbox__next" id="lb-next" aria-label="Siguiente">&rarr;</button>
+            <img id="lb-img" src="" alt="">
+            <p class="lightbox__caption" id="lb-caption"></p>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            const items = Array.from(document.querySelectorAll('.photo-item'));
+            const photos = items.map(function (btn) {
+                const img = btn.querySelector('img');
+                return { src: img.src, caption: btn.querySelector('.photo-caption').textContent };
+            });
+
+            const lightbox = document.getElementById('lightbox');
+            const lbImg = document.getElementById('lb-img');
+            const lbCaption = document.getElementById('lb-caption');
+            let current = 0;
+
+            function open(index) {
+                current = index;
+                render();
+                lightbox.classList.add('is-open');
+            }
+            function render() {
+                lbImg.src = photos[current].src;
+                lbImg.alt = photos[current].caption;
+                lbCaption.textContent = photos[current].caption;
+            }
+            function close() {
+                lightbox.classList.remove('is-open');
+            }
+            function next() {
+                current = (current + 1) % photos.length;
+                render();
+            }
+            function prev() {
+                current = (current - 1 + photos.length) % photos.length;
+                render();
+            }
+
+            items.forEach(function (btn, i) {
+                btn.addEventListener('click', function () { open(i); });
+            });
+
+            document.getElementById('lb-close').addEventListener('click', close);
+            document.getElementById('lb-next').addEventListener('click', next);
+            document.getElementById('lb-prev').addEventListener('click', prev);
+
+            lightbox.addEventListener('click', function (e) {
+                if (e.target === lightbox) close();
+            });
+
+            document.addEventListener('keydown', function (e) {
+                if (!lightbox.classList.contains('is-open')) return;
+                if (e.key === 'Escape') close();
+                if (e.key === 'ArrowRight') next();
+                if (e.key === 'ArrowLeft') prev();
+            });
+        })();
+    </script>
+
+</body>
+
+</html>
