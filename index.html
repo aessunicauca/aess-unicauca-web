@@ -25,26 +25,36 @@
                 <img src="imagess/Logos/Logo2Circ.png" alt="AESS Unicauca">
             </div>
 
-           <div class="menu">
-                <a href="index.html" class="active">Inicio</a>
-                <a href="menu/historia.html">Historia</a>
-                <a href="menu/divisiones.html">Divisiones</a>
-                <a href="menu/proyectos.html">Proyectos</a>
-                <a href="menu/eventos.html">Eventos</a>
-                <a href="menu/noticias.html">Noticias</a>
-                <a href="menu/galeria.html">Galería</a>
-                <a href="menu/nosotros.html">Nosotros</a>
-            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
-            <div class="join">
-                <a href="#">ÚNETE A AESS &rarr;</a>
-            </div>
+            <div class="nav-links" id="navLinks">
 
-            <div class="socials">
-                <a href="https://www.instagram.com/aessunicauca?igsh=MTlrM3R5d21tOTlj&utm_source=qr" target="_blank" rel="noopener noreferrer">IG</a>
-                <a href="http://www.youtube.com/@capituloestudiantilaess-ie4622" target="_blank" rel="noopener noreferrer">YT</a>
-                <a href="www.linkedin.com/in/aess-unicauca-25a0161a9" target="_blank" rel="noopener noreferrer">Ln</a>
-                <a href="https://github.com/aessunicauca" target="_blank" rel="noopener noreferrer">GH</a>
+               <div class="menu">
+                    <a href="index.html" class="active">Inicio</a>
+                    <a href="menu/historia.html">Historia</a>
+                    <a href="menu/divisiones.html">Divisiones</a>
+                    <a href="menu/proyectos.html">Proyectos</a>
+                    <a href="menu/eventos.html">Eventos</a>
+                    <a href="menu/noticias.html">Noticias</a>
+                    <a href="menu/galeria.html">Galería</a>
+                    <a href="menu/nosotros.html">Nosotros</a>
+                </div>
+
+                <div class="join">
+                    <a href="#">ÚNETE A AESS &rarr;</a>
+                </div>
+
+                <div class="socials">
+                    <a href="https://www.instagram.com/aessunicauca?igsh=MTlrM3R5d21tOTlj&utm_source=qr" target="_blank" rel="noopener noreferrer">IG</a>
+                    <a href="http://www.youtube.com/@capituloestudiantilaess-ie4622" target="_blank" rel="noopener noreferrer">YT</a>
+                    <a href="www.linkedin.com/in/aess-unicauca-25a0161a9" target="_blank" rel="noopener noreferrer">Ln</a>
+                    <a href="https://github.com/aessunicauca" target="_blank" rel="noopener noreferrer">GH</a>
+                </div>
+
             </div>
 
         </nav>
@@ -568,6 +578,27 @@
     </footer>
 
     <script src="timeline.js"></script>
+
+    <script>
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        if (navToggle && navLinks) {
+            navToggle.addEventListener('click', () => {
+                const isOpen = navLinks.classList.toggle('open');
+                navToggle.classList.toggle('open', isOpen);
+                navToggle.setAttribute('aria-expanded', isOpen);
+            });
+
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('open');
+                    navToggle.classList.remove('open');
+                    navToggle.setAttribute('aria-expanded', 'false');
+                });
+            });
+        }
+    </script>
 
 </body>
 

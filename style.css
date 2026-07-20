@@ -87,6 +87,61 @@ nav{
 }
 
 
+/* ---------- Botón hamburguesa (solo móvil) ---------- */
+
+.nav-toggle{
+
+    display:none;
+
+    flex-direction:column;
+    justify-content:center;
+    gap:5px;
+
+    width:36px;
+    height:36px;
+
+    background:none;
+    border:none;
+    cursor:pointer;
+
+    padding:0;
+
+}
+
+.nav-toggle span{
+
+    width:100%;
+    height:2px;
+
+    background:white;
+    border-radius:2px;
+
+    transition:0.3s;
+
+}
+
+.nav-toggle.open span:nth-child(1){
+    transform:translateY(7px) rotate(45deg);
+}
+
+.nav-toggle.open span:nth-child(2){
+    opacity:0;
+}
+
+.nav-toggle.open span:nth-child(3){
+    transform:translateY(-7px) rotate(-45deg);
+}
+
+
+/* ---------- Contenedor de enlaces (togglable en móvil) ---------- */
+
+.nav-links{
+    display:flex;
+    flex-direction:column;
+    flex:1;
+}
+
+
 /* ---------- Menú ---------- */
 
 .menu{
@@ -920,67 +975,104 @@ nav{
 
 @media(max-width:1200px){
 
-    .hero-bg-image{
-        display:none;
-    }
-
-    .hero-visual::before{
-        display:none;
-    }
-
     .hero-visual{
-        width:75%;
-        background:#050510;
-    }
-
-    .hero-content{
         width:100%;
     }
 
-    .history-panel{
-        width:25%;
+    .hero-content{
+        width:60%;
     }
 
 }
 
 @media(max-width:768px){
 
+    /* Nav se convierte en barra superior fija con menú desplegable */
+
     nav{
 
-        position:relative;
+        position:fixed;
+
+        flex-direction:row;
+        align-items:center;
+        justify-content:space-between;
 
         width:100%;
-        height:auto;
+        height:70px;
 
+        padding:15px 20px;
+
+        overflow:visible;
+
+    }
+
+    .logo{
+        margin-bottom:0;
+    }
+
+    .logo img{
+        width:44px;
+    }
+
+    .nav-toggle{
+        display:flex;
+    }
+
+    .nav-links{
+
+        position:fixed;
+        top:70px;
+        left:0;
+
+        width:100%;
+        height:calc(100vh - 70px);
+
+        display:flex;
+        flex-direction:column;
+
+        background:#04040f;
+        border-right:none;
+        border-top:1px solid rgba(255,255,255,0.08);
+
+        padding:30px;
+        overflow-y:auto;
+
+        transform:translateX(-100%);
+        transition:transform 0.3s ease;
+
+        z-index:99;
+
+    }
+
+    .nav-links.open{
+        transform:translateX(0);
     }
 
     .main-content{
 
         margin-left:0;
+        margin-top:70px;
 
         flex-direction:column;
 
     }
 
+    .hero{
+        min-height:auto;
+    }
+
     .hero-visual{
 
         width:100%;
+        height:70vh;
 
     }
 
     .hero-content{
 
         width:100%;
-
-        padding:40px;
-
-    }
-
-    .history-panel{
-
-        width:100%;
-         height:auto;
         min-height:auto;
+
         padding:40px;
 
     }
