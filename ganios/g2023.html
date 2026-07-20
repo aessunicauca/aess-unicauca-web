@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2023 - Galería - AESS Unicauca</title>
+    <title>2020 - Galería - AESS Unicauca</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
@@ -19,7 +19,7 @@
 
         <nav>
             <div class="logo">
-                <img src="../imagess/Logo2Circ.png" alt="AESS Unicauca">
+                <img src="../imagess/Logos/Logo2Circ.png" alt="AESS Unicauca">
             </div>
 
             <div class="menu">
@@ -50,15 +50,25 @@
             <div class="gyear-page">
 
                 <span class="eyebrow">Álbum · 2023</span>
-                <h1>2023</h1>
 
-                <div class="wip-box">
-                    <span class="eyebrow">En construcción</span>
-                    <p>
-                        Todavía estamos reuniendo las fotos de 2023. Muy pronto este álbum tendrá el
-                        registro completo de eventos, premios y participaciones de este año.
-                    </p>
+                <div class="gyear-hero">
+                    <div class="gyear-hero__img" style="background-image:url('../imagess/portada (1).png')"></div>
+                    <div class="gyear-hero__tint"></div>
+                    <div class="gyear-hero__shade"></div>
+                    <div class="gyear-hero__content">
+                        <h1> 2023 · Investigación sin<span class="grad"><br>sin fronteras</span></h1>
+                    </div>
                 </div>
+
+                <p class="gyear-intro">
+                AESS Unicauca fortaleció su red internacional a través de proyectos de investigación, 
+                cooperación científica y movilidad académica. El desarrollo de TICANOR permitió establecer 
+                alianzas con instituciones de Alemania, Irlanda y México, consolidando nuevas oportunidades 
+                para la formación y la innovación tecnológica.
+                </p>
+
+                <!-- El widget se genera con JS a partir de PHOTOS, agrupando por actividad -->
+                <div class="memory-grid" id="memory-grid"></div>
 
                 <a href="../menu/galeria.html" class="back-link">&larr; Volver a la Galería</a>
 
@@ -67,6 +77,158 @@
         </div>
 
     </section>
+
+    <!-- ============ LIGHTBOX ============ -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox__frame">
+            <button class="lightbox__close" id="lb-close" aria-label="Cerrar">&times;</button>
+            <button class="lightbox__prev" id="lb-prev" aria-label="Anterior">&larr;</button>
+            <button class="lightbox__next" id="lb-next" aria-label="Siguiente">&rarr;</button>
+            <img id="lb-img" src="" alt="">
+            <p class="lightbox__caption" id="lb-caption"></p>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            // ---- Fuente de datos: una fila por foto. Fotos con el mismo
+            // "activity" consecutivas se agrupan en un mismo cuadro que rota. ----
+            const PHOTOS = [
+                { src: '../imagess/galeria/g2023/T1.jpeg', alt: 'DSTEI', caption: 'Gracias al apoyo de IEEE AESS DSTEI, el proyecto TICANOR llevó a AESS Unicauca a Alemania para desarrollar, junto a Fraunhofer FKIE, CeADAR Ireland y la Universidad del Cauca, tecnologías de enjambres de drones aplicadas al monitoreo inteligente de cultivos de café en Colombia. Un paso más hacia una investigación con impacto internacional.', activity: 'beca', span: 'span-2x2' },
+                { src: '../imagess/galeria/g2023/T2.jpeg', alt: 'DSTEI', caption: 'Gracias al apoyo de IEEE AESS DSTEI, el proyecto TICANOR llevó a AESS Unicauca a Alemania para desarrollar, junto a Fraunhofer FKIE, CeADAR Ireland y la Universidad del Cauca, tecnologías de enjambres de drones aplicadas al monitoreo inteligente de cultivos de café en Colombia. Un paso más hacia una investigación con impacto internacional.', activity: 'beca', span: 'span-2x2' },
+                { src: '../imagess/galeria/g2023/T3.jpeg', alt: 'DSTEI', caption: 'Gracias al apoyo de IEEE AESS DSTEI, el proyecto TICANOR llevó a AESS Unicauca a Alemania para desarrollar, junto a Fraunhofer FKIE, CeADAR Ireland y la Universidad del Cauca, tecnologías de enjambres de drones aplicadas al monitoreo inteligente de cultivos de café en Colombia. Un paso más hacia una investigación con impacto internacional.', activity: 'beca', span: 'span-2x2' },
+                { src: '../imagess/galeria/g2023/T4.jpeg', alt: 'DSTEI', caption: 'Gracias al apoyo de IEEE AESS DSTEI, el proyecto TICANOR llevó a AESS Unicauca a Alemania para desarrollar, junto a Fraunhofer FKIE, CeADAR Ireland y la Universidad del Cauca, tecnologías de enjambres de drones aplicadas al monitoreo inteligente de cultivos de café en Colombia. Un paso más hacia una investigación con impacto internacional.', activity: 'beca', span: 'span-2x2' },
+                { src: '../imagess/galeria/g2023/I1.jpeg', alt: 'DSTEI', caption: 'El proyecto TICANOR, financiado por IEEE AESS DSTEI, llevó a AESS Unicauca al INAOE y al ITAM, donde participó en el Taller Nacional sobre Drones Inteligentes 2023, fortaleciendo la colaboración internacional en investigación y desarrollo de tecnologías para drones inteligentes.', activity: 'Intercambio', span: 'span-2x1' },
+                { src: '../imagess/galeria/g2023/I2.jpeg', alt: 'DSTEI', caption: 'El proyecto TICANOR, financiado por IEEE AESS DSTEI, llevó a AESS Unicauca al INAOE y al ITAM, donde participó en el Taller Nacional sobre Drones Inteligentes 2023, fortaleciendo la colaboración internacional en investigación y desarrollo de tecnologías para drones inteligentes.', activity: 'Intercambio', span: 'span-2x1' },
+                { src: '../imagess/galeria/g2023/K1.jpeg', alt: 'DSTEI', caption: 'Equipo Katari X participa en competencia internacional LASC 2023 en Brasil', activity: 'competencia', span: 'span-2x1' },
+                { src: '../imagess/galeria/g2023/K1.jpeg', alt: 'DSTEI', caption: 'Equipo Katari X participa en competencia internacional LASC 2023 en Brasil', activity: 'competencia', span: 'span-2x1' },
+                { src: '../imagess/galeria/g2023/K1.jpeg', alt: 'DSTEI', caption: 'Equipo Katari X participa en competencia internacional LASC 2023 en Brasil', activity: 'competencia', span: 'span-2x1' },
+                { src: '../imagess/galeria/g2023/K1.jpeg', alt: 'DSTEI', caption: 'Equipo Katari X participa en competencia internacional LASC 2023 en Brasil', activity: 'competencia', span: 'span-2x1' },
+                { src: '../imagess/galeria/g2023/M1.jpeg', alt: 'AESS gana financiación IEEE EPICS', caption: 'AESS gana financiación IEEE EPICS-Proyecto Mallku', activity: 'financiación', span: 'span-2x1' },
+                { src: '../imagess/galeria/g2023/M2.jpeg', alt: 'AESS gana financiación IEEE EPICS', caption: 'AESS gana financiación IEEE EPICS-Proyecto Mallku', activity: 'financiación', span: 'span-2x1' },
+                { src: '../imagess/galeria/g2023/M3.jpg', alt: 'AESS gana financiación IEEE EPICS', caption: 'AESS gana financiación IEEE EPICS-Proyecto Mallku', activity: 'financiación', span: 'span-2x1' },
+                { src: '../imagess/galeria/g2023/M4.jpg', alt: 'AESS gana financiación IEEE EPICS', caption: 'AESS gana financiación IEEE EPICS-Proyecto Mallku', activity: 'financiación', span: 'span-2x1' }
+
+
+            ];
+
+            const CYCLE_MS = 2400;
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            // ---- Agrupar fotos consecutivas de la misma actividad ----
+            const groups = [];
+            PHOTOS.forEach(function (photo, index) {
+                const last = groups[groups.length - 1];
+                if (last && last.activity === photo.activity) {
+                    last.indexes.push(index);
+                } else {
+                    groups.push({ activity: photo.activity, indexes: [index], span: photo.span });
+                }
+            });
+
+            const grid = document.getElementById('memory-grid');
+
+            groups.forEach(function (group) {
+                const tile = document.createElement('button');
+                tile.className = 'memory-tile' + (group.span ? ' ' + group.span : '');
+                tile.setAttribute('data-start', group.indexes[0]);
+
+                const stack = document.createElement('div');
+                stack.className = 'memory-tile__stack';
+
+                group.indexes.forEach(function (photoIndex, i) {
+                    const img = document.createElement('img');
+                    img.src = PHOTOS[photoIndex].src;
+                    img.alt = PHOTOS[photoIndex].alt;
+                    img.loading = 'lazy';
+                    if (i === 0) img.classList.add('is-active');
+                    stack.appendChild(img);
+                });
+
+                const shade = document.createElement('div');
+                shade.className = 'memory-tile__shade';
+
+                const label = document.createElement('span');
+                label.className = 'memory-tile__label';
+                label.textContent = PHOTOS[group.indexes[0]].caption;
+
+                tile.appendChild(stack);
+                tile.appendChild(shade);
+
+                if (group.indexes.length > 1) {
+                    const dots = document.createElement('div');
+                    dots.className = 'memory-tile__dots';
+                    group.indexes.forEach(function (_, i) {
+                        const dot = document.createElement('span');
+                        if (i === 0) dot.classList.add('is-active');
+                        dots.appendChild(dot);
+                    });
+                    tile.appendChild(dots);
+
+                    // Widget tipo iPhone: rota sola entre las fotos de esta actividad
+                    if (!reduceMotion) {
+                        let active = 0;
+                        setInterval(function () {
+                            const imgs = stack.querySelectorAll('img');
+                            const dotEls = dots.querySelectorAll('span');
+                            imgs[active].classList.remove('is-active');
+                            dotEls[active].classList.remove('is-active');
+                            active = (active + 1) % imgs.length;
+                            imgs[active].classList.add('is-active');
+                            dotEls[active].classList.add('is-active');
+                        }, CYCLE_MS);
+                    }
+                }
+
+                tile.appendChild(label);
+                tile.addEventListener('click', function () { open(parseInt(tile.getAttribute('data-start'), 10)); });
+                grid.appendChild(tile);
+            });
+
+            // ---- Lightbox / carrusel completo ----
+            const lightbox = document.getElementById('lightbox');
+            const lbImg = document.getElementById('lb-img');
+            const lbCaption = document.getElementById('lb-caption');
+            let current = 0;
+
+            function open(index) {
+                current = index;
+                render();
+                lightbox.classList.add('is-open');
+            }
+            function render() {
+                lbImg.src = PHOTOS[current].src;
+                lbImg.alt = PHOTOS[current].caption;
+                lbCaption.textContent = PHOTOS[current].caption;
+            }
+            function close() {
+                lightbox.classList.remove('is-open');
+            }
+            function next() {
+                current = (current + 1) % PHOTOS.length;
+                render();
+            }
+            function prev() {
+                current = (current - 1 + PHOTOS.length) % PHOTOS.length;
+                render();
+            }
+
+            document.getElementById('lb-close').addEventListener('click', close);
+            document.getElementById('lb-next').addEventListener('click', next);
+            document.getElementById('lb-prev').addEventListener('click', prev);
+
+            lightbox.addEventListener('click', function (e) {
+                if (e.target === lightbox) close();
+            });
+
+            document.addEventListener('keydown', function (e) {
+                if (!lightbox.classList.contains('is-open')) return;
+                if (e.key === 'Escape') close();
+                if (e.key === 'ArrowRight') next();
+                if (e.key === 'ArrowLeft') prev();
+            });
+        })();
+    </script>
 
 </body>
 

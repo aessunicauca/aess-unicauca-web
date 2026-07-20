@@ -979,6 +979,9 @@ nav{
     .history-panel{
 
         width:100%;
+         height:auto;
+        min-height:auto;
+        padding:40px;
 
     }
 
@@ -1301,208 +1304,20 @@ nav{
 
 }
 
-@media(max-width:768px){
-
+@media(max-width:480px){
     .eci-words span{
-
-        font-size:2.2rem;
-
+        font-size:1.5rem;
     }
-
     .eci-left{
-
-        padding:40px;
-
+        padding:24px;
     }
+}
 
     .eci-overlay{
 
         padding:35px;
 
     }
-
-}
-
-
-/* ==========================================================
-   10. GALLERY EFFECTS
-   ========================================================== */
-
-
-/* ----------------------------------------------------------
-   Rocket Particles
-   ---------------------------------------------------------- */
-
-.rocket-particle{
-
-    position:fixed;
-
-    z-index:9999;
-
-    pointer-events:none;
-    user-select:none;
-
-    font-size:1.2rem;
-
-    animation:rocketFly 1.2s ease-out forwards;
-
-}
-
-@keyframes rocketFly{
-
-    0%{
-
-        opacity:1;
-
-        transform:
-            translate(0,0)
-            rotate(-45deg)
-            scale(1);
-
-    }
-
-    100%{
-
-        opacity:0;
-
-        transform:
-            translate(var(--tx),var(--ty))
-            rotate(-45deg)
-            scale(.4);
-
-    }
-
-}
-
-
-/* ----------------------------------------------------------
-   Gallery Modal
-   ---------------------------------------------------------- */
-
-.gallery-modal{
-
-    display:none;
-
-    position:fixed;
-    inset:0;
-
-    z-index:9998;
-
-    background:rgba(0,0,0,.85);
-
-    align-items:center;
-    justify-content:center;
-
-}
-
-.gallery-modal.active{
-
-    display:flex;
-
-}
-
-.gallery-modal-content{
-
-    position:relative;
-
-    z-index:2;
-
-    text-align:center;
-
-    animation:modalIn .4s ease;
-
-}
-
-@keyframes modalIn{
-
-    from{
-
-        opacity:0;
-
-        transform:scale(.85);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:scale(1);
-
-    }
-
-}
-
-.gallery-modal-content img{
-
-    display:block;
-
-    max-width:500px;
-    max-height:60vh;
-
-    margin:0 auto 20px;
-
-    border:2px solid rgba(255,93,143,.5);
-    border-radius:10px;
-
-}
-
-.gallery-modal-msg{
-
-    font-size:1.1rem;
-
-    font-style:italic;
-
-    color:rgba(255,255,255,.9);
-
-}
-
-.gallery-modal-close{
-
-    position:absolute;
-
-    top:-15px;
-    right:-15px;
-
-    width:35px;
-    height:35px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    border:none;
-    border-radius:50%;
-
-    background:#ff5d8f;
-
-    color:white;
-
-    font-size:1.2rem;
-
-    cursor:pointer;
-
-    z-index:3;
-
-}
-
-.gallery-modal-close:hover{
-
-    background:#ff7a3d;
-
-}
-
-#fireworksCanvas{
-
-    position:fixed;
-    inset:0;
-
-    z-index:1;
-
-    pointer-events:none;
-
-}
-
 
 /* ==========================================================
    11. FOOTER

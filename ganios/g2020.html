@@ -19,7 +19,7 @@
 
         <nav>
             <div class="logo">
-                <img src="../imagess/Logo2Circ.png" alt="AESS Unicauca">
+                <img src="../imagess/Logos/Logo2Circ.png" alt="AESS Unicauca">
             </div>
 
             <div class="menu">
@@ -52,50 +52,24 @@
                 <span class="eyebrow">Álbum · 2020</span>
 
                 <div class="gyear-hero">
-                    <div class="gyear-hero__img" style="background-image:url('../imagess/portada (1).png')"></div>
+                    <div class="gyear-hero__img" style="background-image:url('../imagess/galeria/g2020/fondo.JPG')"></div>
                     <div class="gyear-hero__tint"></div>
                     <div class="gyear-hero__shade"></div>
                     <div class="gyear-hero__content">
-                        <h1>El año de <span class="grad">nuestra fundación</span></h1>
+                        <h1>El inicio de una comunidad comprometida <span class="grad">con el desarrollo aeroespacial</span></h1>
                     </div>
                 </div>
 
                 <p class="gyear-intro">
-                    El primer equipo, el PEU-UNAM, el Festival de Astronomía Digital y el NASA Space Apps
-                    Challenge — así se vio el 2020 fundacional del capítulo. Haz clic en cualquier foto
-                    para verla en grande.
+                    2020 marcó el nacimiento del Capítulo Estudiantil IEEE AESS Universidad del Cauca. <br>
+                    Durante este año se conformó el primer equipo de 
+                    trabajo y comenzaron las primeras actividades académicas y de divulgación, entre ellas la 
+                    participación en el PEU-UNAM, el Festival de Astronomía Digital y el NASA Space Apps Challenge. 
+                    Explora la galería para conocer los momentos que dieron origen al capítulo.
                 </p>
 
-                <div class="photo-grid" id="photo-grid">
-                    <button class="photo-item span-2x2" data-index="0">
-                        <img src="../imagess/portada (1).png" alt="Equipo AESS Unicauca 2020" loading="lazy">
-                        <span class="photo-caption">Equipo fundador AESS Unicauca</span>
-                    </button>
-                    <button class="photo-item" data-index="1">
-                        <img src="../imagess/NASA3.jpeg" alt="NASA Space Apps Challenge 2020" loading="lazy">
-                        <span class="photo-caption">NASA Space Apps Challenge</span>
-                    </button>
-                    <button class="photo-item" data-index="2">
-                        <img src="../imagess/largo.png" alt="Actividad AESS 2020" loading="lazy">
-                        <span class="photo-caption">Jornada de trabajo del equipo</span>
-                    </button>
-                    <button class="photo-item" data-index="3">
-                        <img src="../imagess/carruselvert/foto1.jpg" alt="Actividad AESS 2020" loading="lazy">
-                        <span class="photo-caption">Actividades del capítulo</span>
-                    </button>
-                    <button class="photo-item" data-index="4">
-                        <img src="../imagess/carruselvert/foto2.jpeg" alt="Actividad AESS 2020" loading="lazy">
-                        <span class="photo-caption">Actividades del capítulo</span>
-                    </button>
-                    <button class="photo-item span-2x1" data-index="5">
-                        <img src="../imagess/carruselvert/foto3.jpeg" alt="Actividad AESS 2020" loading="lazy">
-                        <span class="photo-caption">Actividades del capítulo</span>
-                    </button>
-                    <button class="photo-item" data-index="6">
-                        <img src="../imagess/carruselvert/foto4.jpeg" alt="Actividad AESS 2020" loading="lazy">
-                        <span class="photo-caption">Actividades del capítulo</span>
-                    </button>
-                </div>
+                <!-- El widget se genera con JS a partir de PHOTOS, agrupando por actividad -->
+                <div class="memory-grid" id="memory-grid"></div>
 
                 <a href="../menu/galeria.html" class="back-link">&larr; Volver a la Galería</a>
 
@@ -118,12 +92,123 @@
 
     <script>
         (function () {
-            const items = Array.from(document.querySelectorAll('.photo-item'));
-            const photos = items.map(function (btn) {
-                const img = btn.querySelector('img');
-                return { src: img.src, caption: btn.querySelector('.photo-caption').textContent };
+            // ---- Fuente de datos: una fila por foto. Fotos con el mismo
+            // "activity" consecutivas se agrupan en un mismo cuadro que rota. ----
+            const PHOTOS = [
+                { src: '../imagess/galeria/g2020/fund.jpeg', alt: 'Equipo AESS Unicauca 2020', caption: 'Equipo fundador AESS Unicauca', activity: 'fundacion', span: 'span-2x2' },
+                { src: '../imagess/galeria/g2020/p2020.jpeg', alt: 'Equipo AESS Unicauca 2020', caption: 'Equipo fundador AESS Unicauca', activity: 'fundacion', span: 'span-2x2' },
+                { src: '../imagess/galeria/g2020/log1.jpeg', alt: 'Logros y participaciones 2020', caption: 'Logros y participaciones 2020', activity: 'Logros' },
+                { src: '../imagess/galeria/g2020/log2.jpeg', alt: 'Logros y participaciones 2020', caption: 'Logros y participaciones 2020', activity: 'Logros' },
+                { src: '../imagess/galeria/g2020/log3.jpeg', alt: 'Logros y participaciones 2020', caption: 'Logros y participaciones 2020', activity: 'Logros' },
+                { src: '../imagess/galeria/g2020/log4.jpeg', alt: 'Logros y participaciones 2020', caption: 'Logros y participaciones 2020', activity: 'Logros' },
+                { src: '../imagess/galeria/g2020/log5.jpeg', alt: 'Logros y participaciones 2020', caption: 'Logros y participaciones 2020', activity: 'Logros' },
+                { src: '../imagess/galeria/g2020/log6.jpeg', alt: 'Logros y participaciones 2020', caption: 'Logros y participaciones 2020', activity: 'Logros' },
+                { src: '../imagess/galeria/g2020/log7.jpeg', alt: 'Logros y participaciones 2020', caption: 'Logros y participaciones 2020', activity: 'Logros' },
+                { src: '../imagess/galeria/g2020/log8.jpeg', alt: 'Logros y participaciones 2020', caption: 'Logros y participaciones 2020', activity: 'Logros' },
+                { src: '../imagess/galeria/g2020/log9.jpeg', alt: 'Logros y participaciones 2020', caption: 'Logros y participaciones 2020', activity: 'Logros' },
+                { src: '../imagess/galeria/g2020/log10.jpeg', alt: 'Logros y participaciones 2020', caption: 'Logros y participaciones 2020', activity: 'Logros' },
+                { src: '../imagess/galeria/g2020/log11.jpeg', alt: 'Logros y participaciones 2020', caption: 'Logros y participaciones 2020', activity: 'Logros' },
+                { src: '../imagess/galeria/g2020/log12.jpeg', alt: 'Logros y participaciones 2020', caption: 'Logros y participaciones 2020', activity: 'Logros' },
+                { src: '../imagess/galeria/g2020/log13.jpeg', alt: 'Logros y participaciones 2020', caption: 'Logros y participaciones 2020', activity: 'Logros' },
+                { src: '../imagess/galeria/g2020/log14.jpeg', alt: 'Logros y participaciones 2020', caption: 'Logros y participaciones 2020', activity: 'Logros' },
+                { src: '../imagess/galeria/g2020/log15.jpeg', alt: 'Logros y participaciones 2020', caption: 'Logros y participaciones 2020', activity: 'Logros' },
+                { src: '../imagess/galeria/g2020/log16.jpeg', alt: 'Logros y participaciones 2020', caption: 'Logros y participaciones 2020', activity: 'Logros' },
+                { src: '../imagess/galeria/g2020/log17.jpeg', alt: 'Logros y participaciones 2020', caption: 'Logros y participaciones 2020', activity: 'Logros' },
+                { src: '../imagess/galeria/g2020/fer1.jpeg', alt: 'Feria Virtual de las Ciencias2020', caption: 'Feria Virtual de las Ciencias 2020', activity: 'Eventos' },
+                { src: '../imagess/galeria/g2020/fer2.jpeg', alt: 'Feria Virtual de las Ciencias2020', caption: 'Feria Virtual de las Ciencias 2020', activity: 'Eventos' },
+                { src: '../imagess/galeria/g2020/fer3.jpeg', alt: 'Feria Virtual de las Ciencias2020', caption: 'Feria Virtual de las Ciencias 2020', activity: 'Eventos' },
+                { src: '../imagess/galeria/g2020/fer4.jpeg', alt: 'Feria Virtual de las Ciencias2020', caption: 'Feria Virtual de las Ciencias 2020', activity: 'Eventos' },
+                { src: '../imagess/galeria/g2020/fer5.jpeg', alt: 'Feria Virtual de las Ciencias2020', caption: 'Feria Virtual de las Ciencias 2020', activity: 'Eventos' },
+                { src: '../imagess/galeria/g2020/fer6.jpeg', alt: 'Feria Virtual de las Ciencias2020', caption: 'Feria Virtual de las Ciencias 2020', activity: 'Eventos' },
+                { src: '../imagess/galeria/g2020/ob1.JPG', alt: 'Actividad en el Observatorio Astronómico, AESS 2020', caption: 'Actividades de integración en el Observatorio Astronómico Francisco José de Caldas', activity: 'actividades' },
+                { src: '../imagess/galeria/g2020/ob2.JPG', alt: 'Actividad en el Observatorio Astronómico, AESS 2020', caption: 'Actividades de integración en el Observatorio Astronómico Francisco José de Caldas', activity: 'actividades' },
+                { src: '../imagess/galeria/g2020/ob4.JPG', alt: 'Actividad en el Observatorio Astronómico, AESS 2020', caption: 'Actividades de integración en el Observatorio Astronómico Francisco José de Caldas', activity: 'actividades' },
+                { src: '../imagess/galeria/g2020/ob5.JPG', alt: 'Actividad en el Observatorio Astronómico, AESS 2020', caption: 'Actividades de integración en el Observatorio Astronómico Francisco José de Caldas', activity: 'actividades' },
+                { src: '../imagess/galeria/g2020/ob6.JPG', alt: 'Actividad en el Observatorio Astronómico, AESS 2020', caption: 'Actividades de integración en el Observatorio Astronómico Francisco José de Caldas', activity: 'actividades' },
+                { src: '../imagess/galeria/g2020/ob7.JPG', alt: 'Actividad en el Observatorio Astronómico, AESS 2020', caption: 'Actividades de integración en el Observatorio Astronómico Francisco José de Caldas', activity: 'actividades' },
+                { src: '../imagess/galeria/g2020/nav1.jpeg', alt: 'NAVIDAD AESS 2020', caption: 'Actividades de integración Navidad AESS', activity: 'Navidad' },
+                { src: '../imagess/galeria/g2020/nav2.jpeg', alt: 'NAVIDAD AESS 2020', caption: 'Actividades de integración Navidad AESS', activity: 'Navidad' },
+                { src: '../imagess/galeria/g2020/nav3.jpeg', alt: 'NAVIDAD AESS 2020', caption: 'Actividades de integración Navidad AESS', activity: 'Navidad' },
+                { src: '../imagess/galeria/g2020/nav4.jpeg', alt: 'NAVIDAD AESS 2020', caption: 'Actividades de integración Navidad AESS', activity: 'Navidad' },
+                { src: '../imagess/galeria/g2020/nav5.jpeg', alt: 'NAVIDAD AESS 2020', caption: 'Actividades de integración Navidad AESS', activity: 'Navidad' },
+                { src: '../imagess/galeria/g2020/nav6.jpeg', alt: 'NAVIDAD AESS 2020', caption: 'Actividades de integración Navidad AESS', activity: 'Navidad' },
+                { src: '../imagess/galeria/g2020/nav7.jpeg', alt: 'NAVIDAD AESS 2020', caption: 'Actividades de integración Navidad AESS', activity: 'Navidad' },
+            ];
+
+            const CYCLE_MS = 2400;
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            // ---- Agrupar fotos consecutivas de la misma actividad ----
+            const groups = [];
+            PHOTOS.forEach(function (photo, index) {
+                const last = groups[groups.length - 1];
+                if (last && last.activity === photo.activity) {
+                    last.indexes.push(index);
+                } else {
+                    groups.push({ activity: photo.activity, indexes: [index], span: photo.span });
+                }
             });
 
+            const grid = document.getElementById('memory-grid');
+
+            groups.forEach(function (group) {
+                const tile = document.createElement('button');
+                tile.className = 'memory-tile' + (group.span ? ' ' + group.span : '');
+                tile.setAttribute('data-start', group.indexes[0]);
+
+                const stack = document.createElement('div');
+                stack.className = 'memory-tile__stack';
+
+                group.indexes.forEach(function (photoIndex, i) {
+                    const img = document.createElement('img');
+                    img.src = PHOTOS[photoIndex].src;
+                    img.alt = PHOTOS[photoIndex].alt;
+                    img.loading = 'lazy';
+                    if (i === 0) img.classList.add('is-active');
+                    stack.appendChild(img);
+                });
+
+                const shade = document.createElement('div');
+                shade.className = 'memory-tile__shade';
+
+                const label = document.createElement('span');
+                label.className = 'memory-tile__label';
+                label.textContent = PHOTOS[group.indexes[0]].caption;
+
+                tile.appendChild(stack);
+                tile.appendChild(shade);
+
+                if (group.indexes.length > 1) {
+                    const dots = document.createElement('div');
+                    dots.className = 'memory-tile__dots';
+                    group.indexes.forEach(function (_, i) {
+                        const dot = document.createElement('span');
+                        if (i === 0) dot.classList.add('is-active');
+                        dots.appendChild(dot);
+                    });
+                    tile.appendChild(dots);
+
+                    // Widget tipo iPhone: rota sola entre las fotos de esta actividad
+                    if (!reduceMotion) {
+                        let active = 0;
+                        setInterval(function () {
+                            const imgs = stack.querySelectorAll('img');
+                            const dotEls = dots.querySelectorAll('span');
+                            imgs[active].classList.remove('is-active');
+                            dotEls[active].classList.remove('is-active');
+                            active = (active + 1) % imgs.length;
+                            imgs[active].classList.add('is-active');
+                            dotEls[active].classList.add('is-active');
+                        }, CYCLE_MS);
+                    }
+                }
+
+                tile.appendChild(label);
+                tile.addEventListener('click', function () { open(parseInt(tile.getAttribute('data-start'), 10)); });
+                grid.appendChild(tile);
+            });
+
+            // ---- Lightbox / carrusel completo ----
             const lightbox = document.getElementById('lightbox');
             const lbImg = document.getElementById('lb-img');
             const lbCaption = document.getElementById('lb-caption');
@@ -135,25 +220,21 @@
                 lightbox.classList.add('is-open');
             }
             function render() {
-                lbImg.src = photos[current].src;
-                lbImg.alt = photos[current].caption;
-                lbCaption.textContent = photos[current].caption;
+                lbImg.src = PHOTOS[current].src;
+                lbImg.alt = PHOTOS[current].caption;
+                lbCaption.textContent = PHOTOS[current].caption;
             }
             function close() {
                 lightbox.classList.remove('is-open');
             }
             function next() {
-                current = (current + 1) % photos.length;
+                current = (current + 1) % PHOTOS.length;
                 render();
             }
             function prev() {
-                current = (current - 1 + photos.length) % photos.length;
+                current = (current - 1 + PHOTOS.length) % PHOTOS.length;
                 render();
             }
-
-            items.forEach(function (btn, i) {
-                btn.addEventListener('click', function () { open(i); });
-            });
 
             document.getElementById('lb-close').addEventListener('click', close);
             document.getElementById('lb-next').addEventListener('click', next);
