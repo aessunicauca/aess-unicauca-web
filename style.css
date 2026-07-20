@@ -93,6 +93,9 @@ nav{
 
     display:none;
 
+    position:relative;
+    z-index:101;
+
     flex-direction:column;
     justify-content:center;
     gap:5px;
@@ -1405,6 +1408,66 @@ nav{
     }
 }
 
+@media(max-width:768px){
+
+    /* El carrusel pasa a franja horizontal y se ubica DESPUÉS del texto */
+
+    .eci-left > h4:first-of-type{
+        order:1;
+    }
+
+    .eci-left > br{
+        order:1;
+    }
+
+    .eci-left .eci-words{
+        order:2;
+    }
+
+    .eci-left .eci-text{
+        order:3;
+    }
+
+    .eci-left > h4:last-of-type{
+        order:4;
+    }
+
+    .eci-gallery{
+
+        position:static;
+
+        width:100%;
+        height:auto;
+
+        order:5;
+
+        margin-top:10px;
+
+    }
+
+    .gallery-track{
+
+        flex-direction:row;
+
+        gap:10px;
+
+        animation:none;
+
+        overflow-x:auto;
+
+    }
+
+    .gallery-track img{
+
+        width:80px;
+        height:80px;
+
+        flex-shrink:0;
+
+    }
+
+}
+
     .eci-overlay{
 
         padding:35px;
@@ -2142,7 +2205,33 @@ nav{
 
     .board-grid{
 
-        grid-template-columns:1fr;
+        grid-template-columns:repeat(2,1fr);
+
+        gap:12px;
+
+    }
+
+    .board-overlay{
+
+        padding:14px;
+
+    }
+
+    .board-overlay h3{
+
+        font-size:.85rem;
+
+    }
+
+    .board-role{
+
+        font-size:.6rem;
+
+    }
+
+    .board-quote{
+
+        display:none;
 
     }
 
@@ -2495,7 +2584,25 @@ nav{
 
     .stats-grid{
 
-        grid-template-columns:1fr;
+        grid-template-columns:repeat(2,1fr);
+
+        gap:14px;
+
+    }
+
+    .stat-card{
+
+        min-height:120px;
+
+        padding:18px 14px;
+
+    }
+
+    .stat-number{
+
+        font-size:2.4rem;
+
+        margin-bottom:8px;
 
     }
 
@@ -2799,6 +2906,16 @@ nav{
 
     .participa-header h2{
         font-size:2.2rem;
+    }
+
+    .participa-card{
+        padding:22px;
+    }
+
+    .participa-icon{
+        width:46px;
+        height:46px;
+        margin-bottom:16px;
     }
 }
 
