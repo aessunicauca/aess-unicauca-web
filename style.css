@@ -1056,6 +1056,8 @@ nav{
         margin-left:0;
         margin-top:70px;
 
+        height:auto;
+
         flex-direction:column;
 
     }
