@@ -1414,24 +1414,73 @@ nav{
 
     /* El carrusel pasa a franja horizontal y se ubica DESPUÉS del texto */
 
+    .eci-left{
+        gap:0;
+    }
+
     .eci-left > h4:first-of-type{
+
         order:1;
+
+        margin-bottom:16px;
+
+        font-size:.8rem;
+        font-weight:700;
+        letter-spacing:2px;
+        text-transform:uppercase;
+
+        color:#ff5d8f;
+
     }
 
     .eci-left > br{
-        order:1;
+        display:none;
     }
 
     .eci-left .eci-words{
+
         order:2;
+
+        gap:2px;
+
+        margin-bottom:28px;
+
+    }
+
+    .eci-left .eci-words span{
+
+        font-size:1.7rem;
+
     }
 
     .eci-left .eci-text{
+
         order:3;
+
+        max-width:none;
+
+        margin-bottom:28px;
+        padding-left:16px;
+
+        border-left:2px solid #ff5d8f;
+
+        font-size:1.15rem;
+        line-height:1.5;
+
     }
 
     .eci-left > h4:last-of-type{
+
         order:4;
+
+        margin-bottom:24px;
+
+        font-size:1.05rem;
+        font-weight:700;
+        line-height:1.5;
+
+        color:white;
+
     }
 
     .eci-gallery{
