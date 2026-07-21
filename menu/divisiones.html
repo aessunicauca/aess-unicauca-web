@@ -4,14 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Divisiones - AESS Unicauca</title>
+    <title>Eventos - AESS Unicauca</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="../style.css">
-
-    <link rel="stylesheet" href="divisiones-cards.css">
+    <link rel="stylesheet" href="eventos-page.css">
 </head>
 
 <body>
@@ -34,9 +33,9 @@
                 <div class="menu">
                     <a href="../index.html">Inicio</a>
                     <a href="historia.html">Historia</a>
-                    <a href="divisiones.html" class="active">Divisiones</a>
+                    <a href="divisiones.html">Divisiones</a>
                     <a href="proyectos.html">Proyectos</a>
-                    <a href="eventos.html">Eventos</a>
+                    <a href="eventos.html" class="active">Eventos</a>
                     <a href="noticias.html">Noticias</a>
                     <a href="galeria.html">Galería</a>
                     <a href="nosotros.html">Nosotros</a>
@@ -58,97 +57,468 @@
 
         <div class="main-content main-content--scroll">
 
-            <div class="divpage">
+            <div class="eventos-page">
 
-                <div class="divpage-intro">
-                    <span class="eyebrow">Nuestras divisiones técnicas</span>
-                    <h1>4 divisiones,<br><span class="grad">una misión</span></h1>
-                    <p>
-                        En el Capítulo AESS Unicauca nos organizamos en áreas estratégicas de investigación
-                        y desarrollo. Explora el enfoque técnico de cada división y accede a sus misiones,
-                        bitácoras de avance y artículos de divulgación científica.
-                    </p>
+                <span class="eyebrow">Agenda 2026</span>
+                <h1>MÁS QUE EVENTOS<br><span class="grad">EXPERIENCIAS AEROESPACIALES</span></h1>
+                <p class="lead">
+                    Competencias, conferencias, talleres y experiencias que conectan a 
+                    estudiantes, investigadores y profesionales para construir el futuro de la ingeniería aeroespacial
+                    en el suroccidente colombiano.
+                </p>
+
+                <div class="section-meta">Sobre los eventos</div>
+
+                <div class="about-events">
+                    <div class="about-events__text">
+                        <h2>Espacios para aprender, competir y compartir</h2>
+                        <p>
+                            AESS Unicauca organiza y participa en distintos tipos de eventos a lo largo del
+                            año: competencias que ponen a prueba lo que construimos, talleres donde
+                            transferimos conocimiento técnico entre miembros, y charlas de divulgación
+                            abiertas a toda la comunidad universitaria.
+                        </p>
+                        <p>
+                            Si tienes una idea para un evento o quieres proponer una charla, escríbele a
+                            nuestra división de eventos.
+                        </p>
+                        <a href="mailto:aess@unicauca.edu.co?subject=Propuesta%20de%20evento" class="about-events__cta">Proponer un evento &rarr;</a>
+                    </div>
+
+                    <div class="coordinator-card">
+                        <div class="coordinator-card__photo">
+                            <img src="../imagess/Lideres/DANNA.jpeg" alt="Líder de eventos">
+                            <span class="coordinator-card__badge">AESS Unicauca</span>
+                        </div>
+                        <div class="coordinator-card__body">
+                            <span class="coordinator-card__label">División de eventos</span>
+                            <h3 class="coordinator-card__name">Danna Isabela Agredo Ruiz</h3>
+                            <p class="coordinator-card__role">Líder de la división de eventos</p>
+                            <div class="coordinator-card__contact">
+                                <span>
+                                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                                        <path d="M3 7 L12 13 L21 7"></path>
+                                    </svg>
+                                    aess@unicauca.edu.co
+                                </span>
+                                <span>
+                                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M12 21 C12 21 5 14.5 5 9.5 A7 7 0 0 1 19 9.5 C19 14.5 12 21 12 21 Z"></path>
+                                        <circle cx="12" cy="9.5" r="2.4"></circle>
+                                    </svg>
+                                    Popayán, Cauca
+                                </span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="roster-meta">Roster de divisiones — 04 activas</div>
+                <div class="section-meta">Próximos eventos</div>
 
-                <div class="roster">
+                <div class="event-grid">
 
-                    <article class="div-card" id="sec-astronomia">
-                        <div class="card-media">
-                            <div class="card-media__img" style="background-image:url('../imagess/divasatro.jpeg')"></div>
-                            <div class="card-media__tint"></div>
-                            <div class="card-media__fade"></div>
-                            <div class="patch"><span>AST</span></div>
+                    <a href="#" class="event-card event-card--featured">
+                        <div class="event-card__media">
+                            <img src="../imagess/eventos/spaceweek.jpeg" alt="Semana del Espacio 2026">
+                            <div class="event-card__date">
+                                <span class="day">15</span>
+                                <span class="month">Ago</span>
+                            </div>
+                            <span class="event-card__badge">Inscripciones abiertas</span>
                         </div>
-                        <div class="card-body">
-                            <span class="card-tag">Designación · AST&#8209;01</span>
-                            <h2>Astronomía</h2>
-                            <p>
-                                Dedicados a la observación del cosmos, astrofísica, astrofotografía y la
-                                divulgación de las ciencias del espacio profundo. Aquí estudiamos los
-                                fenómenos celestes y coordinamos las jornadas de observación del campus.
-                            </p>
-                            <a href="astronomia.html" class="card-cta">Explorar blog &rarr;</a>
+                        <div class="event-card__body">
+                            <span class="event-card__tag">Evento</span>
+                            <h3>Semana del espacio 2026</h3>
+                            <div class="event-card__meta">
+                                <span>
+                                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="3" y="5" width="18" height="16" rx="2"></rect>
+                                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                                        <line x1="8" y1="3" x2="8" y2="7"></line>
+                                        <line x1="16" y1="3" x2="16" y2="7"></line>
+                                    </svg>
+                                    05 al 09 de Octubre, 2026
+                                </span>
+                                <span>
+                                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M12 21 C12 21 5 14.5 5 9.5 A7 7 0 0 1 19 9.5 C19 14.5 12 21 12 21 Z"></path>
+                                        <circle cx="12" cy="9.5" r="2.4"></circle>
+                                    </svg>
+                                    Universidad del Cauca, Popayán
+                                </span>
+                            </div>
                         </div>
-                    </article>
+                    </a>
 
-                    <article class="div-card" id="sec-sia">
-                        <div class="card-media">
-                            <div class="card-media__img" style="background-image:url('../imagess/div2.jpeg')"></div>
-                            <div class="card-media__tint"></div>
-                            <div class="card-media__fade"></div>
-                            <div class="patch"><span>SIE</span></div>
+                    <a href="#" class="event-card">
+                        <div class="event-card__media">
+                            <img src="../imagess/eventos/hidro.jpeg" alt="Hidrochallenge Colombia">
+                            <div class="event-card__date">
+                                <span class="day">02</span>
+                                <span class="month">Sep</span>
+                            </div>
+                            <span class="event-card__badge">Inscripciones abiertas para espectadores</span>
                         </div>
-                        <div class="card-body">
-                            <span class="card-tag">Designación · SIE&#8209;02</span>
-                            <h2>Sistemas Inteligentes y Estratégicos</h2>
-                            <p>
-                                Focalizados en el diseño, simulación y desarrollo de algoritmos de
-                                inteligencia artificial, automatización y control aplicados a la robótica
-                                móvil, vehículos aéreos no tripulados (UAVs) y misiones aeroespaciales autónomas.
-                            </p>
-                            <a href="sia.html" class="card-cta">Explorar blog &rarr;</a>
+                        <div class="event-card__body">
+                            <span class="event-card__tag">Competencia internacional</span>
+                            <h3>Hidrochallenge Colombia 2026</h3>
+                            <div class="event-card__meta">
+                                <span>
+                                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="3" y="5" width="18" height="16" rx="2"></rect>
+                                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                                        <line x1="8" y1="3" x2="8" y2="7"></line>
+                                        <line x1="16" y1="3" x2="16" y2="7"></line>
+                                    </svg>
+                                    07 al 09 de Octubre,2026
+                                </span>
+                                <span>
+                                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M12 21 C12 21 5 14.5 5 9.5 A7 7 0 0 1 19 9.5 C19 14.5 12 21 12 21 Z"></path>
+                                        <circle cx="12" cy="9.5" r="2.4"></circle>
+                                    </svg>
+                                    Universidad del Cauca, Popayán.
+                                </span>
+                            </div>
                         </div>
-                    </article>
+                    </a>
 
-                    <article class="div-card" id="sec-syn">
-                        <div class="card-media">
-                            <div class="card-media__img" style="background-image:url('../imagess/controlynav.jpeg')"></div>
-                            <div class="card-media__tint"></div>
-                            <div class="card-media__fade"></div>
-                            <div class="patch"><span>CON</span></div>
+                    <a href="#" class="event-card">
+                        <div class="event-card__media">
+                            <img src="../imagess/eventos/NASA.jpeg" alt="NasaSpaceApps">
+                            <div class="event-card__date">
+                                <span class="day">20</span>
+                                <span class="month">Oct</span>
+                            </div>
+                            <span class="event-card__badge">Inscripciones abiertas</span>
                         </div>
-                        <div class="card-body">
-                            <span class="card-tag">Designación · CON&#8209;03</span>
-                            <h2>Control y Navegación</h2>
-                            <p>
-                                Encargados del procesamiento de señales, sistemas de posicionamiento,
-                                telemetría y adquisición de datos. Trabajamos fuertemente en el desarrollo
-                                de la electrónica de control y aviónica para cohetería experimental.
-                            </p>
-                            <a href="syn.html" class="card-cta">Explorar blog &rarr;</a>
+                        <div class="event-card__body">
+                            <span class="event-card__tag">Hackathon internacional</span>
+                            <h3>Nasa Space Apps Challenge 2026</h3>
+                            <div class="event-card__meta">
+                                <span>
+                                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="3" y="5" width="18" height="16" rx="2"></rect>
+                                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                                        <line x1="8" y1="3" x2="8" y2="7"></line>
+                                        <line x1="16" y1="3" x2="16" y2="7"></line>
+                                    </svg>
+                                    14 y 15 de Noviembre, 2026
+                                </span>
+                                <span>
+                                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M12 21 C12 21 5 14.5 5 9.5 A7 7 0 0 1 19 9.5 C19 14.5 12 21 12 21 Z"></path>
+                                        <circle cx="12" cy="9.5" r="2.4"></circle>
+                                    </svg>
+                                    Universidad del Cauca, Popayán
+                                </span>
+                            </div>
                         </div>
-                    </article>
+                    </a>
 
-                    <article class="div-card" id="sec-cyc">
-                        <div class="card-media">
-                            <div class="card-media__img" style="background-image:url('../imagess/PSC.jpeg')"></div>
-                            <div class="card-media__tint"></div>
-                            <div class="card-media__fade"></div>
-                            <div class="patch"><span>PSC</span></div>
+                </div>
+
+                <div class="section-meta">Eventos pasados · 2026</div>
+
+                <div class="event-grid">
+
+                    <a href="#" class="event-card event-card--past">
+                        <div class="event-card__media">
+                            <img src="../imagess/eventos/visitaInsti.jpeg" alt="Evento pasado">
+                            <div class="event-card__date">
+                                <span class="day">18</span>
+                                <span class="month">Mar</span>
+                            </div>
+                            <span class="event-card__badge">Finalizado</span>
                         </div>
-                        <div class="card-body">
-                            <span class="card-tag">Designación · PSC&#8209;04</span>
-                            <h2>Percepción, Sensores y Comunicaciones</h2>
-                            <p>
-                                Especializados en arquitecturas de redes para misiones satelitales,
-                                protocolos de transmisión de radiofrecuencia (RF), encriptación de datos de
-                                telemetría y protección contra ataques en infraestructuras críticas.
-                            </p>
-                            <a href="cyc.html" class="card-cta">Explorar blog &rarr;</a>
+                        <div class="event-card__body">
+                            <span class="event-card__tag">Evento</span>
+                            <h3>Jornada de visita a la Institución Educativa Misak Shur Pupen</h3>
+                            <div class="event-card__meta">
+                                <span>
+                                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="3" y="5" width="18" height="16" rx="2"></rect>
+                                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                                        <line x1="8" y1="3" x2="8" y2="7"></line>
+                                        <line x1="16" y1="3" x2="16" y2="7"></line>
+                                    </svg>
+                                    27 Febrero 2026
+                                </span>
+                                <span>
+                                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M12 21 C12 21 5 14.5 5 9.5 A7 7 0 0 1 19 9.5 C19 14.5 12 21 12 21 Z"></path>
+                                        <circle cx="12" cy="9.5" r="2.4"></circle>
+                                    </svg>
+                                    Institución Educativa Misak Shur Pupen, Caldono, Cauca.
+                                </span>
+                            </div>
                         </div>
-                    </article>
+                    </a>
+
+                    <a href="#" class="event-card event-card--past">
+                        <div class="event-card__media">
+                            <img src="../imagess/carruselvert/foto2.jpeg" alt="Evento pasado de ejemplo">
+                            <div class="event-card__date">
+                                <span class="day">05</span>
+                                <span class="month">May</span>
+                            </div>
+                            <span class="event-card__badge">Finalizado</span>
+                        </div>
+                        <div class="event-card__body">
+                            <span class="event-card__tag">Evento</span>
+                            <h3>Evento de Bienvenida AESS Unicauca 2026: Innovación, Liderazgo y Proyectos Aeroespaciales</h3>
+                            <div class="event-card__meta">
+                                <span>
+                                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="3" y="5" width="18" height="16" rx="2"></rect>
+                                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                                        <line x1="8" y1="3" x2="8" y2="7"></line>
+                                        <line x1="16" y1="3" x2="16" y2="7"></line>
+                                    </svg>
+                                    10 marzo 2026
+                                </span>
+                                <span>
+                                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M12 21 C12 21 5 14.5 5 9.5 A7 7 0 0 1 19 9.5 C19 14.5 12 21 12 21 Z"></path>
+                                        <circle cx="12" cy="9.5" r="2.4"></circle>
+                                    </svg>
+                                    Laboratorio AESS, Unicauca
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#" class="event-card event-card--past">
+                        <div class="event-card__media">
+                            <img src="../imagess/eventos/TALLER1.jpeg" alt="taller1">
+                            <div class="event-card__date">
+                                <span class="day">05</span>
+                                <span class="month">May</span>
+                            </div>
+                            <span class="event-card__badge">Finalizado</span>
+                        </div>
+                        <div class="event-card__body">
+                            <span class="event-card__tag">Talleres</span>
+                            <h3>Hidrochallenge Colombia: Introducción a la coheteria</h3>
+                            <div class="event-card__meta">
+                                <span>
+                                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="3" y="5" width="18" height="16" rx="2"></rect>
+                                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                                        <line x1="8" y1="3" x2="8" y2="7"></line>
+                                        <line x1="16" y1="3" x2="16" y2="7"></line>
+                                    </svg>
+                                    09 de Mayo 2026
+                                </span>
+                                <span>
+                                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M12 21 C12 21 5 14.5 5 9.5 A7 7 0 0 1 19 9.5 C19 14.5 12 21 12 21 Z"></path>
+                                        <circle cx="12" cy="9.5" r="2.4"></circle>
+                                    </svg>
+                                    Modalidad virtual
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#" class="event-card event-card--past">
+                        <div class="event-card__media">
+                            <img src="../imagess/eventos/TALLER2.jpeg" alt="taller1">
+                            <div class="event-card__date">
+                                <span class="day">05</span>
+                                <span class="month">May</span>
+                            </div>
+                            <span class="event-card__badge">Finalizado</span>
+                        </div>
+                        <div class="event-card__body">
+                            <span class="event-card__tag">Talleres</span>
+                            <h3>Hidrochallenge Colombia: Construcción de Cohetes</h3>
+                            <div class="event-card__meta">
+                                <span>
+                                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="3" y="5" width="18" height="16" rx="2"></rect>
+                                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                                        <line x1="8" y1="3" x2="8" y2="7"></line>
+                                        <line x1="16" y1="3" x2="16" y2="7"></line>
+                                    </svg>
+                                    16 de Mayo 2026
+                                </span>
+                                <span>
+                                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M12 21 C12 21 5 14.5 5 9.5 A7 7 0 0 1 19 9.5 C19 14.5 12 21 12 21 Z"></path>
+                                        <circle cx="12" cy="9.5" r="2.4"></circle>
+                                    </svg>
+                                    Modalidad virtual
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#" class="event-card event-card--past">
+                        <div class="event-card__media">
+                            <img src="../imagess/eventos/TALLER3.jpeg" alt="taller1">
+                            <div class="event-card__date">
+                                <span class="day">05</span>
+                                <span class="month">May</span>
+                            </div>
+                            <span class="event-card__badge">Finalizado</span>
+                        </div>
+                        <div class="event-card__body">
+                            <span class="event-card__tag">Talleres</span>
+                            <h3>Hidrochallenge Colombia: Propulsión de cohetes</h3>
+                            <div class="event-card__meta">
+                                <span>
+                                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="3" y="5" width="18" height="16" rx="2"></rect>
+                                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                                        <line x1="8" y1="3" x2="8" y2="7"></line>
+                                        <line x1="16" y1="3" x2="16" y2="7"></line>
+                                    </svg>
+                                    23 de Mayo 2026
+                                </span>
+                                <span>
+                                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M12 21 C12 21 5 14.5 5 9.5 A7 7 0 0 1 19 9.5 C19 14.5 12 21 12 21 Z"></path>
+                                        <circle cx="12" cy="9.5" r="2.4"></circle>
+                                    </svg>
+                                    Modalidad virtual
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#" class="event-card event-card--past">
+                        <div class="event-card__media">
+                            <img src="../imagess/eventos/TALLER4.jpeg" alt="taller1">
+                            <div class="event-card__date">
+                                <span class="day">05</span>
+                                <span class="month">May</span>
+                            </div>
+                            <span class="event-card__badge">Finalizado</span>
+                        </div>
+                        <div class="event-card__body">
+                            <span class="event-card__tag">Talleres</span>
+                            <h3>Hidrochallenge Colombia: Protección de carga útil</h3>
+                            <div class="event-card__meta">
+                                <span>
+                                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="3" y="5" width="18" height="16" rx="2"></rect>
+                                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                                        <line x1="8" y1="3" x2="8" y2="7"></line>
+                                        <line x1="16" y1="3" x2="16" y2="7"></line>
+                                    </svg>
+                                    30 de Mayo 2026
+                                </span>
+                                <span>
+                                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M12 21 C12 21 5 14.5 5 9.5 A7 7 0 0 1 19 9.5 C19 14.5 12 21 12 21 Z"></path>
+                                        <circle cx="12" cy="9.5" r="2.4"></circle>
+                                    </svg>
+                                    Modalidad virtual
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#" class="event-card event-card--past">
+                        <div class="event-card__media">
+                            <img src="../imagess/eventos/TALLER5.jpeg" alt="taller1">
+                            <div class="event-card__date">
+                                <span class="day">05</span>
+                                <span class="month">May</span>
+                            </div>
+                            <span class="event-card__badge">Finalizado</span>
+                        </div>
+                        <div class="event-card__body">
+                            <span class="event-card__tag">Talleres</span>
+                            <h3>Hidrochallenge Colombia: Electrónica para sistemas aeroespaciales</h3>
+                            <div class="event-card__meta">
+                                <span>
+                                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="3" y="5" width="18" height="16" rx="2"></rect>
+                                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                                        <line x1="8" y1="3" x2="8" y2="7"></line>
+                                        <line x1="16" y1="3" x2="16" y2="7"></line>
+                                    </svg>
+                                    06 de junio 2026
+                                </span>
+                                <span>
+                                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M12 21 C12 21 5 14.5 5 9.5 A7 7 0 0 1 19 9.5 C19 14.5 12 21 12 21 Z"></path>
+                                        <circle cx="12" cy="9.5" r="2.4"></circle>
+                                    </svg>
+                                    Modalidad virtual
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#" class="event-card event-card--past">
+                        <div class="event-card__media">
+                            <img src="../imagess/eventos/talleres de programación de drones.jpeg" alt="Evento pasado de ejemplo">
+                            <div class="event-card__date">
+                                <span class="day">22</span>
+                                <span class="month">Jun</span>
+                            </div>
+                            <span class="event-card__badge">Finalizado</span>
+                        </div>
+                        <div class="event-card__body">
+                            <span class="event-card__tag">Talleres</span>
+                            <h3>Talleres de Programación de Drones con PySimVerse, ImmersiveTech y IEEE AESS Unicauca</h3>
+                            <div class="event-card__meta">
+                                <span>
+                                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="3" y="5" width="18" height="16" rx="2"></rect>
+                                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                                        <line x1="8" y1="3" x2="8" y2="7"></line>
+                                        <line x1="16" y1="3" x2="16" y2="7"></line>
+                                    </svg>
+                                    Mayo 7, 14, 21, y 28, 2026.
+                                </span>
+                                <span>
+                                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M12 21 C12 21 5 14.5 5 9.5 A7 7 0 0 1 19 9.5 C19 14.5 12 21 12 21 Z"></path>
+                                        <circle cx="12" cy="9.5" r="2.4"></circle>
+                                    </svg>
+                                    Modalidad virtual
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#" class="event-card event-card--past">
+                        <div class="event-card__media">
+                            <img src="../imagess/eventos/MEC.jpeg" alt="taller1">
+                            <div class="event-card__date">
+                                <span class="day">05</span>
+                                <span class="month">May</span>
+                            </div>
+                            <span class="event-card__badge">Finalizado</span>
+                        </div>
+                        <div class="event-card__body">
+                            <span class="event-card__tag">Talleres</span>
+                            <h3>Mecánica Orbital</h3>
+                            <div class="event-card__meta">
+                                <span>
+                                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="3" y="5" width="18" height="16" rx="2"></rect>
+                                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                                        <line x1="8" y1="3" x2="8" y2="7"></line>
+                                        <line x1="16" y1="3" x2="16" y2="7"></line>
+                                    </svg>
+                                    02 y 03 de junio, 2026
+                                </span>
+                                <span>
+                                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M12 21 C12 21 5 14.5 5 9.5 A7 7 0 0 1 19 9.5 C19 14.5 12 21 12 21 Z"></path>
+                                        <circle cx="12" cy="9.5" r="2.4"></circle>
+                                    </svg>
+                                    Sala de sistemas de Ingeniería Física, FACNED
+                                </span>
+                            </div>
+                        </div>
+                    </a>
 
                 </div>
 
