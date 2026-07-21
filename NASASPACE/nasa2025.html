@@ -10,7 +10,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="../menu/nasa-page.css">
+    <!-- nasa-page.css se quitó: tenía reglas antiguas de .gyear-hero / .nasa-page / .photo-grid
+         que chocaban con el nuevo diseño (ya migrado por completo a style.css) y causaban
+         el espacio negro y el texto desorganizado. Si necesitas algo específico de ese
+         archivo, dímelo y lo paso a style.css antes de borrarlo del todo. -->
 </head>
 
 <body>
@@ -60,22 +63,298 @@
             <div class="nasa-page">
 
                 <span class="eyebrow">Space Apps &middot; 2025</span>
-                <h1>2025</h1>
 
-                <div class="wip-box" style="margin-top:36px; padding:50px 32px; text-align:center; background:var(--panel); border:1px dashed var(--panel-border); border-radius:16px;">
-                    <span class="eyebrow" style="justify-content:center;">En construcción</span>
-                    <p style="font-family:var(--body); color:var(--muted); max-width:480px; margin:12px auto 0 auto; line-height:1.7;">
-                        Todavía estamos reuniendo el registro de esta edición del NASA Space Apps Challenge
-                        en Popayán. Muy pronto esta página tendrá fotos, retos trabajados y equipos
-                        destacados de 2025.
-                    </p>
+                <h1 class="gyear-title">NASA Space Apps Challenge Popayán 2025 reunió a participantes para <span class="grad">desarrollar soluciones con datos abiertos de la NASA</span></h1>
+
+                <!-- ============ FOTO PRIMICIA ============
+                     Cambia la ruta de la imagen por la foto destacada de esta
+                     edición. Va junto al texto, no detrás del título. Si el
+                     archivo no existe todavía, el recuadro muestra
+                     automáticamente un aviso en vez de quedar en negro
+                     (ver el script al final del archivo). -->
+                <div class="gyear-feature">
+                    <figure class="gyear-feature__media" id="gyear-hero">
+                        <div class="gyear-feature__img" id="gyear-hero-img" style="background-image:url('../imagess/NASASPACE/2025/primicia.jpg')"></div>
+                        <span class="gyear-feature__missing-note">Falta subir la foto de portada en<br>/imagess/NASASPACE/2025/primicia.jpg</span>
+                        <figcaption class="gyear-feature__caption">📷 AESS Unicauca &middot; Popayán, Cauca</figcaption>
+                    </figure>
+
+                    <div class="gyear-feature__text">
+                        <span class="gyear-feature__kicker">Reportaje &middot; Space Apps 2025</span>
+                        <p class="gyear-hero__dek">
+                            350 participantes y 10 equipos multidisciplinarios compitieron durante dos
+                            días de mentorías, prototipado y presentaciones finales con datos abiertos
+                            de la NASA.
+                        </p>
+                        <div class="gyear-hero__byline">
+                            <span>🗓️ 4–5 de octubre de 2025</span>
+                            <span>📍 Popayán, Cauca</span>
+                        </div>
+                    </div>
                 </div>
 
-                <a href="../nasa.html" class="back-link" style="display:inline-flex; align-items:center; gap:8px; font-family:var(--body); font-weight:600; font-size:.9rem; color:var(--muted); text-decoration:none; margin-top:36px;">
+                <div class="section-meta">Datos de la edición</div>
+
+                <div class="stat-grid">
+                    <div class="stat-card">
+                        <div class="stat-card__num">350</div>
+                        <div class="stat-card__label">Participantes</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card__num">10</div>
+                        <div class="stat-card__label">Equipos multidisciplinarios</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card__num">2</div>
+                        <div class="stat-card__label">Días de evento</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card__num">$450.000</div>
+                        <div class="stat-card__label">Bolsa de premios (COP)</div>
+                    </div>
+                </div>
+
+                <!-- Resumen tipo nota periodística: qué pasó, cuántos equipos, quién ganó, etc. -->
+                <p class="gyear-intro">
+                    Durante dos jornadas de innovación, estudiantes, investigadores, desarrolladores y
+                    emprendedores trabajaron en equipos multidisciplinarios para responder a los desafíos
+                    globales propuestos por la NASA, consolidando a Popayán como un referente regional en
+                    ciencia, tecnología e innovación.
+                </p>
+
+                <p class="gyear-intro">
+                    Los días <strong>4 y 5 de octubre de 2025</strong>, la ciudad de Popayán fue sede de
+                    una nueva edición del NASA Space Apps Challenge, el hackatón de ciencia y tecnología
+                    más grande del mundo. Organizado por el IEEE AESS Student Branch Chapter de la
+                    Universidad del Cauca, el evento reunió a estudiantes, investigadores, profesionales,
+                    emprendedores, diseñadores y entusiastas de la tecnología con el propósito de
+                    desarrollar soluciones innovadoras utilizando datos abiertos de la NASA.
+                </p>
+
+                <p class="gyear-intro">
+                    Durante dos días de trabajo colaborativo, los participantes conformaron equipos
+                    multidisciplinarios para abordar desafíos relacionados con el clima espacial, la
+                    observación de la Tierra, la inteligencia artificial, la agricultura, la
+                    sostenibilidad, la educación STEM y la divulgación científica. La programación
+                    incluyó sesiones de inducción, mentorías especializadas, acompañamiento técnico,
+                    desarrollo de prototipos y presentaciones finales ante un jurado conformado por
+                    expertos del ámbito académico y tecnológico.
+                </p>
+
+                <p class="gyear-intro">
+                    En total, <strong>350 participantes</strong>, organizados en <strong>10 equipos</strong>,
+                    hicieron parte de esta edición, fortaleciendo el ecosistema regional de innovación
+                    mediante el trabajo interdisciplinario, el liderazgo, la creatividad y el uso de
+                    tecnologías con impacto social. El evento reafirmó el compromiso de IEEE AESS
+                    Unicauca con la formación de talento y la promoción de iniciativas que acercan la
+                    ciencia espacial a la comunidad.
+                </p>
+
+                <p class="gyear-intro">
+                    El proceso de acompañamiento contó con el apoyo de los siguientes mentores, quienes
+                    orientaron a los equipos durante las etapas de ideación, desarrollo técnico,
+                    validación y presentación de sus proyectos:
+                </p>
+
+                <ul class="gyear-list gyear-list--columns">
+                    <li>Christian Manuel Moreno</li>
+                    <li>María Camila Camacho</li>
+                    <li>Edwin Francisco Valdés</li>
+                    <li>Sebastián Maca Orozco</li>
+                    <li>Camilo Andrés Oliveros</li>
+                    <li>Carlos Hernán Tobar</li>
+                    <li>José Fernando Guacán</li>
+                    <li>Nancy Socorro</li>
+                    <li>Estefany Lozano</li>
+                    <li>David Santiago García Chicangana</li>
+                </ul>
+
+                <div class="section-meta">Proyectos ganadores</div>
+
+                <div class="gyear-winner gyear-winner--gold">
+                    <h3>🥇 Primer lugar — Stellar Histories</h3>
+                    <p class="gyear-intro"><strong>Desafío:</strong> Stellar Stories: Space Weather Through the Eyes of Earthlings</p>
+                    <p class="gyear-intro">
+                        El proyecto consistió en una historia interactiva desarrollada como aplicación web
+                        para enseñar a niños conceptos relacionados con el clima espacial mediante
+                        ilustraciones y narrativas educativas. A partir de información científica de la
+                        NASA sobre tormentas solares, erupciones y fenómenos espaciales, el equipo creó
+                        una herramienta que combina divulgación científica, creatividad y tecnología para
+                        acercar estos temas a públicos infantiles.
+                    </p>
+                    <p class="gyear-intro"><strong>Integrantes:</strong></p>
+                    <ul class="gyear-list">
+                        <li>Edward Esteban Dávila Salazar</li>
+                        <li>Duván Alexis Hoyos Meneses</li>
+                        <li>Juan David Meza Paz</li>
+                        <li>John Faber Navia Narváez</li>
+                        <li>Nicolle Sofía Castro Cardozo</li>
+                    </ul>
+                    <p class="gyear-intro"><strong>Premio:</strong> $300.000 COP</p>
+                </div>
+
+                <div class="gyear-winner gyear-winner--silver">
+                    <h3>🥈 Segundo lugar — La Granja de los Sueños</h3>
+                    <p class="gyear-intro"><strong>Desafío:</strong> NASA Farm Navigators: Using NASA Data Exploration in Agriculture</p>
+                    <p class="gyear-intro">
+                        El equipo desarrolló un videojuego educativo orientado a niños, enfocado en
+                        enseñar principios de agricultura sostenible, biodiversidad y producción de
+                        alimentos mediante retos interactivos inspirados en investigaciones agrícolas
+                        apoyadas por datos de la NASA. La propuesta promovió el aprendizaje STEM y la
+                        conciencia ambiental.
+                    </p>
+                    <p class="gyear-intro"><strong>Integrantes:</strong></p>
+                    <ul class="gyear-list">
+                        <li>Juan David Ruiz Bohórquez</li>
+                        <li>Hanner Yefrid Campo</li>
+                        <li>Maicol Cáliz Mellizo</li>
+                        <li>Jhonatan Gabriel Vásquez</li>
+                        <li>Melany Armero</li>
+                    </ul>
+                    <p class="gyear-intro"><strong>Premio:</strong> $100.000 COP</p>
+                </div>
+
+                <div class="gyear-winner gyear-winner--bronze">
+                    <h3>🥉 Tercer lugar — La Noche de las Auroras</h3>
+                    <p class="gyear-intro"><strong>Desafío:</strong> Stellar Stories: Space Weather Through the Eyes of Earthlings</p>
+                    <p class="gyear-intro">
+                        El proyecto presentó un cuento ilustrado dirigido al público infantil para
+                        explicar fenómenos como las eyecciones de masa coronal, las tormentas solares y
+                        las auroras mediante una narrativa inclusiva protagonizada por un niño. La
+                        propuesta destacó por integrar rigor científico, ilustración, accesibilidad y
+                        divulgación.
+                    </p>
+                    <p class="gyear-intro"><strong>Integrantes:</strong></p>
+                    <ul class="gyear-list">
+                        <li>Angely Tatiana López Chávez</li>
+                        <li>William Andrés Oviedo Tapia</li>
+                        <li>David Guillermo Ramírez Cano</li>
+                        <li>Óscar Ramos Rivera</li>
+                    </ul>
+                    <p class="gyear-intro"><strong>Premio:</strong> $50.000 COP</p>
+                </div>
+
+                <div class="section-meta">Galería de la edición</div>
+
+                <!-- El mosaico de fotos se genera solo a partir del arreglo PHOTOS del script -->
+                <div class="photo-grid" id="photo-grid"></div>
+
+                <a href="../menu/nasa.html" class="back-link">
                     &larr; Volver a NASA Space Apps Challenge
                 </a>
 
+                    
+
             </div>
+
+            <!-- ============ LIGHTBOX ============ -->
+            <div class="lightbox" id="lightbox">
+                <div class="lightbox__frame">
+                    <button class="lightbox__close" id="lb-close" aria-label="Cerrar">&times;</button>
+                    <button class="lightbox__prev" id="lb-prev" aria-label="Anterior">&larr;</button>
+                    <button class="lightbox__next" id="lb-next" aria-label="Siguiente">&rarr;</button>
+                    <img id="lb-img" src="" alt="">
+                    <p class="lightbox__caption" id="lb-caption"></p>
+                </div>
+            </div>
+
+            <script>
+                (function () {
+                    // ---- Si la foto de portada (primicia.jpg) todavía no existe,
+                    //      la sección muestra un aviso en vez de quedar en negro. ----
+                    const hero = document.getElementById('gyear-hero');
+                    const heroImg = document.getElementById('gyear-hero-img');
+                    if (hero && heroImg) {
+                        const match = heroImg.style.backgroundImage.match(/url\(["']?(.*?)["']?\)/);
+                        const heroSrc = match ? match[1] : '';
+                        if (heroSrc) {
+                            const tester = new Image();
+                            tester.onerror = function () { hero.classList.add('no-image'); };
+                            tester.src = heroSrc;
+                        }
+                    }
+
+                    // ---- Para agregar/quitar fotos de la galería, edita este arreglo.
+                    //      Copia una línea por cada foto nueva. La primera foto se
+                    //      muestra más grande como foto destacada. ----
+                    const PHOTOS = [
+                        { src: '../imagess/NASASPACE/2025/foto1.jpg', alt: 'Equipos trabajando en sus prototipos', caption: 'Equipos trabajando en sus prototipos durante la maratón de desarrollo' },
+                        { src: '../imagess/NASASPACE/2025/foto2.jpg', alt: 'Presentación final ante el jurado', caption: 'Presentación final de los proyectos ante el jurado' }
+                    ];
+
+                    const grid = document.getElementById('photo-grid');
+
+                    PHOTOS.forEach(function (photo, index) {
+                        const btn = document.createElement('button');
+                        btn.className = 'photo-item' + (index === 0 ? ' span-2x2' : '');
+                        btn.setAttribute('data-path', photo.src);
+
+                        const num = document.createElement('span');
+                        num.className = 'photo-item__num';
+                        num.textContent = String(index + 1).padStart(2, '0');
+
+                        const img = document.createElement('img');
+                        img.src = photo.src;
+                        img.alt = photo.alt;
+                        img.loading = 'lazy';
+                        img.addEventListener('error', function () {
+                            btn.classList.add('img-missing');
+                        });
+
+                        const caption = document.createElement('span');
+                        caption.className = 'photo-caption';
+                        caption.textContent = photo.caption;
+
+                        btn.appendChild(num);
+                        btn.appendChild(img);
+                        btn.appendChild(caption);
+                        btn.addEventListener('click', function () { open(index); });
+                        grid.appendChild(btn);
+                    });
+
+                    const lightbox = document.getElementById('lightbox');
+                    const lbImg = document.getElementById('lb-img');
+                    const lbCaption = document.getElementById('lb-caption');
+                    let current = 0;
+
+                    function open(index) {
+                        current = index;
+                        render();
+                        lightbox.classList.add('is-open');
+                    }
+                    function render() {
+                        lbImg.src = PHOTOS[current].src;
+                        lbImg.alt = PHOTOS[current].caption;
+                        lbCaption.textContent = PHOTOS[current].caption;
+                    }
+                    function close() {
+                        lightbox.classList.remove('is-open');
+                    }
+                    function next() {
+                        current = (current + 1) % PHOTOS.length;
+                        render();
+                    }
+                    function prev() {
+                        current = (current - 1 + PHOTOS.length) % PHOTOS.length;
+                        render();
+                    }
+
+                    document.getElementById('lb-close').addEventListener('click', close);
+                    document.getElementById('lb-next').addEventListener('click', next);
+                    document.getElementById('lb-prev').addEventListener('click', prev);
+
+                    lightbox.addEventListener('click', function (e) {
+                        if (e.target === lightbox) close();
+                    });
+
+                    document.addEventListener('keydown', function (e) {
+                        if (!lightbox.classList.contains('is-open')) return;
+                        if (e.key === 'Escape') close();
+                        if (e.key === 'ArrowRight') next();
+                        if (e.key === 'ArrowLeft') prev();
+                    });
+                })();
+            </script>
 
         </div>
 

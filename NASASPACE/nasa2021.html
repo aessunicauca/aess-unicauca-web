@@ -19,7 +19,7 @@
 
         <nav>
             <div class="logo">
-                <img src="../imagess/Logo2Circ.png" alt="AESS Unicauca">
+                <img src="../imagess/Logos/Logo2Circ.png" alt="AESS Unicauca">
             </div>
 
             <button class="nav-toggle" id="navToggle" type="button" aria-label="Abrir menú" aria-expanded="false">
@@ -60,22 +60,116 @@
             <div class="nasa-page">
 
                 <span class="eyebrow">Space Apps &middot; 2021</span>
-                <h1>2021</h1>
 
-                <div class="wip-box" style="margin-top:36px; padding:50px 32px; text-align:center; background:var(--panel); border:1px dashed var(--panel-border); border-radius:16px;">
-                    <span class="eyebrow" style="justify-content:center;">En construcción</span>
-                    <p style="font-family:var(--body); color:var(--muted); max-width:480px; margin:12px auto 0 auto; line-height:1.7;">
-                        Todavía estamos reuniendo el registro de esta edición del NASA Space Apps Challenge
-                        en Popayán. Muy pronto esta página tendrá fotos, retos trabajados y equipos
-                        destacados de 2021.
-                    </p>
-                </div>
+                <!-- ============ FOTO PRIMICIA ============
+                     Cambia la ruta de la imagen por la foto destacada de esta
+                     edición, y el texto del título. -->
+                <section class="gyear-hero">
+                    <div class="gyear-hero__img" style="background-image:url('../imagess/NASASPACE/2021/primicia.jpg')"></div>
+                    <div class="gyear-hero__tint"></div>
+                    <div class="gyear-hero__shade"></div>
+                    <div class="gyear-hero__content">
+                        <h1>Escribe aquí el titular de esta edición <span class="grad">2021</span></h1>
+                    </div>
+                </section>
 
-                <a href="../menu/nasa.html" class="back-link" style="display:inline-flex; align-items:center; gap:8px; font-family:var(--body); font-weight:600; font-size:.9rem; color:var(--muted); text-decoration:none; margin-top:36px;">
+                <!-- Resumen tipo nota periodística: qué pasó, cuántos equipos, quién ganó, etc. -->
+                <p class="gyear-intro">
+                    Escribe aquí el resumen de la edición 2021 del NASA Space Apps Challenge en
+                    Popayán: cuántos equipos participaron, qué retos se trabajaron, quién ganó y
+                    cualquier dato destacado.
+                </p>
+
+                <div class="section-meta">Galería de la edición</div>
+
+                <!-- El mosaico de fotos se genera solo a partir del arreglo PHOTOS del script -->
+                <div class="photo-grid" id="photo-grid"></div>
+
+                <a href="../menu/nasa.html" class="back-link">
                     &larr; Volver a NASA Space Apps Challenge
                 </a>
 
             </div>
+
+            <!-- ============ LIGHTBOX ============ -->
+            <div class="lightbox" id="lightbox">
+                <div class="lightbox__frame">
+                    <button class="lightbox__close" id="lb-close" aria-label="Cerrar">&times;</button>
+                    <button class="lightbox__prev" id="lb-prev" aria-label="Anterior">&larr;</button>
+                    <button class="lightbox__next" id="lb-next" aria-label="Siguiente">&rarr;</button>
+                    <img id="lb-img" src="" alt="">
+                    <p class="lightbox__caption" id="lb-caption"></p>
+                </div>
+            </div>
+
+            <script>
+                (function () {
+                    // ---- Para agregar/quitar fotos de la galería, edita este arreglo.
+                    //      Copia una línea por cada foto nueva. ----
+                    const PHOTOS = [
+                        { src: '../imagess/NASASPACE/2021/foto1.jpg', alt: 'Space Apps 2021', caption: 'Descripción de la foto 1' },
+                        { src: '../imagess/NASASPACE/2021/foto2.jpg', alt: 'Space Apps 2021', caption: 'Descripción de la foto 2' }
+                    ];
+
+                    const grid = document.getElementById('photo-grid');
+
+                    PHOTOS.forEach(function (photo, index) {
+                        const btn = document.createElement('button');
+                        btn.className = 'photo-item';
+
+                        const img = document.createElement('img');
+                        img.src = photo.src;
+                        img.alt = photo.alt;
+                        img.loading = 'lazy';
+
+                        btn.appendChild(img);
+                        btn.addEventListener('click', function () { open(index); });
+                        grid.appendChild(btn);
+                    });
+
+                    const lightbox = document.getElementById('lightbox');
+                    const lbImg = document.getElementById('lb-img');
+                    const lbCaption = document.getElementById('lb-caption');
+                    let current = 0;
+
+                    function open(index) {
+                        current = index;
+                        render();
+                        lightbox.classList.add('is-open');
+                    }
+                    function render() {
+                        lbImg.src = PHOTOS[current].src;
+                        lbImg.alt = PHOTOS[current].caption;
+                        lbCaption.textContent = PHOTOS[current].caption;
+                    }
+                    function close() {
+                        lightbox.classList.remove('is-open');
+                    }
+                    function next() {
+                        current = (current + 1) % PHOTOS.length;
+                        render();
+                    }
+                    function prev() {
+                        current = (current - 1 + PHOTOS.length) % PHOTOS.length;
+                        render();
+                    }
+
+                    document.getElementById('lb-close').addEventListener('click', close);
+                    document.getElementById('lb-next').addEventListener('click', next);
+                    document.getElementById('lb-prev').addEventListener('click', prev);
+
+                    lightbox.addEventListener('click', function (e) {
+                        if (e.target === lightbox) close();
+                    });
+
+                    document.addEventListener('keydown', function (e) {
+                        if (!lightbox.classList.contains('is-open')) return;
+                        if (e.key === 'Escape') close();
+                        if (e.key === 'ArrowRight') next();
+                        if (e.key === 'ArrowLeft') prev();
+                    });
+                })();
+            </script>
 
         </div>
 
