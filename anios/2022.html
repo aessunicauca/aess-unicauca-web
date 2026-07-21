@@ -28,6 +28,14 @@
 <img src="../imagess/Logos/Logo2Circ.png" alt="AESS Unicauca">
 </div>
 
+<button class="nav-toggle" id="navToggle" type="button" aria-label="Abrir menú" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
+
+<div class="nav-links" id="navLinks">
+
 <div class="menu">
 <a href="../index.html">Inicio</a>
 <a href="../menu/historia.html" class="active">Historia</a>
@@ -50,6 +58,8 @@
 <a href="https://github.com/aessunicauca">GH</a>
 </div>
 
+</div>
+
 </nav>
 
 <div class="main-content main-content--scroll">
@@ -63,7 +73,7 @@ Línea de tiempo · 2022
 <section class="year-hero">
 
 <div class="year-hero__img"
-style="background-image:url('../imagess/galeria/g2022/port.jpeg">
+style="background-image:url('../imagess/galeria/g2022/port.jpeg')">
 </div>
 
 <div class="year-hero__shade"></div>
@@ -453,6 +463,29 @@ en resolver problemas científicos mediante trabajo colaborativo.
 </div>
 
 </section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        if (navToggle && navLinks) {
+            navToggle.addEventListener('click', () => {
+                const isOpen = navLinks.classList.toggle('open');
+                navToggle.classList.toggle('open', isOpen);
+                navToggle.setAttribute('aria-expanded', isOpen);
+            });
+
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('open');
+                    navToggle.classList.remove('open');
+                    navToggle.setAttribute('aria-expanded', 'false');
+                });
+            });
+        }
+    });
+</script>
 
 </body>
 
