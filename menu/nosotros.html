@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="nosotros-page.css">
+    <link rel="icon" type="image/png" href="../imagess/Logos/Logo2Circ.png">
 </head>
 
 <body>
@@ -192,7 +193,7 @@
                     <div class="mv-card">
                         <div class="mv-card__icon">M</div>
                         <h3>Misión</h3>
-                        <p class="pending">Formar una comunidad de estudiantes, investigadores y jóvenes 
+                        <p>Formar una comunidad de estudiantes, investigadores y jóvenes 
                             profesionales comprometidos con la excelencia, la innovación y el liderazgo, 
                             promoviendo el desarrollo de proyectos de investigación, desarrollo tecnológico 
                             y divulgación en las áreas de interés de la IEEE Aerospace and Electronic Systems Society. 
@@ -205,7 +206,7 @@
                     <div class="mv-card">
                         <div class="mv-card__icon">V</div>
                         <h3>Visión</h3>
-                        <p class="pending">Para el año 2030, IEEE AESS Unicauca será reconocido como un capítulo estudiantil 
+                        <p>Para el año 2030, IEEE AESS Unicauca será reconocido como un capítulo estudiantil 
                             líder en Colombia y Latinoamérica por su contribución a la investigación, la innovación y el desarrollo 
                             tecnológico en las áreas de interés de IEEE AESS. Consolidaremos un ecosistema que fortalezca la 
                             colaboración entre la academia, la industria y organizaciones nacionales e internacionales, generando 
@@ -214,6 +215,78 @@
                             tecnológico, contribuyendo al fortalecimiento del sector aeroespacial y de sistemas electrónicos en 
                             beneficio de la sociedad. </p>
                     </div>
+                </div>
+
+                <div class="section-meta">JUNTA DIRECTIVA</div>
+
+                <div class="board-slideshow" id="boardSlideshow">
+
+                    <div class="slideshow-media">
+                        <img src="../imagess/carruselvert/foto1.jpg" alt="Junta Directiva trabajando en equipo" class="slideshow-img is-active" data-slide="0">
+                        <img src="../imagess/carruselvert/foto2.jpeg" alt="Junta Directiva trabajando en equipo" class="slideshow-img" data-slide="1">
+                        <img src="../imagess/carruselvert/foto3.jpeg" alt="Junta Directiva trabajando en equipo" class="slideshow-img" data-slide="2">
+                        <img src="../imagess/carruselvert/foto4.jpeg" alt="Junta Directiva trabajando en equipo" class="slideshow-img" data-slide="3">
+                        <img src="../imagess/carruselvert/foto5.jpeg" alt="Junta Directiva trabajando en equipo" class="slideshow-img" data-slide="4">
+                        <img src="../imagess/carruselvert/foto6.jpeg" alt="Junta Directiva trabajando en equipo" class="slideshow-img" data-slide="5">
+                        <div class="slideshow-scrim"></div>
+                    </div>
+
+                    <div class="slideshow-content">
+
+                        <span class="slideshow-mark">&ldquo;</span>
+
+                        <p class="slideshow-quote is-active" data-slide="0">
+                            Esta Junta Directiva guía el rumbo de AESS Unicauca con un mismo propósito: que la
+                            ingeniería, la ciencia y el trabajo en equipo transformen nuestro entorno.
+                        </p>
+                        <p class="slideshow-quote" data-slide="1">
+                            Creemos en construir en comunidad: cada proyecto que sacamos adelante nace de
+                            estudiantes que deciden aportar su tiempo y su talento al capítulo.
+                        </p>
+                        <p class="slideshow-quote" data-slide="2">
+                            Nos mueve la curiosidad. Investigar, equivocarnos y volver a intentar es parte del
+                            camino hacia cada lanzamiento, cada prototipo, cada resultado.
+                        </p>
+                        <p class="slideshow-quote" data-slide="3">
+                            Formamos líderes, no solo proyectos. Queremos que quien pase por AESS Unicauca
+                            salga con más confianza en lo que es capaz de construir.
+                        </p>
+                        <p class="slideshow-quote" data-slide="4">
+                            El trabajo en equipo es nuestro motor: ninguno de nuestros logros ha sido obra de
+                            una sola persona, sino de un grupo que se sostiene mutuamente.
+                        </p>
+                        <p class="slideshow-quote" data-slide="5">
+                            Gracias a cada estudiante que le apuesta a este proyecto. Seguimos construyendo
+                            comunidad aeroespacial en el suroccidente colombiano.
+                        </p>
+
+                        <span class="slideshow-sign">— La Junta Directiva, AESS Unicauca</span>
+
+                        <div class="slideshow-controls">
+                            <button type="button" class="slideshow-arrow slideshow-arrow--prev" id="boardPrev" aria-label="Foto anterior">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M15 18l-6-6 6-6"/>
+                                </svg>
+                            </button>
+
+                            <div class="slideshow-dots" id="boardDots">
+                                <button type="button" class="slideshow-dot is-active" data-slide="0" aria-label="Ir a la foto 1"></button>
+                                <button type="button" class="slideshow-dot" data-slide="1" aria-label="Ir a la foto 2"></button>
+                                <button type="button" class="slideshow-dot" data-slide="2" aria-label="Ir a la foto 3"></button>
+                                <button type="button" class="slideshow-dot" data-slide="3" aria-label="Ir a la foto 4"></button>
+                                <button type="button" class="slideshow-dot" data-slide="4" aria-label="Ir a la foto 5"></button>
+                                <button type="button" class="slideshow-dot" data-slide="5" aria-label="Ir a la foto 6"></button>
+                            </div>
+
+                            <button type="button" class="slideshow-arrow slideshow-arrow--next" id="boardNext" aria-label="Foto siguiente">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M9 18l6-6-6-6"/>
+                                </svg>
+                            </button>
+                        </div>
+
+                    </div>
+
                 </div>
 
             </div>
@@ -241,6 +314,45 @@
                         navToggle.setAttribute('aria-expanded', 'false');
                     });
                 });
+            }
+
+            const boardSlideshow = document.getElementById('boardSlideshow');
+
+            if (boardSlideshow) {
+                const images = boardSlideshow.querySelectorAll('.slideshow-img');
+                const quotes = boardSlideshow.querySelectorAll('.slideshow-quote');
+                const dots = boardSlideshow.querySelectorAll('.slideshow-dot');
+                const prevBtn = document.getElementById('boardPrev');
+                const nextBtn = document.getElementById('boardNext');
+                const total = images.length;
+                let current = 0;
+                let autoTimer = null;
+
+                const goTo = (index) => {
+                    current = (index + total) % total;
+                    images.forEach(img => img.classList.toggle('is-active', img.dataset.slide == current));
+                    quotes.forEach(q => q.classList.toggle('is-active', q.dataset.slide == current));
+                    dots.forEach(d => d.classList.toggle('is-active', d.dataset.slide == current));
+                };
+
+                const startAuto = () => {
+                    stopAuto();
+                    autoTimer = setInterval(() => goTo(current + 1), 5000);
+                };
+                const stopAuto = () => {
+                    if (autoTimer) clearInterval(autoTimer);
+                };
+
+                prevBtn.addEventListener('click', () => { goTo(current - 1); startAuto(); });
+                nextBtn.addEventListener('click', () => { goTo(current + 1); startAuto(); });
+                dots.forEach(dot => {
+                    dot.addEventListener('click', () => { goTo(Number(dot.dataset.slide)); startAuto(); });
+                });
+
+                boardSlideshow.addEventListener('mouseenter', stopAuto);
+                boardSlideshow.addEventListener('mouseleave', startAuto);
+
+                startAuto();
             }
         });
     </script>

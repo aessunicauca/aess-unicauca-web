@@ -5336,6 +5336,136 @@ html{
         }
 
         /* =========================================================
+           JUNTA DIRECTIVA — slideshow sincronizado (foto + mensaje)
+           ========================================================= */
+        .board-slideshow{
+            position: relative;
+            margin-top: 40px;
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid var(--panel-border);
+            min-height: 460px;
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .slideshow-media{
+            position:absolute;
+            inset:0;
+            z-index:0;
+        }
+        .slideshow-img{
+            position:absolute;
+            inset:0;
+            width:100%;
+            height:100%;
+            object-fit:cover;
+            opacity:0;
+            transform: scale(1.04);
+            transition: opacity 1.1s ease, transform 6s ease;
+        }
+        .slideshow-img.is-active{
+            opacity:1;
+            transform: scale(1);
+        }
+        .slideshow-scrim{
+            position:absolute;
+            inset:0;
+            background: linear-gradient(180deg, rgba(10,8,9,.15) 0%, rgba(10,8,9,.55) 55%, rgba(10,8,9,.93) 100%);
+        }
+
+        .slideshow-content{
+            position:relative;
+            z-index:1;
+            width:100%;
+            padding: 46px 44px 34px 44px;
+        }
+
+        .slideshow-mark{
+            display:block;
+            font-family: var(--display);
+            font-size: 2.6rem;
+            line-height: 1;
+            color: var(--orange-light);
+            margin-bottom: 4px;
+        }
+
+        .slideshow-quote{
+            display:none;
+            font-family: var(--body);
+            font-size: 1.15rem;
+            line-height: 1.7;
+            color: var(--cream);
+            font-style: italic;
+            max-width: 62ch;
+            margin: 0 0 14px 0;
+        }
+        .slideshow-quote.is-active{
+            display:block;
+            animation: quote-fade .6s ease;
+        }
+        @keyframes quote-fade{
+            from{ opacity:0; transform: translateY(6px); }
+            to{ opacity:1; transform: translateY(0); }
+        }
+
+        .slideshow-sign{
+            display:block;
+            font-family: var(--mono);
+            font-size: .78rem;
+            letter-spacing: 1.5px;
+            color: var(--muted);
+            text-transform: uppercase;
+            margin-bottom: 26px;
+        }
+
+        .slideshow-controls{
+            display:flex;
+            align-items:center;
+            gap: 18px;
+        }
+
+        .slideshow-dots{
+            display:flex;
+            gap: 9px;
+        }
+        .slideshow-dot{
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            border: none;
+            background: rgba(246,241,234,.3);
+            cursor:pointer;
+            padding:0;
+            transition: background .3s ease, transform .3s ease;
+        }
+        .slideshow-dot.is-active{
+            background: var(--orange);
+            transform: scale(1.3);
+        }
+
+        .slideshow-arrow{
+            flex-shrink:0;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            border: 1px solid rgba(246,241,234,.3);
+            background: rgba(21,15,18,.55);
+            color: var(--cream);
+            cursor:pointer;
+            transition: background .25s ease, border-color .25s ease, transform .2s ease;
+        }
+        .slideshow-arrow svg{ width:17px; height:17px; }
+        .slideshow-arrow:hover{
+            background: linear-gradient(100deg, var(--orange), var(--maroon));
+            border-color: transparent;
+            transform: scale(1.06);
+        }
+
+        /* =========================================================
            RESPONSIVE
            ========================================================= */
         @media (max-width: 760px){
@@ -5343,9 +5473,13 @@ html{
             .statement{ padding: 26px 22px; }
             .mv-grid{ grid-template-columns: 1fr; }
             .interest-grid{ grid-template-columns: 1fr 1fr; }
+            .board-slideshow{ min-height: 400px; }
+            .slideshow-content{ padding: 32px 24px 26px 24px; }
+            .slideshow-quote{ font-size: 1.02rem; }
         }
         @media (max-width: 480px){
             .interest-grid{ grid-template-columns: 1fr; }
+            .board-slideshow{ min-height: 440px; }
         }
 
 
@@ -5908,25 +6042,21 @@ h1 .grad {
 .btn-ghost {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
     font-family: var(--body);
     font-weight: 600;
-    font-size: .9rem;
-    color: var(--cream);
-    background: rgba(21, 15, 18, 0.6);
-    border: 1px solid var(--panel-border);
-    padding: 13px 26px;
-    border-radius: 8px;
+    font-size: .88rem;
+    color: var(--muted);
     text-decoration: none;
-    backdrop-filter: blur(4px);
-    transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 4px 0;
+    border-bottom: 1px solid transparent;
+    transition: all .25s ease;
 }
 
 .btn-ghost:hover {
-    border-color: var(--orange-light);
-    background: rgba(44, 28, 32, 0.4);
     color: var(--orange-light);
-    gap: 14px;
+    border-bottom-color: var(--orange-light);
+    gap: 11px;
 }
 
 /* =========================================================
@@ -5955,34 +6085,49 @@ h1 .grad {
 .stat-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 18px;
+    background: var(--panel);
+    border: 1px solid var(--panel-border);
+    border-radius: 14px;
+    overflow: hidden;
 }
 
 .stat-card {
-    padding: 22px 20px;
-    background: var(--panel);
-    border: 1px solid var(--panel-border);
-    border-radius: 12px;
-    transition: border-color .3s ease, transform .3s ease;
+    position: relative;
+    padding: 26px 22px;
+    transition: background .3s ease;
+}
+
+.stat-card + .stat-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 22%;
+    bottom: 22%;
+    width: 1px;
+    background: var(--panel-border);
 }
 
 .stat-card:hover {
-    border-color: var(--orange);
-    transform: translateY(-3px);
+    background: rgba(209, 75, 44, 0.06);
 }
 
 .stat-card__num {
+    display: block;
     font-family: var(--display);
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     color: var(--orange-light);
-    margin-bottom: 6px;
+    margin-bottom: 8px;
+    letter-spacing: .5px;
 }
 
 .stat-card__label {
-    font-family: var(--body);
-    font-size: .85rem;
+    display: block;
+    font-family: var(--mono);
+    font-size: .7rem;
     line-height: 1.5;
+    letter-spacing: .4px;
     color: var(--muted);
+    text-transform: uppercase;
 }
 
 /* =========================================================
@@ -5991,66 +6136,47 @@ h1 .grad {
 .steps {
     display: flex;
     flex-direction: column;
-    position: relative;
-    padding-left: 20px;
-}
-
-.steps::before {
-    content: "";
-    position: absolute;
-    left: 42px;
-    top: 30px;
-    bottom: 30px;
-    width: 2px;
-    background: linear-gradient(to bottom, var(--panel-border), var(--orange), var(--panel-border));
-    opacity: 0.6;
-    z-index: 0;
+    gap: 2px;
+    background: var(--panel-border);
+    border-radius: 14px;
+    overflow: hidden;
 }
 
 .step {
     display: grid;
     grid-template-columns: 46px 1fr;
     gap: 24px;
-    padding: 24px;
-    margin-bottom: 16px;
-    background: rgba(21, 15, 18, 0.3);
-    border: 1px solid transparent;
-    border-radius: 12px;
+    padding: 26px 28px;
+    background: var(--panel);
+    border-left: 3px solid transparent;
     position: relative;
-    z-index: 1;
     transition: all .3s ease;
 }
 
 .step:hover {
-    background: rgba(21, 15, 18, 0.8);
-    border-color: rgba(124, 34, 56, 0.4);
-}
-
-.step:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
+    background: rgba(209, 75, 44, 0.06);
+    border-left-color: var(--orange);
 }
 
 .step__num {
-    font-family: var(--display);
-    font-size: 1.1rem;
-    color: var(--bg);
-    width: 44px;
-    height: 44px;
+    font-family: var(--mono);
+    font-weight: 700;
+    font-size: .95rem;
+    color: var(--orange-light);
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    background: var(--orange-light);
-    box-shadow: 0 0 12px rgba(224, 134, 92, 0.3);
+    border: 1px solid var(--panel-border);
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
-    z-index: 2;
-    transition: transform .3s ease;
+    transition: all .3s ease;
 }
 
 .step:hover .step__num {
-    transform: scale(1.08);
-    background: var(--orange);
+    border-color: var(--orange);
+    color: var(--bg);
+    background: var(--orange-light);
 }
 
 .step__content {
@@ -6174,8 +6300,14 @@ h1 .grad {
 .cta-panel__secondary {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 14px;
+    align-items: center;
+    gap: 18px;
+    margin-top: 18px;
+}
+
+.cta-panel__dot {
+    color: var(--panel-border);
+    font-size: .8rem;
 }
 
 .registration-note {
@@ -6385,6 +6517,7 @@ h1 .grad {
    ========================================================= */
 @media (max-width: 900px) {
     .stat-grid { grid-template-columns: repeat(2, 1fr); }
+    .stat-card:nth-child(odd)::before { display: none; }
     .edition-strip { grid-template-columns: repeat(2, 1fr); }
     .year-grid { grid-template-columns: repeat(2, 1fr); }
     .hero-split { grid-template-columns: 1fr; padding-top: 40px; }
@@ -6393,12 +6526,15 @@ h1 .grad {
 
 @media (max-width: 600px) {
     .nasa-page { padding: 0 20px 80px 20px; }
-    .steps::before { display: none; }
-    .steps { padding-left: 0; }
-    .step { grid-template-columns: 1fr; gap: 16px; padding: 20px; }
-    .step__num { width: 36px; height: 36px; font-size: 0.95rem; }
+    .stat-grid { grid-template-columns: 1fr; }
+    .stat-card::before { display: none; }
+    .stat-card { border-bottom: 1px solid var(--panel-border); }
+    .stat-card:last-child { border-bottom: none; }
+    .step { grid-template-columns: 1fr; gap: 12px; padding: 20px; }
+    .step__num { width: 36px; height: 36px; font-size: 0.85rem; }
     .year-grid { grid-template-columns: 1fr; }
     .cta-panel { padding: 22px 20px; }
+    .cta-panel__secondary { gap: 14px; }
     .gyear-winner { padding: 22px 20px; }
 }
 
