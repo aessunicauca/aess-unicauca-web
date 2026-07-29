@@ -115,14 +115,14 @@
   const resetInitialScroll = () => {
     if (window.location.hash) return;
 
-    const navigationEntry = performance.getEntriesByType('navigation')[0];
-    const navigationType = navigationEntry ? navigationEntry.type : 'navigate';
-
-    if (navigationType === 'back_forward') return;
-
     const scrollContainers = document.querySelectorAll('.main-content--scroll');
+    const rootScroller = document.scrollingElement || document.documentElement || document.body;
 
     window.scrollTo(0, 0);
+    if (rootScroller) {
+      rootScroller.scrollTop = 0;
+      rootScroller.scrollLeft = 0;
+    }
 
     scrollContainers.forEach((container) => {
       container.scrollTop = 0;
@@ -130,12 +130,20 @@
     });
   };
 
-  requestAnimationFrame(() => {
+  const scheduleInitialResets = () => {
     resetInitialScroll();
     requestAnimationFrame(resetInitialScroll);
-  });
+    setTimeout(resetInitialScroll, 0);
+    setTimeout(resetInitialScroll, 120);
+    setTimeout(resetInitialScroll, 350);
+  };
 
-  window.addEventListener('pageshow', () => {
-    requestAnimationFrame(resetInitialScroll);
-  });
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', scheduleInitialResets, { once: true });
+  } else {
+    scheduleInitialResets();
+  }
+
+  window.addEventListener('load', scheduleInitialResets, { once: true });
+  window.addEventListener('pageshow', scheduleInitialResets);
 })();
