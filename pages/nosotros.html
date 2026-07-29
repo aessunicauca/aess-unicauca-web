@@ -258,68 +258,6 @@
 
     </section>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const navToggle = document.getElementById('navToggle');
-            const navLinks = document.getElementById('navLinks');
-
-            if (navToggle && navLinks) {
-                navToggle.addEventListener('click', () => {
-                    const isOpen = navLinks.classList.toggle('open');
-                    navToggle.classList.toggle('open', isOpen);
-                    navToggle.setAttribute('aria-expanded', isOpen);
-                });
-
-                navLinks.querySelectorAll('a').forEach(link => {
-                    link.addEventListener('click', () => {
-                        navLinks.classList.remove('open');
-                        navToggle.classList.remove('open');
-                        navToggle.setAttribute('aria-expanded', 'false');
-                    });
-                });
-            }
-
-            const boardSlideshow = document.getElementById('boardSlideshow');
-
-            if (boardSlideshow) {
-                const images = boardSlideshow.querySelectorAll('.slideshow-img');
-                const quotes = boardSlideshow.querySelectorAll('.slideshow-quote');
-                const dots = boardSlideshow.querySelectorAll('.slideshow-dot');
-                const prevBtn = document.getElementById('boardPrev');
-                const nextBtn = document.getElementById('boardNext');
-                const total = images.length;
-                let current = 0;
-                let autoTimer = null;
-
-                const goTo = (index) => {
-                    current = (index + total) % total;
-                    images.forEach(img => img.classList.toggle('is-active', img.dataset.slide == current));
-                    quotes.forEach(q => q.classList.toggle('is-active', q.dataset.slide == current));
-                    dots.forEach(d => d.classList.toggle('is-active', d.dataset.slide == current));
-                };
-
-                const startAuto = () => {
-                    stopAuto();
-                    autoTimer = setInterval(() => goTo(current + 1), 5000);
-                };
-                const stopAuto = () => {
-                    if (autoTimer) clearInterval(autoTimer);
-                };
-
-                prevBtn.addEventListener('click', () => { goTo(current - 1); startAuto(); });
-                nextBtn.addEventListener('click', () => { goTo(current + 1); startAuto(); });
-                dots.forEach(dot => {
-                    dot.addEventListener('click', () => { goTo(Number(dot.dataset.slide)); startAuto(); });
-                });
-
-                boardSlideshow.addEventListener('mouseenter', stopAuto);
-                boardSlideshow.addEventListener('mouseleave', startAuto);
-
-                startAuto();
-            }
-        });
-    </script>
-
 </body>
 
 </html>
