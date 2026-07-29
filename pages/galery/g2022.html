@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2020 - Galería - AESS Unicauca</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../../assets/images/logos/logo2circ.png">
+    <link rel="stylesheet" href="../../styles/main.css">
+</head>
+
+<body>
+
+    <section class="hero">
+
+        <nav id="site-nav" data-page="galeria" data-root="../"></nav>
+
+        <div class="main-content main-content--scroll">
+
+            <div class="gyear-page">
+
+                <span class="eyebrow">Álbum · 2022</span>
+
+                <div class="gyear-hero">
+                    <div class="gyear-hero__img" style="background-image:url('../../assets/images/galeria/g2022/fondo.jpg')"></div>
+                    <div class="gyear-hero__tint"></div>
+                    <div class="gyear-hero__shade"></div>
+                    <div class="gyear-hero__content">
+                        <h1>2022 · Tecnología al servicio <span class="grad"><br>de la comunidad</span></h1>
+                    </div>
+                </div>
+
+                <p class="gyear-intro">
+                AESS Unicauca consolidó su crecimiento mediante proyectos financiados por IEEE, iniciativas de robótica 
+                educativa para comunidades rurales, competencias internacionales y eventos de innovación que fortalecieron
+                 su presencia nacional e internacional.
+                </p>
+
+                <!-- El widget se genera con JS a partir de PHOTOS, agrupando por actividad -->
+                <div class="memory-grid" id="memory-grid"></div>
+
+                <a href="../galeria.html" class="back-link">&larr; Volver a la Galería</a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ============ LIGHTBOX ============ -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox__frame">
+            <button class="lightbox__close" id="lb-close" aria-label="Cerrar">&times;</button>
+            <button class="lightbox__prev" id="lb-prev" aria-label="Anterior">&larr;</button>
+            <button class="lightbox__next" id="lb-next" aria-label="Siguiente">&rarr;</button>
+            <img id="lb-img" src="" alt="">
+            <p class="lightbox__caption" id="lb-caption"></p>
+        </div>
+    </div>
+
+        <script id="memory-gallery-data" type="text/plain">
+[{ src: '../../assets/images/galeria/g2022/rokit1.jpg', alt: 'Ganadores Financiación IEEE EPICS', caption: 'Ganadores Financiación IEEE EPICS ROKIT', activity: 'proyecto', span: 'span-2x2' },
+                { src: '../../assets/images/galeria/g2022/rokit2.jpg', alt: 'Ganadores Financiación IEEE EPICS', caption: 'Ganadores Financiación IEEE EPICS ROKIT', activity: 'proyecto', span: 'span-2x2' },
+                { src: '../../assets/images/galeria/g2022/rokit3.jpg', alt: 'Ganadores Financiación IEEE EPICS', caption: 'Ganadores Financiación IEEE EPICS ROKIT', activity: 'proyecto', span: 'span-2x2' },
+                { src: '../../assets/images/galeria/g2022/rokit4.jpg', alt: 'Ganadores Financiación IEEE EPICS', caption: 'Ganadores Financiación IEEE EPICS ROKIT', activity: 'proyecto', span: 'span-2x2' },
+                { src: '../../assets/images/galeria/g2022/rokit5.jpg', alt: 'Ganadores Financiación IEEE EPICS', caption: 'Ganadores Financiación IEEE EPICS ROKIT', activity: 'proyecto', span: 'span-2x2' },
+                { src: '../../assets/images/galeria/g2022/rokit6.jpg', alt: 'Ganadores Financiación IEEE EPICS', caption: 'Ganadores Financiación IEEE EPICS ROKIT', activity: 'proyecto', span: 'span-2x2' },
+                { src: '../../assets/images/galeria/g2022/zagi1.jpeg', alt: 'Ala Zagi Race 2022', caption: 'Ala Zagi Race 2022', activity: 'Zagi' },
+                { src: '../../assets/images/galeria/g2022/zagi2.jpeg', alt: 'Ala Zagi Race 2022', caption: 'Ala Zagi Race 2022', activity: 'Zagi' },
+                { src: '../../assets/images/galeria/g2022/zagi3.jpeg', alt: 'Ala Zagi Race 2022', caption: 'Ala Zagi Race 2022', activity: 'Zagi' },
+                { src: '../../assets/images/galeria/g2022/zagi4.jpeg', alt: 'Ala Zagi Race 2022', caption: 'Ala Zagi Race 2022', activity: 'Zagi' },
+                { src: '../../assets/images/galeria/g2022/zagi5.jpeg', alt: 'Ala Zagi Race 2022', caption: 'Ala Zagi Race 2022', activity: 'Zagi' },
+                { src: '../../assets/images/galeria/g2022/w1.jpeg', alt: 'Semana del Espacio 2022', caption: 'Semana del Espacio 2022', activity: 'SpaceWeek' },
+                { src: '../../assets/images/galeria/g2022/w2.jpeg', alt: 'Semana del Espacio 2022', caption: 'Semana del Espacio 2022', activity: 'SpaceWeek' },
+                { src: '../../assets/images/galeria/g2022/w3.jpeg', alt: 'Semana del Espacio 2022', caption: 'Semana del Espacio 2022', activity: 'SpaceWeek' },
+                { src: '../../assets/images/galeria/g2022/w4.jpeg', alt: 'Semana del Espacio 2022', caption: 'Semana del Espacio 2022', activity: 'SpaceWeek' },
+                { src: '../../assets/images/galeria/g2022/w5.jpeg', alt: 'Semana del Espacio 2022', caption: 'Semana del Espacio 2022', activity: 'SpaceWeek' },
+                { src: '../../assets/images/galeria/g2022/w6.jpeg', alt: 'Semana del Espacio 2022', caption: 'Semana del Espacio 2022', activity: 'SpaceWeek' },
+                { src: '../../assets/images/galeria/g2022/w7.jpeg', alt: 'Semana del Espacio 2022', caption: 'Semana del Espacio 2022', activity: 'SpaceWeek' },
+                { src: '../../assets/images/galeria/g2022/w8.jpeg', alt: 'Semana del Espacio 2022', caption: 'Semana del Espacio 2022', activity: 'SpaceWeek' },
+                { src: '../../assets/images/galeria/g2022/w9.jpeg', alt: 'Semana del Espacio 2022', caption: 'Semana del Espacio 2022', activity: 'SpaceWeek' },
+                { src: '../../assets/images/galeria/g2022/h1.jpeg', alt: 'Hultz Prize 2022', caption: 'Hultz Prize 2022', activity: 'Evento' },
+                { src: '../../assets/images/galeria/g2022/h2.jpeg', alt: 'Hultz Prize 2022', caption: 'Hultz Prize 2022', activity: 'Evento' },
+                { src: '../../assets/images/galeria/g2022/h3.jpeg', alt: 'Hultz Prize 2022', caption: 'Hultz Prize 2022', activity: 'Evento'},
+                { src: '../../assets/images/galeria/g2022/h4.jpeg', alt: 'Hultz Prize 2022', caption: 'Hultz Prize 2022', activity: 'Evento'},
+                { src: '../../assets/images/galeria/g2022/h5.jpeg', alt: 'Hultz Prize 2022', caption: 'Hultz Prize 2022', activity: 'Evento'}]
+    </script>
+    <script src="../../shared/scripts/memory-gallery.js"></script>
+
+    
+
+    <script src="../../shared/scripts/nav.js"></script>
+</body>
+
+</html>

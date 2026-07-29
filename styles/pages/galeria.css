@@ -1,0 +1,746 @@
+/* ==========================================================
+   GALERIA
+   ========================================================== */
+html{
+            scroll-behavior: smooth;
+        }
+
+        /* =========================================================
+           PALETA DE MARCA â€” misma paleta que Historia/Divisiones
+           ========================================================= */
+        :root{
+            --bg: #0a0809;
+            --panel: #150f12;
+            --panel-border: #2c1c20;
+            --maroon: #7c2238;
+            --red: #a8293f;
+            --orange: #d14b2c;
+            --orange-light: #ff7a45;
+            --cream: #f6f1ea;
+            --muted: #b9a39b;
+            --mono: 'JetBrains Mono', monospace;
+            --display: 'Archivo Black', sans-serif;
+            --body: 'Inter', sans-serif;
+        }
+
+        .main-content--scroll{
+            height: auto;
+            min-height: 100vh;
+        }
+
+        /* ---------- contenedor general ---------- */
+        .galeria-page,
+        .gyear-page{
+            position: relative;
+            color: var(--cream);
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 0 40px 120px 40px;
+            overflow-x: hidden;
+        }
+
+        .galeria-page::before{
+            content:"";
+            position:absolute;
+            top:-220px;
+            right:-180px;
+            width:560px;
+            height:560px;
+            background: radial-gradient(circle, var(--orange) 0%, var(--maroon) 55%, transparent 75%);
+            opacity:.22;
+            filter: blur(40px);
+            border-radius:50%;
+            pointer-events:none;
+            z-index:0;
+        }
+        .galeria-page > *{ position:relative; z-index:1; }
+
+        .eyebrow{
+            display:inline-flex;
+            align-items:center;
+            gap:10px;
+            font-family: var(--mono);
+            font-weight:700;
+            letter-spacing: 3px;
+            font-size: .78rem;
+            color: var(--orange-light);
+            text-transform: uppercase;
+        }
+        .eyebrow::before{
+            content:"";
+            width: 22px;
+            height: 2px;
+            background: var(--orange-light);
+            display:inline-block;
+        }
+
+        .galeria-page h1, .gyear-page h1{
+            font-family: var(--display);
+            font-size: clamp(2rem, 4.2vw, 2.9rem);
+            line-height: 1.18;
+            margin: 18px 0 22px 0;
+            text-transform: uppercase;
+        }
+        h1 .grad{
+            background: linear-gradient(100deg, var(--orange-light), var(--orange) 45%, var(--red) 90%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .lead{
+            font-family: var(--body);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--muted);
+            max-width: 760px;
+        }
+
+        .section-meta{
+            display:flex;
+            align-items:center;
+            gap: 14px;
+            margin: 50px 0 28px 0;
+            font-family: var(--mono);
+            font-size: .78rem;
+            letter-spacing: 1.5px;
+            color: var(--muted);
+            text-transform: uppercase;
+        }
+        .section-meta::before,
+        .section-meta::after{
+            content:"";
+            height:1px;
+            flex:1;
+            background: var(--panel-border);
+        }
+
+        /* =========================================================
+           CUADRÃCULA DE AÃ‘OS (portada de la galerÃ­a)
+           ========================================================= */
+        .year-grid{
+            display:grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .year-card{
+            position:relative;
+            display:block;
+            min-height: 260px;
+            border-radius: 14px;
+            overflow:hidden;
+            border: 1px solid var(--panel-border);
+            text-decoration:none;
+            background: var(--panel);
+            transition: border-color .35s ease, transform .35s ease;
+        }
+        .year-card:hover{
+            border-color: var(--orange);
+            transform: translateY(-4px);
+        }
+
+        .year-card__img{
+            position:absolute;
+            inset:0;
+            background-size: cover;
+            background-position: center;
+            background-repeat:no-repeat;
+            filter: grayscale(18%) contrast(1.04) brightness(.92);
+            transform: scale(1.01);
+            transition: transform .55s ease, filter .55s ease;
+        }
+        .year-card__tint{
+            position:absolute;
+            inset:0;
+            background: linear-gradient(165deg, var(--maroon), var(--orange) 115%);
+            mix-blend-mode: color;
+            opacity: .42;
+        }
+        .year-card__shade{
+            position:absolute;
+            inset:0;
+            background: linear-gradient(to top, rgba(8,6,7,.58) 10%, rgba(8,6,7,.08) 60%, transparent 100%);
+        }
+        .year-card:hover .year-card__img{
+            transform: scale(1.05);
+            filter: grayscale(0%) contrast(1.06) brightness(1);
+        }
+
+        .year-card.is-placeholder .year-card__img{ display:none; }
+        .year-card.is-placeholder .year-card__tint{
+            background: linear-gradient(165deg, var(--panel-border), var(--panel) 80%);
+            opacity: 1;
+            mix-blend-mode: normal;
+        }
+        .year-card.is-placeholder{ opacity:.78; }
+
+        .year-card__body{
+            position:relative;
+            z-index:1;
+            height:100%;
+            display:flex;
+            flex-direction:column;
+            justify-content:space-between;
+            padding: 22px;
+        }
+
+        .year-card__number{
+            font-family: var(--display);
+            font-size: 2.4rem;
+            color: var(--cream);
+            line-height:1;
+        }
+
+        .year-card__tag{
+            display:inline-block;
+            align-self:flex-start;
+            font-family: var(--mono);
+            font-size: .68rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--orange-light);
+            background: rgba(8,6,7,.55);
+            border: 1px solid rgba(246,241,234,.2);
+            padding: 4px 10px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+        }
+
+        .year-card__cta{
+            font-family: var(--body);
+            font-weight:700;
+            font-size: .88rem;
+            color: var(--cream);
+            display:inline-flex;
+            align-items:center;
+            gap:6px;
+            transition: gap .3s ease;
+        }
+        .year-card:hover .year-card__cta{ gap:11px; }
+
+        /* =========================================================
+           PÃGINA DE GALERÃA DE UN AÃ‘O
+           ========================================================= */
+        .back-link{
+            display:inline-flex;
+            align-items:center;
+            gap:8px;
+            font-family: var(--body);
+            font-weight:600;
+            font-size: .9rem;
+            color: var(--muted);
+            text-decoration:none;
+            margin-top: 36px;
+            transition: color .3s ease, gap .3s ease;
+        }
+        .back-link:hover{ color: var(--orange-light); gap:12px; }
+
+        /* ---------- tÃ­tulo de la crÃ³nica, fuera de la imagen ---------- */
+        .gyear-title{
+            font-family: var(--display);
+            font-size: clamp(1.7rem, 3.6vw, 2.5rem);
+            line-height: 1.22;
+            margin: 18px 0 26px 0;
+            text-transform: uppercase;
+            max-width: 980px;
+        }
+
+        /* ---------- foto + texto lado a lado (no superpuestos) ---------- */
+        .gyear-feature{
+            display:grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 32px;
+            align-items:stretch;
+            margin-bottom: 8px;
+        }
+
+        .gyear-feature__media{
+            position:relative;
+            min-height: 300px;
+            border-radius: 16px;
+            overflow:hidden;
+            border: 1px solid var(--panel-border);
+            margin:0;
+        }
+        .gyear-feature__img{
+            position:absolute; inset:0;
+            background-size:cover;
+            background-position:center;
+            background-color: var(--panel);
+            filter: grayscale(70%) contrast(1.1) brightness(.78);
+        }
+        .gyear-feature__media::after{
+            content:"";
+            position:absolute; inset:0;
+            background: linear-gradient(160deg, rgba(124,34,56,.55), rgba(209,75,44,.4) 120%);
+            mix-blend-mode:color;
+        }
+
+        /* ---------- estado sin foto: patrÃ³n + aviso, en vez de un bloque negro vacÃ­o ---------- */
+        .gyear-feature__media.no-image .gyear-feature__img{
+            background-image: none !important;
+            background:
+                repeating-linear-gradient(135deg, rgba(246,241,234,.035) 0 16px, transparent 16px 32px),
+                linear-gradient(160deg, #1c1216, var(--panel) 120%);
+        }
+        .gyear-feature__media.no-image::after{ opacity:.3; }
+        .gyear-feature__missing-note{
+            display:none;
+            position:absolute;
+            inset: 14px 14px auto 14px;
+            z-index:2;
+            font-family: var(--mono);
+            font-size:.7rem;
+            line-height:1.55;
+            letter-spacing:.3px;
+            color: var(--muted);
+            background: rgba(8,6,7,.65);
+            border: 1px dashed var(--panel-border);
+            padding: 12px 14px;
+            border-radius: 10px;
+            text-align:center;
+        }
+        .gyear-feature__media.no-image .gyear-feature__missing-note{ display:block; }
+
+        .gyear-feature__caption{
+            position:absolute;
+            left:0; right:0; bottom:0;
+            z-index:1;
+            padding: 26px 16px 12px 16px;
+            background: linear-gradient(to top, rgba(8,6,7,.9) 20%, transparent);
+            font-family: var(--mono);
+            font-size: .68rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: rgba(246,241,234,.75);
+        }
+
+        .gyear-feature__text{
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            padding: 4px 4px 4px 0;
+        }
+
+        /* ---------- kicker "reportaje" junto al texto ---------- */
+        .gyear-feature__kicker{
+            display:inline-flex;
+            align-items:center;
+            gap:8px;
+            width: fit-content;
+            font-family: var(--mono);
+            font-size:.68rem;
+            font-weight:700;
+            letter-spacing:2px;
+            text-transform:uppercase;
+            color: var(--orange-light);
+            margin-bottom: 16px;
+        }
+        .gyear-feature__kicker::before{
+            content:"";
+            width:6px; height:6px;
+            border-radius:50%;
+            background: var(--orange-light);
+        }
+
+        /* ---------- bajada / dek periodÃ­stico ---------- */
+        .gyear-hero__dek{
+            font-family: var(--body);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--cream);
+            margin: 0;
+        }
+
+        /* ---------- crÃ©dito de foto / datos, como pie de nota ---------- */
+        .gyear-hero__byline{
+            display:flex;
+            flex-wrap:wrap;
+            gap: 8px 20px;
+            margin-top: 22px;
+            padding-top: 16px;
+            border-top: 1px solid var(--panel-border);
+            font-family: var(--mono);
+            font-size: .72rem;
+            letter-spacing: .5px;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+        .gyear-hero__byline span{
+            display:inline-flex;
+            align-items:center;
+            gap:6px;
+        }
+
+        .gyear-intro{
+            font-family: var(--body);
+            font-size: 1.02rem;
+            line-height:1.75;
+            color: var(--muted);
+            max-width: 760px;
+            margin: 24px 0 8px 0;
+        }
+
+        /* ---------- mosaico editorial para galerías anuales ---------- */
+        .memory-grid{
+            display:grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: 190px;
+            grid-auto-flow:dense;
+            gap:14px;
+            margin-top:30px;
+        }
+
+        .memory-grid .memory-tile{
+            appearance:none;
+            -webkit-appearance:none;
+            position:relative;
+            padding:0;
+            margin:0;
+            border:1px solid var(--panel-border);
+            border-radius:12px;
+            overflow:hidden;
+            background:var(--panel);
+            cursor:pointer;
+            text-align:left;
+            color:inherit;
+            transition:transform .35s ease, border-color .35s ease, box-shadow .35s ease;
+        }
+
+        .memory-grid .memory-tile:hover{
+            transform:translateY(-4px);
+            border-color:var(--orange);
+            box-shadow:0 16px 36px rgba(0,0,0,.24);
+        }
+
+        .memory-grid .memory-tile.span-2x2{
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        .memory-grid .memory-tile.span-2x1{
+            grid-column: span 2;
+        }
+
+        .memory-tile__stack{
+            position:absolute;
+            inset:0;
+            background:linear-gradient(180deg, rgba(18,15,16,.5), rgba(8,6,7,.15));
+        }
+
+        .memory-tile__stack img{
+            position:absolute;
+            inset:0;
+            width:100%;
+            height:100%;
+            object-fit:cover;
+            display:block;
+            opacity:0;
+            transform:scale(1.035);
+            filter:saturate(.92) contrast(1.02);
+            transition:opacity .8s ease, transform 1s ease, filter .8s ease;
+        }
+
+        .memory-tile__stack img.is-active{
+            opacity:1;
+            transform:scale(1);
+            filter:saturate(1) contrast(1.04);
+        }
+
+        .memory-tile__shade{
+            position:absolute;
+            inset:0;
+            background:
+                linear-gradient(to top, rgba(8,6,7,.9) 12%, rgba(8,6,7,.18) 55%, transparent 100%),
+                linear-gradient(to bottom, rgba(8,6,7,.12), transparent 26%);
+            pointer-events:none;
+        }
+
+        .memory-tile__label{
+            position:absolute;
+            left:0;
+            right:0;
+            bottom:0;
+            z-index:1;
+            padding:24px 14px 14px;
+            font-family:var(--body);
+            font-size:.8rem;
+            line-height:1.45;
+            color:rgba(246,241,234,.96);
+            transform:translateY(2px);
+            transition:transform .35s ease, color .35s ease;
+        }
+
+        .memory-tile:hover .memory-tile__label{
+            transform:translateY(0);
+            color:var(--cream);
+        }
+
+        .memory-tile__dots{
+            position:absolute;
+            top:12px;
+            right:12px;
+            z-index:1;
+            display:flex;
+            gap:6px;
+            padding:6px 8px;
+            border-radius:999px;
+            background:rgba(8,6,7,.42);
+            backdrop-filter:blur(3px);
+        }
+
+        .memory-tile__dots span{
+            width:6px;
+            height:6px;
+            border-radius:50%;
+            background:rgba(246,241,234,.35);
+            transition:background-color .35s ease, transform .35s ease;
+        }
+
+        .memory-tile__dots span.is-active{
+            background:var(--orange-light);
+            transform:scale(1.2);
+        }
+
+        /* ---------- mosaico de fotos ---------- */
+        .photo-grid{
+            display:grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: 190px;
+            grid-auto-flow: dense;
+            gap: 14px;
+            margin-top: 30px;
+        }
+
+        .photo-grid button.photo-item{
+            appearance: none;
+            -webkit-appearance: none;
+            background: none;
+            border: 0;
+            padding: 0;
+            margin: 0;
+            font: inherit;
+            color: inherit;
+            text-align: inherit;
+            cursor: pointer;
+        }
+
+        .photo-item{
+            position:relative;
+            border-radius: 10px;
+            overflow:hidden;
+            border: 1px solid var(--panel-border);
+            background: var(--panel);
+        }
+        .photo-item img{
+            width:100%;
+            height:100%;
+            object-fit: cover;
+            display:block;
+            transition: transform .5s ease, filter .5s ease;
+            filter: saturate(.92) contrast(1.03);
+        }
+        .photo-item:hover img{
+            transform: scale(1.06);
+            filter: saturate(1.05) contrast(1.05);
+        }
+        .photo-item::after{
+            content:"";
+            position:absolute; inset:0;
+            box-shadow: inset 0 0 0 1px rgba(246,241,234,0);
+            transition: box-shadow .3s ease;
+        }
+        .photo-item:hover::after{
+            box-shadow: inset 0 0 0 2px var(--orange);
+        }
+
+        .photo-item.span-2x2{ grid-column: span 2; grid-row: span 2; }
+        .photo-item.span-2x1{ grid-column: span 2; }
+
+        /* la leyenda queda siempre visible en una franja inferior, con mÃ¡s Ã©nfasis al pasar el cursor */
+        .photo-caption{
+            position:absolute;
+            left:0; right:0; bottom:0;
+            padding: 22px 12px 10px 12px;
+            background: linear-gradient(to top, rgba(8,6,7,.92) 20%, transparent);
+            font-family: var(--body);
+            font-size: .78rem;
+            line-height:1.4;
+            color: rgba(246,241,234,.9);
+            transform: translateY(2px);
+            transition: color .3s ease, transform .3s ease;
+        }
+        .photo-item:hover .photo-caption{
+            color: var(--cream);
+            transform: translateY(0);
+        }
+        .photo-item.span-2x2 .photo-caption{
+            padding: 34px 16px 16px 16px;
+            font-size: .88rem;
+        }
+
+        /* ---------- nÃºmero de foto, como pie editorial ---------- */
+        .photo-item__num{
+            position:absolute;
+            top:10px; left:10px;
+            z-index:1;
+            font-family: var(--mono);
+            font-size: .65rem;
+            font-weight:700;
+            letter-spacing:1px;
+            color: var(--cream);
+            background: rgba(8,6,7,.55);
+            border: 1px solid rgba(246,241,234,.25);
+            padding: 3px 9px;
+            border-radius: 20px;
+            backdrop-filter: blur(2px);
+        }
+
+        /* ---------- reserva visual cuando aÃºn no se ha subido la foto ---------- */
+        .photo-item.img-missing{
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            min-height: 170px;
+            background:
+                repeating-linear-gradient(135deg, rgba(246,241,234,.035) 0 14px, transparent 14px 28px),
+                var(--panel);
+        }
+        .photo-item.img-missing img{ display:none; }
+        .photo-item.img-missing::before{
+            content: "ðŸ“· Falta la foto\A" attr(data-path);
+            white-space: pre-line;
+            text-align:center;
+            padding: 0 14px;
+            font-family: var(--mono);
+            font-size: .68rem;
+            line-height:1.6;
+            color: var(--muted);
+        }
+        .photo-item.img-missing .photo-caption{ display:none; }
+
+        /* placeholder de pÃ¡gina "en construcciÃ³n" */
+        .wip-box{
+            margin-top: 36px;
+            padding: 50px 32px;
+            text-align:center;
+            background: var(--panel);
+            border: 1px dashed var(--panel-border);
+            border-radius: 16px;
+        }
+        .wip-box p{
+            font-family: var(--body);
+            color: var(--muted);
+            max-width: 480px;
+            margin: 12px auto 0 auto;
+            line-height:1.7;
+        }
+        .wip-box .eyebrow{ justify-content:center; }
+
+        /* =========================================================
+           LIGHTBOX
+           ========================================================= */
+        .lightbox{
+            position: fixed;
+            inset: 0;
+            background: rgba(6,5,6,.94);
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            z-index: 999;
+            padding: 40px;
+            opacity:0;
+            visibility:hidden;
+            pointer-events:none;
+            transition:opacity .28s ease, visibility .28s ease;
+        }
+        .lightbox.is-open{
+            opacity:1;
+            visibility:visible;
+            pointer-events:auto;
+        }
+
+        .lightbox__frame{
+            position:relative;
+            max-width: 1100px;
+            max-height: 86vh;
+            width:100%;
+            transform:translateY(10px) scale(.985);
+            transition:transform .28s ease;
+        }
+        .lightbox.is-open .lightbox__frame{ transform:translateY(0) scale(1); }
+        .lightbox__frame img{
+            width:100%;
+            height:100%;
+            max-height: 86vh;
+            object-fit: contain;
+            border-radius: 10px;
+            border: 1px solid var(--panel-border);
+            transition:opacity .3s ease;
+        }
+        .lightbox__caption{
+            text-align:center;
+            font-family: var(--body);
+            font-size: .9rem;
+            color: var(--muted);
+            margin-top: 14px;
+        }
+
+        .lightbox__close,
+        .lightbox__prev,
+        .lightbox__next{
+            position:absolute;
+            background: var(--panel);
+            border: 1px solid var(--panel-border);
+            color: var(--cream);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            font-family: var(--body);
+            font-size: 1.1rem;
+            cursor:pointer;
+            transition: border-color .25s ease, background .25s ease;
+        }
+        .lightbox__close:hover,
+        .lightbox__prev:hover,
+        .lightbox__next:hover{
+            border-color: var(--orange);
+            background: var(--maroon);
+        }
+        .lightbox__close{ top:-56px; right:0; }
+        .lightbox__prev{ left:-56px; top:50%; transform:translateY(-50%); }
+        .lightbox__next{ right:-56px; top:50%; transform:translateY(-50%); }
+
+        /* =========================================================
+           RESPONSIVE
+           ========================================================= */
+        @media (max-width: 900px){
+            .year-grid{ grid-template-columns: repeat(2, 1fr); }
+            .memory-grid{ grid-template-columns: repeat(2, 1fr); }
+            .memory-grid .memory-tile.span-2x2{ grid-column: span 2; grid-row: span 1; }
+            .photo-grid{ grid-template-columns: repeat(2, 1fr); grid-auto-rows: 170px; }
+            .photo-item.span-2x2{ grid-column: span 2; grid-row: span 1; }
+            .lightbox__prev{ left:8px; }
+            .lightbox__next{ right:8px; }
+            .lightbox__close{ top:8px; right:8px; }
+            .gyear-feature{ grid-template-columns: 1fr; }
+            .gyear-feature__media{ min-height: 240px; }
+            .gyear-list--columns{ column-count: 1; }
+        }
+        @media (max-width: 600px){
+            .galeria-page, .gyear-page{ padding: 0 20px 80px 20px; }
+            .year-grid{ grid-template-columns: 1fr; }
+            .memory-grid{ grid-template-columns: 1fr; grid-auto-rows: 210px; }
+            .memory-grid .memory-tile.span-2x2,
+            .memory-grid .memory-tile.span-2x1{ grid-column: span 1; grid-row: span 1; }
+            .photo-grid{ grid-template-columns: repeat(2, 1fr); grid-auto-rows: 150px; gap:10px; }
+            .gyear-feature__media{ min-height: 200px; }
+            .gyear-feature__missing-note{ font-size:.64rem; }
+            .gyear-hero__byline{ gap: 6px 14px; }
+        }
+
+
