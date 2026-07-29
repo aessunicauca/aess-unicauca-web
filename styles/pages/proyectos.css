@@ -1,0 +1,405 @@
+/* ==========================================================
+   PROYECTOS
+   ========================================================== */
+
+.proyectos-page{
+    position: relative;
+    color: var(--cream);
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 40px 120px 40px;
+    overflow-x: hidden;
+}
+
+.proyectos-page::before{
+    content:"";
+    position:absolute;
+    top:-220px;
+    right:-180px;
+    width:560px;
+    height:560px;
+    background: radial-gradient(circle, var(--orange) 0%, var(--maroon) 55%, transparent 75%);
+    opacity:.14;
+    filter: blur(40px);
+    border-radius:50%;
+    pointer-events:none;
+    z-index:0;
+}
+.proyectos-page > *{ position:relative; z-index:1; }
+
+.proyectos-page h1{
+    font-family: var(--display);
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    line-height: 1.18;
+    margin: 18px 0 22px 0;
+    text-transform: uppercase;
+}
+
+.proyectos-page .lead{
+    font-family: var(--body);
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--muted);
+    max-width: 760px;
+}
+
+/* =========================================================
+   ETIQUETA DE CATEGORÃA (sobre la "imagen" de color)
+   ========================================================= */
+.project-tag{
+    position:absolute;
+    top:14px;
+    left:14px;
+    z-index:2;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-family: var(--mono);
+    font-size: .65rem;
+    font-weight:700;
+    letter-spacing: 1.3px;
+    text-transform: uppercase;
+    padding: 5px 11px;
+    border-radius: 20px;
+    background: rgba(8,6,7,.55);
+    border: 1px solid rgba(246,241,234,.35);
+    color: var(--cream);
+    backdrop-filter: blur(3px);
+}
+
+/* =========================================================
+   CUADRÃCULA "BENTO" DE PROYECTOS ACTUALES
+   ========================================================= */
+.project-grid{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(200px, auto);
+    grid-auto-flow: dense;
+    gap: 20px;
+}
+
+.project-card{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    height:100%;
+    background: var(--panel);
+    border: 1px solid var(--panel-border);
+    border-radius: 16px;
+    overflow:hidden;
+    transition: border-color .35s ease, transform .35s ease;
+}
+.project-card:hover{
+    border-color: var(--orange);
+    transform: translateY(-4px);
+}
+
+.project-card--feature{
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.project-card__media{
+    position:relative;
+    height: 140px;
+    flex-shrink:0;
+    overflow:hidden;
+}
+.project-card--feature .project-card__media{
+    height: 100%;
+    flex: 1;
+}
+
+.project-card__media img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    transition: transform .5s ease;
+}
+.project-card:hover .project-card__media img{
+    transform: scale(1.06);
+}
+
+.project-card__media::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background: linear-gradient(180deg, rgba(8,6,7,.55) 0%, rgba(8,6,7,0) 55%);
+    pointer-events:none;
+}
+
+.project-card__body{
+    padding: 20px 22px 24px 22px;
+    display:flex;
+    flex-direction:column;
+    gap: 10px;
+    flex:1;
+}
+
+.project-card h3{
+    font-family: var(--display);
+    font-size: 1rem;
+    line-height:1.35;
+    text-transform: uppercase;
+    color: var(--cream);
+}
+.project-card--feature h3{
+    font-size: 1.35rem;
+}
+
+.project-card p{
+    font-family: var(--body);
+    font-size: .87rem;
+    line-height: 1.6;
+    color: var(--muted);
+    flex:1;
+}
+.project-card--feature p{
+    font-size: .95rem;
+}
+
+/* ---------- Paletas de color por tarjeta ---------- */
+.grad-maroon{ background: linear-gradient(135deg, var(--maroon), var(--orange)); }
+.grad-red{ background: linear-gradient(135deg, var(--red), var(--orange-light)); }
+.grad-teal{ background: linear-gradient(135deg, #123b39, #2fa89b); }
+.grad-gold{ background: linear-gradient(135deg, #3a2b10, #d9a441); }
+.grad-blue{ background: linear-gradient(135deg, #0f2a3a, #2f7da8); }
+
+/* =========================================================
+   AESS CHALLENGE LABS (I+D en desarrollo)
+   ========================================================= */
+.labs-grid{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.lab-card{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    background: var(--panel);
+    border: 1px solid var(--panel-border);
+    border-radius: 16px;
+    overflow:hidden;
+    transition: border-color .35s ease, transform .35s ease;
+}
+.lab-card:hover{
+    border-color: var(--orange-light);
+    transform: translateY(-4px);
+}
+
+.lab-card__media{
+    position:relative;
+    height: 120px;
+    background: linear-gradient(135deg, #1a1214, var(--maroon)); /* respaldo si falta la foto */
+    overflow:hidden;
+}
+.lab-card__media img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    transition: transform .5s ease;
+}
+.lab-card:hover .lab-card__media img{
+    transform: scale(1.06);
+}
+.lab-card__media::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background: linear-gradient(180deg, rgba(8,6,7,.55) 0%, rgba(8,6,7,0) 55%);
+    pointer-events:none;
+}
+
+.lab-card__badge{
+    position:absolute;
+    top:14px;
+    left:14px;
+    z-index:2;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-family: var(--mono);
+    font-size: .64rem;
+    font-weight:700;
+    letter-spacing: 1.3px;
+    text-transform: uppercase;
+    color: var(--orange-light);
+    padding: 5px 11px;
+    background: rgba(8,6,7,.6);
+    border: 1px solid var(--orange-light);
+    border-radius: 20px;
+    backdrop-filter: blur(3px);
+}
+
+.lab-card__body{
+    padding: 20px 22px 24px 22px;
+    display:flex;
+    flex-direction:column;
+    gap: 10px;
+    flex:1;
+}
+
+.lab-card h3{
+    font-family: var(--display);
+    font-size: 1rem;
+    line-height:1.35;
+    text-transform: uppercase;
+    color: var(--cream);
+}
+
+.lab-card p{
+    font-family: var(--body);
+    font-size: .87rem;
+    line-height: 1.6;
+    color: var(--muted);
+}
+
+/* =========================================================
+   PANEL "PARTICIPA EN UN PROYECTO"
+   ========================================================= */
+.project-cta{
+    position:relative;
+    margin-top: 60px;
+    padding: 52px 46px;
+    border-radius: 22px;
+    overflow:hidden;
+    background: linear-gradient(120deg, var(--maroon) 0%, var(--red) 48%, var(--orange) 100%);
+    display:flex;
+    flex-direction:column;
+    gap: 16px;
+}
+
+.project-cta::before{
+    content:"";
+    position:absolute;
+    top:-140px;
+    left:-100px;
+    width: 380px;
+    height: 380px;
+    background: radial-gradient(circle, rgba(246,241,234,.25), transparent 70%);
+    filter: blur(10px);
+    pointer-events:none;
+}
+.project-cta::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image: radial-gradient(circle, rgba(246,241,234,.14) 1px, transparent 1.6px);
+    background-size: 22px 22px;
+    opacity:.6;
+    pointer-events:none;
+}
+
+.project-cta__tag{
+    position:relative;
+    z-index:1;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    width:fit-content;
+    font-family: var(--mono);
+    font-size: .72rem;
+    font-weight:700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--cream);
+    padding: 6px 14px;
+    background: rgba(8,6,7,.3);
+    border: 1px solid rgba(246,241,234,.4);
+    border-radius: 20px;
+}
+
+.project-cta h3{
+    position:relative;
+    z-index:1;
+    font-family: var(--display);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    text-transform: uppercase;
+    color: var(--cream);
+    line-height:1.25;
+}
+
+.project-cta p{
+    position:relative;
+    z-index:1;
+    font-family: var(--body);
+    color: rgba(246,241,234,.88);
+    max-width: 620px;
+    line-height:1.65;
+}
+
+.project-cta__actions{
+    position:relative;
+    z-index:1;
+    display:flex;
+    flex-wrap:wrap;
+    gap: 14px;
+    margin-top: 8px;
+}
+
+.btn-solid{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    font-family: var(--body);
+    font-weight:700;
+    font-size: .9rem;
+    color: var(--maroon);
+    background: var(--cream);
+    padding: 14px 28px;
+    border-radius: 8px;
+    text-decoration:none;
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+.btn-solid:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(0,0,0,.3);
+}
+
+.btn-outline{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    font-family: var(--body);
+    font-weight:600;
+    font-size: .9rem;
+    color: var(--cream);
+    background: transparent;
+    border: 1px solid rgba(246,241,234,.5);
+    padding: 13px 26px;
+    border-radius: 8px;
+    text-decoration:none;
+    transition: border-color .3s ease, background .3s ease, gap .3s ease;
+}
+.btn-outline:hover{
+    border-color: var(--cream);
+    background: rgba(246,241,234,.1);
+    gap: 14px;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 1080px){
+    .project-grid{ grid-template-columns: repeat(2, 1fr); }
+    .project-card--feature{ grid-column: span 2; grid-row: span 1; }
+    .project-card--feature .project-card__media{ height: 160px; flex:none; }
+}
+
+@media (max-width: 900px){
+    .labs-grid{ grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px){
+    .proyectos-page{ padding: 0 20px 80px 20px; }
+    .project-grid{ grid-template-columns: 1fr; }
+    .project-card--feature{ grid-column: span 1; }
+    .project-cta{ padding: 36px 26px; }
+}
+/* ==========================================================
+   FIN DEL ARCHIVO
+   ========================================================== */

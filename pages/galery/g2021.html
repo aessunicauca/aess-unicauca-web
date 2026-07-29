@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2020 - Galería - AESS Unicauca</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../../assets/images/logos/logo2circ.png">
+    <link rel="stylesheet" href="../../styles/main.css">
+</head>
+
+<body>
+
+    <section class="hero">
+
+        <nav id="site-nav" data-page="galeria" data-root="../"></nav>
+
+        <div class="main-content main-content--scroll">
+
+            <div class="gyear-page">
+
+                <span class="eyebrow">Álbum · 2021</span>
+
+                <div class="gyear-hero">
+                    <div class="gyear-hero__img" style="background-image:url(../../assets/images/galeria/g2021/fondo.jpeg)"></div>
+                    <div class="gyear-hero__tint"></div>
+                    <div class="gyear-hero__shade"></div>
+                    <div class="gyear-hero__content">
+                        <h1>2021 · Ciencia, innovación <span class="grad">y nuevos horizontes</span></h1>
+                    </div>
+                </div>
+
+                <p class="gyear-intro">
+                    2021 marcó el crecimiento de AESS Unicauca como un capítulo de referencia en Colombia. 
+                    Durante este año se obtuvo el reconocimiento como Mejor Capítulo IEEE AESS Colombia, 
+                    se fortalecieron las actividades de astronomía y divulgación científica, se organizaron conferencias 
+                    internacionales, se inició la línea de cohetería, se logró un alto rendimiento en competencias nacionales como 
+                    Ala Zagi Race AESS 2021 y se alcanzaron importantes resultados en competencias 
+                    como CanSat Latinoamérica, consolidando una etapa de expansión académica e internacional.
+                </p>
+
+                <!-- El widget se genera con JS a partir de PHOTOS, agrupando por actividad -->
+                <div class="memory-grid" id="memory-grid"></div>
+
+                <a href="../galeria.html" class="back-link">&larr; Volver a la Galería</a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ============ LIGHTBOX ============ -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox__frame">
+            <button class="lightbox__close" id="lb-close" aria-label="Cerrar">&times;</button>
+            <button class="lightbox__prev" id="lb-prev" aria-label="Anterior">&larr;</button>
+            <button class="lightbox__next" id="lb-next" aria-label="Siguiente">&rarr;</button>
+            <img id="lb-img" src="" alt="">
+            <p class="lightbox__caption" id="lb-caption"></p>
+        </div>
+    </div>
+
+        <script id="memory-gallery-data" type="text/plain">
+[{ src: '../../assets/images/galeria/g2021/best1.jpeg', alt: 'Premio al mejor capítulo estudiantil AESS 2020', caption: 'Premio al mejor capítulo estudiantil AESS 2020', activity: 'Premiación', span: 'span-2x2' },
+                { src: '../../assets/images/galeria/g2021/best.jpeg', alt: 'Premio al mejor Chair de Capítulo estudiantil AESS 2020', caption: 'Premio al mejor Chair de Capítulo estudiantil AESS 2020', activity: 'Premiación', span: 'span-2x2' },
+                { src: '../../assets/images/galeria/g2021/mision1.jpeg', alt: 'Misión a Marte', caption: 'Misión a Marte 2021', activity: 'Evento' },
+                { src: '../../assets/images/galeria/g2021/mision2.jpeg', alt: 'Misión a Marte', caption: 'Misión a Marte 2021', activity: 'Evento' },
+                { src: '../../assets/images/galeria/g2021/mision3.jpeg', alt: 'Misión a Marte', caption: 'Misión a Marte 2021', activity: 'Evento' },
+                { src: '../../assets/images/galeria/g2021/mision4.jpeg', alt: 'Misión a Marte', caption: 'Misión a Marte 2021', activity: 'Evento' },
+                { src: '../../assets/images/galeria/g2021/seminario1.jpeg', alt: 'Seminario en Paisaje Sonoro Urbano e Inteligencia Artificial', caption: 'Seminario en Paisaje Sonoro Urbano e Inteligencia Artificial', activity: 'Seminario' },
+                { src: '../../assets/images/galeria/g2021/seminario2.jpeg', alt: 'Seminario en Paisaje Sonoro Urbano e Inteligencia Artificial', caption: 'Seminario en Paisaje Sonoro Urbano e Inteligencia Artificial', activity: 'Seminario' },
+                { src: '../../assets/images/galeria/g2021/seminario3.jpeg', alt: 'Seminario en Paisaje Sonoro Urbano e Inteligencia Artificial', caption: 'Seminario en Paisaje Sonoro Urbano e Inteligencia Artificial', activity: 'Seminario' },
+                { src: '../../assets/images/galeria/g2021/seminario4.jpeg', alt: 'Seminario en Paisaje Sonoro Urbano e Inteligencia Artificial', caption: 'Seminario en Paisaje Sonoro Urbano e Inteligencia Artificial', activity: 'Seminario' },
+                { src: '../../assets/images/galeria/g2021/co1.jpg', alt: 'Coheteria 2021', caption: 'Coheteria 2021', activity: 'Coheteria' },
+                { src: '../../assets/images/galeria/g2021/co2.jpg', alt: 'Coheteria 2021', caption: 'Coheteria 2021', activity: 'Coheteria' },
+                { src: '../../assets/images/galeria/g2021/co3.jpg', alt: 'Coheteria 2021', caption: 'Coheteria 2021', activity: 'Coheteria' },
+                { src: '../../assets/images/galeria/g2021/co4.jpg', alt: 'Coheteria 2021', caption: 'Coheteria 2021', activity: 'Coheteria' },
+                { src: '../../assets/images/galeria/g2021/co5.jpeg', alt: 'Coheteria 2021', caption: 'Coheteria 2021', activity: 'Coheteria' },
+                { src: '../../assets/images/galeria/g2021/co6.jpg', alt: 'Coheteria 2021', caption: 'Coheteria 2021', activity: 'Coheteria' },
+                { src: '../../assets/images/galeria/g2021/co7.jpeg', alt: 'Coheteria 2021', caption: 'Coheteria 2021', activity: 'Coheteria' },
+                { src: '../../assets/images/galeria/g2021/sat1.jpeg', alt: 'Satélites', caption: 'Satélites 2021', activity: 'Satélites' },
+                { src: '../../assets/images/galeria/g2021/sat2.jpeg', alt: 'Satélites', caption: 'Satélites 2021', activity: 'Satélites' },
+                { src: '../../assets/images/galeria/g2021/sat3.jpeg', alt: 'Satélites', caption: 'Satélites 2021', activity: 'Satélites' },
+                { src: '../../assets/images/galeria/g2021/rov1.jpeg', alt: 'Rovers', caption: 'Rover Cuervo 2021', activity: 'Rovers' },
+                { src: '../../assets/images/galeria/g2021/rov2.jpeg', alt: 'Rovers', caption: 'Rover Cuervo 2021', activity: 'Rovers' },
+                { src: '../../assets/images/galeria/g2021/rov1.jpeg', alt: 'Rovers', caption: 'Rover Cuervo 2021', activity: 'Rovers' },
+                { src: '../../assets/images/galeria/g2021/zagi1.jpeg', alt: 'Ala Zagi Race 2021', caption: 'Ala Zagi Race 2021', activity: 'Zagi' },
+                { src: '../../assets/images/galeria/g2021/zagi2.jpeg', alt: 'Ala Zagi Race 2021', caption: 'Ala Zagi Race 2021', activity: 'Zagi' },
+                { src: '../../assets/images/galeria/g2021/zagi3.jpeg', alt: 'Ala Zagi Race 2021', caption: 'Ala Zagi Race 2021', activity: 'Zagi' },
+                { src: '../../assets/images/galeria/g2021/zagi4.jpeg', alt: 'Ala Zagi Race 2021', caption: 'Ala Zagi Race 2021', activity: 'Zagi' },
+                { src: '../../assets/images/galeria/g2021/zagi5.jpeg', alt: 'Ala Zagi Race 2021', caption: 'Ala Zagi Race 2021', activity: 'Zagi' }]
+    </script>
+    <script src="../../shared/scripts/memory-gallery.js"></script>
+
+    
+
+    <script src="../../shared/scripts/nav.js"></script>
+</body>
+
+</html>
