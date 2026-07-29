@@ -111,4 +111,31 @@
       navToggle.setAttribute('aria-expanded', 'false');
     });
   });
+
+  const resetInitialScroll = () => {
+    if (window.location.hash) return;
+
+    const navigationEntry = performance.getEntriesByType('navigation')[0];
+    const navigationType = navigationEntry ? navigationEntry.type : 'navigate';
+
+    if (navigationType === 'back_forward') return;
+
+    const scrollContainers = document.querySelectorAll('.main-content--scroll');
+
+    window.scrollTo(0, 0);
+
+    scrollContainers.forEach((container) => {
+      container.scrollTop = 0;
+      container.scrollLeft = 0;
+    });
+  };
+
+  requestAnimationFrame(() => {
+    resetInitialScroll();
+    requestAnimationFrame(resetInitialScroll);
+  });
+
+  window.addEventListener('pageshow', () => {
+    requestAnimationFrame(resetInitialScroll);
+  });
 })();
