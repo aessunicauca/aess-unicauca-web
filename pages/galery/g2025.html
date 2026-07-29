@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2020 - Galería - AESS Unicauca</title>
+    <title>2025 - Galería - AESS Unicauca</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
@@ -15,17 +15,14 @@
 <body>
 
     <section class="hero">
-
         <nav id="site-nav" data-page="galeria" data-root="../"></nav>
 
         <div class="main-content main-content--scroll">
-
             <div class="gyear-page">
-
                 <span class="eyebrow">Álbum · 2025</span>
 
                 <div class="gyear-hero">
-                    <div class="gyear-hero__img" style="background-image:url('../../assets/images/galeria/g2025/port.jpeg"></div>
+                    <div class="gyear-hero__img" style="background-image:url('../../assets/images/galeria/g2025/port.jpeg')"></div>
                     <div class="gyear-hero__tint"></div>
                     <div class="gyear-hero__shade"></div>
                     <div class="gyear-hero__content">
@@ -34,24 +31,19 @@
                 </div>
 
                 <p class="gyear-intro">
-                Cada imagen reúne un capítulo de una historia construida por estudiantes, docentes y aliados. 
-                El liderazgo femenino, los proyectos de investigación, las competencias internacionales y la 
-                consolidación del Semillero de Ingeniería Aeroespacial hicieron de 2025 uno de los años más 
-                memorables del capítulo. Haz clic sobre las fotografías para descubrir cada historia.
+                    Cada imagen reúne un capítulo de una historia construida por estudiantes, docentes y aliados.
+                    El liderazgo femenino, los proyectos de investigación, las competencias internacionales y la
+                    consolidación del Semillero de Ingeniería Aeroespacial hicieron de 2025 uno de los años más
+                    memorables del capítulo. Haz clic sobre las fotografías para descubrir cada historia.
                 </p>
 
-                <!-- El widget se genera con JS a partir de PHOTOS, agrupando por actividad -->
                 <div class="memory-grid" id="memory-grid"></div>
 
                 <a href="../galeria.html" class="back-link">&larr; Volver a la Galería</a>
-
             </div>
-
         </div>
-
     </section>
 
-    <!-- ============ LIGHTBOX ============ -->
     <div class="lightbox" id="lightbox">
         <div class="lightbox__frame">
             <button class="lightbox__close" id="lb-close" aria-label="Cerrar">&times;</button>
@@ -62,121 +54,120 @@
         </div>
     </div>
 
-        <script id="memory-gallery-data" type="text/plain">
-[{ src: '../../assets/images/galeria/g2025/E1.jpeg', alt: 'Explorando el Futuro 202X', caption: 'Explorando el Futuro 202X: Foto de Evento', activity: 'Evento Explorando', span: 'span-2x2' },
-                { src: '../../assets/images/galeria/g2025/E2.jpeg', alt: 'Explorando el Futuro 202X', caption: 'Explorando el Futuro 202X: Foto de Evento', activity: 'Evento Explorando', span: 'span-2x2' },
-                { src: '../../assets/images/galeria/g2025/E3.jpeg', alt: 'Explorando el Futuro 202X', caption: 'Explorando el Futuro 202X: Foto de Evento', activity: 'Evento Explorando', span: 'span-2x2' },
-                { src: '../../assets/images/galeria/g2025/E4.jpeg', alt: 'Explorando el Futuro 202X', caption: 'Explorando el Futuro 202X: Foto de Evento', activity: 'Evento Explorando', span: 'span-2x2' },
-                { src: '../../assets/images/galeria/g2025/E5.jpeg', alt: 'Explorando el Futuro 202X', caption: 'Explorando el Futuro 202X: Ponencia Magistral Liseth Campo', activity: 'Evento Explorando', span: 'span-2x2' },
-                { src: '../../assets/images/galeria/g2025/E6.jpeg', alt: 'Explorando el Futuro 202X', caption: 'Explorando el Futuro 202X: Ponencia Magistral Giovanna Ramirez', activity: 'Evento Explorando', span: 'span-2x2' },
-                { src: '../../assets/images/galeria/g2025/E7.jpeg', alt: 'Explorando el Futuro 202X', caption: 'Explorando el Futuro 202X: Ponencia Magistral Vince Socci', activity: 'Evento Explorando', span: 'span-2x2' },
-                { src: '../../assets/images/galeria/g2025/E8.jpeg', alt: 'Explorando el Futuro 202X', caption: 'Explorando el Futuro 202X: Ponencia Magistral ', activity: 'Evento Explorando', span: 'span-2x2' },
-                { src: '../../assets/images/galeria/g2025/E9.jpeg', alt: 'Explorando el Futuro 202X', caption: 'Explorando el Futuro 202X: Ponencia Magistral Estefano Coraluppi', activity: 'Evento Explorando', span: 'span-2x2' },
-                { src: '../../assets/images/galeria/g2025/E10.jpeg', alt: 'Explorando el Futuro 202X', caption: 'Explorando el Futuro 202X', activity: 'Evento Explorando', span: 'span-2x2' },
-                { src: '../../assets/images/galeria/g2025/E11.jpeg', alt: 'Explorando el Futuro 202X', caption: 'Explorando el Futuro 202X', activity: 'Evento Explorando', span: 'span-2x2' },
-                { src: '../../assets/images/galeria/g2025/E12.jpeg', alt: 'Explorando el Futuro 202X', caption: 'Explorando el Futuro 202X', activity: 'Evento Explorando', span: 'span-2x2' },
-                { src: '../../assets/images/galeria/g2025/E13.jpeg', alt: 'Explorando el Futuro 202X', caption: 'Explorando el Futuro 202X', activity: 'Evento Explorando', span: 'span-2x2' },
-                { src: '../../assets/images/galeria/g2025/E14.jpeg', alt: 'Explorando el Futuro 202X', caption: 'Explorando el Futuro 202X', activity: 'Evento Explorando', span: 'span-2x2' },
-                { src: '../../assets/images/galeria/g2025/E15.jpeg', alt: 'Explorando el Futuro 202X', caption: 'Explorando el Futuro 202X', activity: 'Evento Explorando', span: 'span-2x2' },
-                { src: '../../assets/images/galeria/g2025/E16.jpeg', alt: 'Explorando el Futuro 202X', caption: 'Explorando el Futuro 202X', activity: 'Evento Explorando', span: 'span-2x2' },
-                { src: '../../assets/images/galeria/g2025/E17.jpeg', alt: 'Explorando el Futuro 202X', caption: 'Explorando el Futuro 202X', activity: 'Evento Explorando', span: 'span-2x2' },
-                { src: '../../assets/images/galeria/g2025/E18.jpeg', alt: 'Explorando el Futuro 202X', caption: 'Explorando el Futuro 202X', activity: 'Evento Explorando', span: 'span-2x2' },
-                { src: '../../assets/images/galeria/g2025/E19.jpeg', alt: 'Explorando el Futuro 202X', caption: 'Explorando el Futuro 202X', activity: 'Evento Explorando', span: 'span-2x2' },
-                { src: '../../assets/images/galeria/g2025/E20.jpeg', alt: 'Explorando el Futuro 202X', caption: 'Explorando el Futuro 202X', activity: 'Evento Explorando', span: 'span-2x2' },
-                { src: '../../assets/images/galeria/g2025/E21.jpeg', alt: 'Explorando el Futuro 202X', caption: 'Explorando el Futuro 202X', activity: 'Evento Explorando', span: 'span-2x2' },
-                { src: '../../assets/images/galeria/g2025/E22.jpeg', alt: 'Explorando el Futuro 202X', caption: 'Explorando el Futuro 202X', activity: 'Evento Explorando', span: 'span-2x2' },
-                { src: '../../assets/images/galeria/g2025/E23.jpeg', alt: 'Explorando el Futuro 202X', caption: 'Explorando el Futuro 202X', activity: 'Evento Explorando', span: 'span-2x2' },
-                { src: '../../assets/images/galeria/g2025/E24.jpeg', alt: 'Explorando el Futuro 202X', caption: 'Explorando el Futuro 202X', activity: 'Evento Explorando', span: 'span-2x2' },
-                { src: '../../assets/images/galeria/g2025/E25.jpeg', alt: 'Explorando el Futuro 202X', caption: 'Explorando el Futuro 202X', activity: 'Evento Explorando', span: 'span-2x2' },
-                { src: '../../assets/images/galeria/g2025/M1.jpeg', alt: 'Día de la mujer y la niña en la Ciencia', caption: 'Día de la mujer y la niña en la Ciencia', activity: 'Conmemoración' },
-                { src: '../../assets/images/galeria/g2025/M2.jpeg', alt: 'Día de la mujer y la niña en la Ciencia', caption: 'Día de la mujer y la niña en la Ciencia', activity: 'Conmemoración' },
-                { src: '../../assets/images/galeria/g2025/M3.jpeg', alt: 'Día de la mujer y la niña en la Ciencia', caption: 'Día de la mujer y la niña en la Ciencia', activity: 'Conmemoración' },
-                { src: '../../assets/images/galeria/g2025/M4.jpeg', alt: 'Día de la mujer y la niña en la Ciencia', caption: 'Día de la mujer y la niña en la Ciencia', activity: 'Conmemoración' },
-                { src: '../../assets/images/galeria/g2025/S1.jpeg', alt: 'Revisión de proyectos 30 de Abril', caption: 'Revisión de proyectos 30 de Abril', activity: 'Proyectos' },
-                { src: '../../assets/images/galeria/g2025/S2.jpeg', alt: 'Revisión de proyectos 30 de Abril', caption: 'Revisión de proyectos 30 de Abril', activity: 'Proyectos' },
-                { src: '../../assets/images/galeria/g2025/S3.jpeg', alt: 'Revisión de proyectos 30 de Abril', caption: 'Revisión de proyectos 30 de Abril', activity: 'Proyectos' },
-                { src: '../../assets/images/galeria/g2025/S4.jpeg', alt: 'Revisión de proyectos 30 de Abril', caption: 'Revisión de proyectos 30 de Abril', activity: 'Proyectos' },
-                { src: '../../assets/images/galeria/g2025/S6.jpeg', alt: 'Revisión de proyectos 30 de Abril', caption: 'Revisión de proyectos 30 de Abril', activity: 'Proyectos' },
-                { src: '../../assets/images/galeria/g2025/S7.jpeg', alt: 'Revisión de proyectos 30 de Abril', caption: 'Revisión de proyectos 30 de Abril', activity: 'Proyectos' },
-                { src: '../../assets/images/galeria/g2025/S8.jpeg', alt: 'Revisión de proyectos 30 de Abril', caption: 'Revisión de proyectos 30 de Abril', activity: 'Proyectos' },
-                { src: '../../assets/images/galeria/g2025/S9.jpeg', alt: 'Revisión de proyectos 30 de Abril', caption: 'Revisión de proyectos 30 de Abril', activity: 'Proyectos' },
-                { src: '../../assets/images/galeria/g2025/S10.jpeg', alt: 'Revisión de proyectos 30 de Abril', caption: 'Revisión de proyectos 30 de Abril', activity: 'Proyectos' },
-                { src: '../../assets/images/galeria/g2025/S11.jpeg', alt: 'Revisión de proyectos 30 de Abril', caption: 'Revisión de proyectos 30 de Abril', activity: 'Proyectos' },
-                { src: '../../assets/images/galeria/g2025/S12.jpeg', alt: 'Revisión de proyectos 30 de Abril', caption: 'Revisión de proyectos 30 de Abril', activity: 'Proyectos' },
-                { src: '../../assets/images/galeria/g2025/S13.jpeg', alt: 'Revisión de proyectos 30 de Abril', caption: 'Revisión de proyectos 30 de Abril', activity: 'Proyectos' },
-                { src: '../../assets/images/galeria/g2025/S14.jpeg', alt: 'Revisión de proyectos 30 de Abril', caption: 'Revisión de proyectos 30 de Abril', activity: 'Proyectos' },
-                { src: '../../assets/images/galeria/g2025/S15.jpeg', alt: 'Revisión de proyectos 30 de Abril', caption: 'Revisión de proyectos 30 de Abril', activity: 'Proyectos' },
-                { src: '../../assets/images/galeria/g2025/S16.jpeg', alt: 'Revisión de proyectos 30 de Abril', caption: 'Revisión de proyectos 30 de Abril', activity: 'Proyectos' },
-                { src: '../../assets/images/galeria/g2025/P1.jpg', alt: 'Programa de Embajadores: Prehackathon', caption: 'Programa de Embajadores: Prehackathon', activity: 'Prehackathon', span: 'span-2x2'  },
-                { src: '../../assets/images/galeria/g2025/P2.jpeg', alt: 'Programa de Embajadores: Prehackathon', caption: 'Programa de Embajadores: Prehackathon', activity: 'Prehackathon', span: 'span-2x2'  },
-                { src: '../../assets/images/galeria/g2025/P3.jpg', alt: 'Programa de Embajadores: Prehackathon', caption: 'Programa de Embajadores: Prehackathon', activity: 'Prehackathon', span: 'span-2x2'  },
-                { src: '../../assets/images/galeria/g2025/P4.jpg', alt: 'Programa de Embajadores: Prehackathon', caption: 'Programa de Embajadores: Prehackathon', activity: 'Prehackathon', span: 'span-2x2'  },
-                { src: '../../assets/images/galeria/g2025/P5.jpg', alt: 'Programa de Embajadores: Prehackathon', caption: 'Programa de Embajadores: Prehackathon', activity: 'Prehackathon', span: 'span-2x2'  },
-                { src: '../../assets/images/galeria/g2025/P6.jpg', alt: 'Programa de Embajadores: Prehackathon', caption: 'Programa de Embajadores: Prehackathon', activity: 'Prehackathon', span: 'span-2x2'  },
-                { src: '../../assets/images/galeria/g2025/P7.jpg', alt: 'Programa de Embajadores: Prehackathon', caption: 'Programa de Embajadores: Prehackathon', activity: 'Prehackathon', span: 'span-2x2'  },
-                { src: '../../assets/images/galeria/g2025/P8.jpg', alt: 'Programa de Embajadores: Prehackathon', caption: 'Programa de Embajadores: Prehackathon', activity: 'Prehackathon', span: 'span-2x2'  },
-                { src: '../../assets/images/galeria/g2025/P9.jpg', alt: 'Programa de Embajadores: Prehackathon', caption: 'Programa de Embajadores: Prehackathon', activity: 'Prehackathon', span: 'span-2x2'  },
-                { src: '../../assets/images/galeria/g2025/P10.jpg', alt: 'Programa de Embajadores: Prehackathon', caption: 'Programa de Embajadores: Prehackathon', activity: 'Prehackathon', span: 'span-2x2'  },
-                { src: '../../assets/images/galeria/g2025/P11.jpg', alt: 'Programa de Embajadores: Prehackathon', caption: 'Programa de Embajadores: Prehackathon', activity: 'Prehackathon', span: 'span-2x2'  },
-                { src: '../../assets/images/galeria/g2025/P12.jpg', alt: 'Programa de Embajadores: Prehackathon', caption: 'Programa de Embajadores: Prehackathon', activity: 'Prehackathon', span: 'span-2x2'  },
-                { src: '../../assets/images/galeria/g2025/P13.jpg', alt: 'Programa de Embajadores: Prehackathon', caption: 'Programa de Embajadores: Prehackathon', activity: 'Prehackathon', span: 'span-2x2'  },
-                { src: '../../assets/images/galeria/g2025/P14.jpg', alt: 'Programa de Embajadores: Prehackathon', caption: 'Programa de Embajadores: Prehackathon', activity: 'Prehackathon', span: 'span-2x2'  },
-                { src: '../../assets/images/galeria/g2025/P15.jpg', alt: 'Programa de Embajadores: Prehackathon', caption: 'Programa de Embajadores: Prehackathon', activity: 'Prehackathon', span: 'span-2x2'  },
-                { src: '../../assets/images/galeria/g2025/P16.jpg', alt: 'Programa de Embajadores: Prehackathon', caption: 'Programa de Embajadores: Prehackathon', activity: 'Prehackathon', span: 'span-2x2'  },
-                { src: '../../assets/images/galeria/g2025/atlas1.jpeg', alt: 'Atlas X', caption: 'Atlas X: Hidrocohetes', activity: 'Hidrocohetes' },
-                { src: '../../assets/images/galeria/g2025/atlas2.jpeg', alt: 'Atlas X', caption: 'Atlas X: Hidrocohetes', activity: 'Hidrocohetes' },
-                { src: '../../assets/images/galeria/g2025/atlas3.jpeg', alt: 'Atlas X', caption: 'Atlas X: Hidrocohetes', activity: 'Hidrocohetes' },
-                { src: '../../assets/images/galeria/g2025/atlas4.jpeg', alt: 'Atlas X', caption: 'Atlas X: Hidrocohetes', activity: 'Hidrocohetes' },
-                { src: '../../assets/images/galeria/g2025/atlas5.jpeg', alt: 'Atlas X', caption: 'Atlas X: Hidrocohetes', activity: 'Hidrocohetes' },
-                { src: '../../assets/images/galeria/g2025/atlas6.jpeg', alt: 'Atlas X', caption: 'Atlas X: Hidrocohetes', activity: 'Hidrocohetes' },
-                { src: '../../assets/images/galeria/g2025/atlas7.jpeg', alt: 'Atlas X', caption: 'Atlas X: Hidrocohetes', activity: 'Hidrocohetes' },
-                { src: '../../assets/images/galeria/g2025/atlas8.jpeg', alt: 'Atlas X', caption: 'Atlas X: Hidrocohetes', activity: 'Hidrocohetes' },
-                { src: '../../assets/images/galeria/g2025/atlas9.jpeg', alt: 'Atlas X', caption: 'Atlas X: Hidrocohetes', activity: 'Hidrocohetes' },
-                { src: '../../assets/images/galeria/g2025/atlas10.jpeg', alt: 'Atlas X', caption: 'Atlas X: Hidrocohetes', activity: 'Hidrocohetes' },
-                { src: '../../assets/images/galeria/g2025/flylejon1.jpeg', alt: 'Flylejon', caption: 'Flylejon: Hidrocohetes', activity: 'Hidrocohetes 2' },
-                { src: '../../assets/images/galeria/g2025/flylejon2.jpeg', alt: 'Flylejon', caption: 'Flylejon: Hidrocohetes', activity: 'Hidrocohetes 2' },
-                { src: '../../assets/images/galeria/g2025/flylejon3.jpeg', alt: 'Flylejon', caption: 'Flylejon: Hidrocohetes', activity: 'Hidrocohetes 2' },
-                { src: '../../assets/images/galeria/g2025/flylejon4.jpeg', alt: 'Flylejon', caption: 'Flylejon: Hidrocohetes', activity: 'Hidrocohetes 2' },
-                { src: '../../assets/images/galeria/g2025/flylejon5.jpeg', alt: 'Flylejon', caption: 'Flylejon: Hidrocohetes', activity: 'Hidrocohetes 2' },
-                { src: '../../assets/images/galeria/g2025/flylejon6.jpeg', alt: 'Flylejon', caption: 'Flylejon: Hidrocohetes', activity: 'Hidrocohetes 2' },
-                { src: '../../assets/images/galeria/g2025/Tulcan1.jpeg', alt: 'Tulcan-Sat', caption: 'Tulcan-Sat', activity: 'Cansats' },
-                { src: '../../assets/images/galeria/g2025/Tulcan2.jpeg', alt: 'Tulcan-Sat', caption: 'Tulcan-Sat', activity: 'Cansats' },
-                { src: '../../assets/images/galeria/g2025/Tulcan3.jpeg', alt: 'Tulcan-Sat', caption: 'Tulcan-Sat', activity: 'Cansats' },
-                { src: '../../assets/images/galeria/g2025/Tulcan4.jpeg', alt: 'Tulcan-Sat', caption: 'Tulcan-Sat', activity: 'Cansats' },
-                { src: '../../assets/images/galeria/g2025/Tulcan5.jpeg', alt: 'Tulcan-Sat', caption: 'Tulcan-Sat', activity: 'Cansats' },
-                { src: '../../assets/images/galeria/g2025/Tulcan6.jpeg', alt: 'Tulcan-Sat', caption: 'Tulcan-Sat', activity: 'Cansats' },
-                { src: '../../assets/images/galeria/g2025/Tulcan7.jpeg', alt: 'Tulcan-Sat', caption: 'Tulcan-Sat', activity: 'Cansats' },
-                { src: '../../assets/images/galeria/g2025/Tulcan8.jpeg', alt: 'Tulcan-Sat', caption: 'Tulcan-Sat', activity: 'Cansats' },
-                { src: '../../assets/images/galeria/g2025/Tulcan9.jpeg', alt: 'Tulcan-Sat', caption: 'Tulcan-Sat', activity: 'Cansats' },
-                { src: '../../assets/images/galeria/g2025/Tulcan10.jpeg', alt: 'Tulcan-Sat', caption: 'Tulcan-Sat', activity: 'Cansats' },
-                { src: '../../assets/images/galeria/g2025/Tulcan11.jpeg', alt: 'Tulcan-Sat', caption: 'Tulcan-Sat', activity: 'Cansats' },
-                { src: '../../assets/images/galeria/g2025/Tulcan12.jpeg', alt: 'Tulcan-Sat', caption: 'Tulcan-Sat', activity: 'Cansats' },
-                { src: '../../assets/images/galeria/g2025/Tulcan13.jpeg', alt: 'Tulcan-Sat', caption: 'Tulcan-Sat', activity: 'Cansats' },
-                { src: '../../assets/images/galeria/g2025/Tulcan14.jpeg', alt: 'Tulcan-Sat', caption: 'Tulcan-Sat', activity: 'Cansats' },
-                { src: '../../assets/images/galeria/g2025/Air1.jpeg', alt: 'Air-Sat', caption: 'Air-Sat', activity: 'Cansats1' },
-                { src: '../../assets/images/galeria/g2025/Air2.jpeg', alt: 'Air-Sat', caption: 'Air-Sat', activity: 'Cansats1' },
-                { src: '../../assets/images/galeria/g2025/Air3.jpeg', alt: 'Air-Sat', caption: 'Air-Sat', activity: 'Cansats1' },
-                { src: '../../assets/images/galeria/g2025/Astrek1.jpeg', alt: 'Astrek', caption: 'Astrek', activity: 'Rovers' },
-                { src: '../../assets/images/galeria/g2025/Astrek2.jpeg', alt: 'Astrek', caption: 'Astrek', activity: 'Rovers' },
-                { src: '../../assets/images/galeria/g2025/Astrek3.jpeg', alt: 'Astrek', caption: 'Astrek', activity: 'Rovers' },
-                { src: '../../assets/images/galeria/g2025/sia1.jpeg', alt: 'Actividad AESS 2025', caption: 'Reconocimiento', activity: 'actividades'},
-                { src: '../../assets/images/galeria/g2025/sia2.jpeg', alt: 'Actividad AESS 2025', caption: 'Reconocimiento', activity: 'actividades' },
-                { src: '../../assets/images/galeria/g2025/sia3.jpeg', alt: 'Actividad AESS 2025', caption: 'Reconocimiento', activity: 'actividades' },
-                { src: '../../assets/images/galeria/g2025/congreso1.jpeg', alt: 'Congreso Nacional de Ingenería Física', caption: 'Congreso Nacional de Ingeniería Física', activity: 'Congreso', span: 'span-2x2' },
-                { src: '../../assets/images/galeria/g2025/congreso2.jpeg', alt: 'Congreso Nacional de Ingenería Física', caption: 'Congreso Nacional de Ingeniería Física', activity: 'Congreso', span: 'span-2x2' },
-                { src: '../../assets/images/galeria/g2025/congreso3.jpeg', alt: 'Congreso Nacional de Ingenería Física', caption: 'Congreso Nacional de Ingeniería Física', activity: 'Congreso', span: 'span-2x2' },
-                { src: '../../assets/images/galeria/g2025/congreso4.jpeg', alt: 'Congreso Nacional de Ingenería Física', caption: 'Congreso Nacional de Ingeniería Física', activity: 'Congreso', span: 'span-2x2' },
-                { src: '../../assets/images/galeria/g2025/congreso5.jpeg', alt: 'Congreso Nacional de Ingenería Física', caption: 'Congreso Nacional de Ingeniería Física', activity: 'Congreso', span: 'span-2x2' },
-                { src: '../../assets/images/galeria/g2025/casa1.jpeg', alt: 'Casa abierta Ingeniería Física', caption: 'Casa abierta Ingeniería Física', activity: 'Casa', span: 'span-2x1' },
-                { src: '../../assets/images/galeria/g2025/casa2.jpeg', alt: 'Casa abierta Ingeniería Física', caption: 'Casa abierta Ingeniería Física', activity: 'Casa', span: 'span-2x1' },
-                { src: '../../assets/images/galeria/g2025/casa3.jpeg', alt: 'Casa abierta Ingeniería Física', caption: 'Casa abierta Ingeniería Física', activity: 'Casa', span: 'span-2x1' },
-                { src: '../../assets/images/galeria/g2025/parque1.jpeg', alt: 'Ciencia al parque', caption: 'Ciencia al parque', activity: 'Parque', span: 'span-2x1' },
-                { src: '../../assets/images/galeria/g2025/parque2.jpeg', alt: 'Ciencia al parque', caption: 'Ciencia al parque', activity: 'Parque', span: 'span-2x1' }]
+    <script id="memory-gallery-data" type="text/plain">
+[
+    { src: '../../assets/images/galeria/g2025/e1.jpeg', alt: 'Explorando el Futuro 202X', caption: 'Explorando el Futuro 202X: Foto de Evento', activity: 'Evento Explorando', span: 'span-2x2' },
+    { src: '../../assets/images/galeria/g2025/e2.jpeg', alt: 'Explorando el Futuro 202X', caption: 'Explorando el Futuro 202X: Foto de Evento', activity: 'Evento Explorando', span: 'span-2x2' },
+    { src: '../../assets/images/galeria/g2025/e3.jpeg', alt: 'Explorando el Futuro 202X', caption: 'Explorando el Futuro 202X: Foto de Evento', activity: 'Evento Explorando', span: 'span-2x2' },
+    { src: '../../assets/images/galeria/g2025/e4.jpeg', alt: 'Explorando el Futuro 202X', caption: 'Explorando el Futuro 202X: Foto de Evento', activity: 'Evento Explorando', span: 'span-2x2' },
+    { src: '../../assets/images/galeria/g2025/e5.jpeg', alt: 'Explorando el Futuro 202X', caption: 'Explorando el Futuro 202X: Ponencia Magistral Liseth Campo', activity: 'Evento Explorando', span: 'span-2x2' },
+    { src: '../../assets/images/galeria/g2025/e6.jpeg', alt: 'Explorando el Futuro 202X', caption: 'Explorando el Futuro 202X: Ponencia Magistral Giovanna Ramirez', activity: 'Evento Explorando', span: 'span-2x2' },
+    { src: '../../assets/images/galeria/g2025/e7.jpeg', alt: 'Explorando el Futuro 202X', caption: 'Explorando el Futuro 202X: Ponencia Magistral Vince Socci', activity: 'Evento Explorando', span: 'span-2x2' },
+    { src: '../../assets/images/galeria/g2025/e8.jpeg', alt: 'Explorando el Futuro 202X', caption: 'Explorando el Futuro 202X: Ponencia Magistral', activity: 'Evento Explorando', span: 'span-2x2' },
+    { src: '../../assets/images/galeria/g2025/e9.jpeg', alt: 'Explorando el Futuro 202X', caption: 'Explorando el Futuro 202X: Ponencia Magistral Estefano Coraluppi', activity: 'Evento Explorando', span: 'span-2x2' },
+    { src: '../../assets/images/galeria/g2025/e10.jpeg', alt: 'Explorando el Futuro 202X', caption: 'Explorando el Futuro 202X', activity: 'Evento Explorando', span: 'span-2x2' },
+    { src: '../../assets/images/galeria/g2025/e11.jpeg', alt: 'Explorando el Futuro 202X', caption: 'Explorando el Futuro 202X', activity: 'Evento Explorando', span: 'span-2x2' },
+    { src: '../../assets/images/galeria/g2025/e12.jpeg', alt: 'Explorando el Futuro 202X', caption: 'Explorando el Futuro 202X', activity: 'Evento Explorando', span: 'span-2x2' },
+    { src: '../../assets/images/galeria/g2025/e13.jpeg', alt: 'Explorando el Futuro 202X', caption: 'Explorando el Futuro 202X', activity: 'Evento Explorando', span: 'span-2x2' },
+    { src: '../../assets/images/galeria/g2025/e14.jpeg', alt: 'Explorando el Futuro 202X', caption: 'Explorando el Futuro 202X', activity: 'Evento Explorando', span: 'span-2x2' },
+    { src: '../../assets/images/galeria/g2025/e15.jpeg', alt: 'Explorando el Futuro 202X', caption: 'Explorando el Futuro 202X', activity: 'Evento Explorando', span: 'span-2x2' },
+    { src: '../../assets/images/galeria/g2025/e16.jpeg', alt: 'Explorando el Futuro 202X', caption: 'Explorando el Futuro 202X', activity: 'Evento Explorando', span: 'span-2x2' },
+    { src: '../../assets/images/galeria/g2025/e17.jpeg', alt: 'Explorando el Futuro 202X', caption: 'Explorando el Futuro 202X', activity: 'Evento Explorando', span: 'span-2x2' },
+    { src: '../../assets/images/galeria/g2025/e18.jpeg', alt: 'Explorando el Futuro 202X', caption: 'Explorando el Futuro 202X', activity: 'Evento Explorando', span: 'span-2x2' },
+    { src: '../../assets/images/galeria/g2025/e19.jpeg', alt: 'Explorando el Futuro 202X', caption: 'Explorando el Futuro 202X', activity: 'Evento Explorando', span: 'span-2x2' },
+    { src: '../../assets/images/galeria/g2025/e20.jpeg', alt: 'Explorando el Futuro 202X', caption: 'Explorando el Futuro 202X', activity: 'Evento Explorando', span: 'span-2x2' },
+    { src: '../../assets/images/galeria/g2025/e21.jpeg', alt: 'Explorando el Futuro 202X', caption: 'Explorando el Futuro 202X', activity: 'Evento Explorando', span: 'span-2x2' },
+    { src: '../../assets/images/galeria/g2025/e22.jpeg', alt: 'Explorando el Futuro 202X', caption: 'Explorando el Futuro 202X', activity: 'Evento Explorando', span: 'span-2x2' },
+    { src: '../../assets/images/galeria/g2025/e23.jpeg', alt: 'Explorando el Futuro 202X', caption: 'Explorando el Futuro 202X', activity: 'Evento Explorando', span: 'span-2x2' },
+    { src: '../../assets/images/galeria/g2025/e24.jpeg', alt: 'Explorando el Futuro 202X', caption: 'Explorando el Futuro 202X', activity: 'Evento Explorando', span: 'span-2x2' },
+    { src: '../../assets/images/galeria/g2025/e25.jpeg', alt: 'Explorando el Futuro 202X', caption: 'Explorando el Futuro 202X', activity: 'Evento Explorando', span: 'span-2x2' },
+    { src: '../../assets/images/galeria/g2025/m1.jpeg', alt: 'Día de la mujer y la niña en la Ciencia', caption: 'Día de la mujer y la niña en la Ciencia', activity: 'Conmemoración' },
+    { src: '../../assets/images/galeria/g2025/m2.jpeg', alt: 'Día de la mujer y la niña en la Ciencia', caption: 'Día de la mujer y la niña en la Ciencia', activity: 'Conmemoración' },
+    { src: '../../assets/images/galeria/g2025/m3.jpeg', alt: 'Día de la mujer y la niña en la Ciencia', caption: 'Día de la mujer y la niña en la Ciencia', activity: 'Conmemoración' },
+    { src: '../../assets/images/galeria/g2025/m4.jpeg', alt: 'Día de la mujer y la niña en la Ciencia', caption: 'Día de la mujer y la niña en la Ciencia', activity: 'Conmemoración' },
+    { src: '../../assets/images/galeria/g2025/s1.jpeg', alt: 'Revisión de proyectos 30 de Abril', caption: 'Revisión de proyectos 30 de Abril', activity: 'Proyectos' },
+    { src: '../../assets/images/galeria/g2025/s2.jpeg', alt: 'Revisión de proyectos 30 de Abril', caption: 'Revisión de proyectos 30 de Abril', activity: 'Proyectos' },
+    { src: '../../assets/images/galeria/g2025/s3.jpeg', alt: 'Revisión de proyectos 30 de Abril', caption: 'Revisión de proyectos 30 de Abril', activity: 'Proyectos' },
+    { src: '../../assets/images/galeria/g2025/s4.jpeg', alt: 'Revisión de proyectos 30 de Abril', caption: 'Revisión de proyectos 30 de Abril', activity: 'Proyectos' },
+    { src: '../../assets/images/galeria/g2025/s6.jpeg', alt: 'Revisión de proyectos 30 de Abril', caption: 'Revisión de proyectos 30 de Abril', activity: 'Proyectos' },
+    { src: '../../assets/images/galeria/g2025/s7.jpeg', alt: 'Revisión de proyectos 30 de Abril', caption: 'Revisión de proyectos 30 de Abril', activity: 'Proyectos' },
+    { src: '../../assets/images/galeria/g2025/s8.jpeg', alt: 'Revisión de proyectos 30 de Abril', caption: 'Revisión de proyectos 30 de Abril', activity: 'Proyectos' },
+    { src: '../../assets/images/galeria/g2025/s9.jpeg', alt: 'Revisión de proyectos 30 de Abril', caption: 'Revisión de proyectos 30 de Abril', activity: 'Proyectos' },
+    { src: '../../assets/images/galeria/g2025/s10.jpeg', alt: 'Revisión de proyectos 30 de Abril', caption: 'Revisión de proyectos 30 de Abril', activity: 'Proyectos' },
+    { src: '../../assets/images/galeria/g2025/s11.jpeg', alt: 'Revisión de proyectos 30 de Abril', caption: 'Revisión de proyectos 30 de Abril', activity: 'Proyectos' },
+    { src: '../../assets/images/galeria/g2025/s12.jpeg', alt: 'Revisión de proyectos 30 de Abril', caption: 'Revisión de proyectos 30 de Abril', activity: 'Proyectos' },
+    { src: '../../assets/images/galeria/g2025/s13.jpeg', alt: 'Revisión de proyectos 30 de Abril', caption: 'Revisión de proyectos 30 de Abril', activity: 'Proyectos' },
+    { src: '../../assets/images/galeria/g2025/s14.jpeg', alt: 'Revisión de proyectos 30 de Abril', caption: 'Revisión de proyectos 30 de Abril', activity: 'Proyectos' },
+    { src: '../../assets/images/galeria/g2025/s15.jpeg', alt: 'Revisión de proyectos 30 de Abril', caption: 'Revisión de proyectos 30 de Abril', activity: 'Proyectos' },
+    { src: '../../assets/images/galeria/g2025/s16.jpeg', alt: 'Revisión de proyectos 30 de Abril', caption: 'Revisión de proyectos 30 de Abril', activity: 'Proyectos' },
+    { src: '../../assets/images/galeria/g2025/p1.jpg', alt: 'Programa de Embajadores: Prehackathon', caption: 'Programa de Embajadores: Prehackathon', activity: 'Prehackathon', span: 'span-2x2' },
+    { src: '../../assets/images/galeria/g2025/p2.jpeg', alt: 'Programa de Embajadores: Prehackathon', caption: 'Programa de Embajadores: Prehackathon', activity: 'Prehackathon', span: 'span-2x2' },
+    { src: '../../assets/images/galeria/g2025/p3.jpg', alt: 'Programa de Embajadores: Prehackathon', caption: 'Programa de Embajadores: Prehackathon', activity: 'Prehackathon', span: 'span-2x2' },
+    { src: '../../assets/images/galeria/g2025/p4.jpg', alt: 'Programa de Embajadores: Prehackathon', caption: 'Programa de Embajadores: Prehackathon', activity: 'Prehackathon', span: 'span-2x2' },
+    { src: '../../assets/images/galeria/g2025/p5.jpg', alt: 'Programa de Embajadores: Prehackathon', caption: 'Programa de Embajadores: Prehackathon', activity: 'Prehackathon', span: 'span-2x2' },
+    { src: '../../assets/images/galeria/g2025/p6.jpg', alt: 'Programa de Embajadores: Prehackathon', caption: 'Programa de Embajadores: Prehackathon', activity: 'Prehackathon', span: 'span-2x2' },
+    { src: '../../assets/images/galeria/g2025/p7.jpg', alt: 'Programa de Embajadores: Prehackathon', caption: 'Programa de Embajadores: Prehackathon', activity: 'Prehackathon', span: 'span-2x2' },
+    { src: '../../assets/images/galeria/g2025/p8.jpg', alt: 'Programa de Embajadores: Prehackathon', caption: 'Programa de Embajadores: Prehackathon', activity: 'Prehackathon', span: 'span-2x2' },
+    { src: '../../assets/images/galeria/g2025/p9.jpg', alt: 'Programa de Embajadores: Prehackathon', caption: 'Programa de Embajadores: Prehackathon', activity: 'Prehackathon', span: 'span-2x2' },
+    { src: '../../assets/images/galeria/g2025/p10.jpg', alt: 'Programa de Embajadores: Prehackathon', caption: 'Programa de Embajadores: Prehackathon', activity: 'Prehackathon', span: 'span-2x2' },
+    { src: '../../assets/images/galeria/g2025/p11.jpg', alt: 'Programa de Embajadores: Prehackathon', caption: 'Programa de Embajadores: Prehackathon', activity: 'Prehackathon', span: 'span-2x2' },
+    { src: '../../assets/images/galeria/g2025/p12.jpg', alt: 'Programa de Embajadores: Prehackathon', caption: 'Programa de Embajadores: Prehackathon', activity: 'Prehackathon', span: 'span-2x2' },
+    { src: '../../assets/images/galeria/g2025/p13.jpg', alt: 'Programa de Embajadores: Prehackathon', caption: 'Programa de Embajadores: Prehackathon', activity: 'Prehackathon', span: 'span-2x2' },
+    { src: '../../assets/images/galeria/g2025/p14.jpg', alt: 'Programa de Embajadores: Prehackathon', caption: 'Programa de Embajadores: Prehackathon', activity: 'Prehackathon', span: 'span-2x2' },
+    { src: '../../assets/images/galeria/g2025/p15.jpg', alt: 'Programa de Embajadores: Prehackathon', caption: 'Programa de Embajadores: Prehackathon', activity: 'Prehackathon', span: 'span-2x2' },
+    { src: '../../assets/images/galeria/g2025/p16.jpg', alt: 'Programa de Embajadores: Prehackathon', caption: 'Programa de Embajadores: Prehackathon', activity: 'Prehackathon', span: 'span-2x2' },
+    { src: '../../assets/images/galeria/g2025/atlas1.jpeg', alt: 'Atlas X', caption: 'Atlas X: Hidrocohetes', activity: 'Hidrocohetes' },
+    { src: '../../assets/images/galeria/g2025/atlas2.jpeg', alt: 'Atlas X', caption: 'Atlas X: Hidrocohetes', activity: 'Hidrocohetes' },
+    { src: '../../assets/images/galeria/g2025/atlas3.jpeg', alt: 'Atlas X', caption: 'Atlas X: Hidrocohetes', activity: 'Hidrocohetes' },
+    { src: '../../assets/images/galeria/g2025/atlas4.jpeg', alt: 'Atlas X', caption: 'Atlas X: Hidrocohetes', activity: 'Hidrocohetes' },
+    { src: '../../assets/images/galeria/g2025/atlas5.jpeg', alt: 'Atlas X', caption: 'Atlas X: Hidrocohetes', activity: 'Hidrocohetes' },
+    { src: '../../assets/images/galeria/g2025/atlas6.jpeg', alt: 'Atlas X', caption: 'Atlas X: Hidrocohetes', activity: 'Hidrocohetes' },
+    { src: '../../assets/images/galeria/g2025/atlas7.jpeg', alt: 'Atlas X', caption: 'Atlas X: Hidrocohetes', activity: 'Hidrocohetes' },
+    { src: '../../assets/images/galeria/g2025/atlas8.jpeg', alt: 'Atlas X', caption: 'Atlas X: Hidrocohetes', activity: 'Hidrocohetes' },
+    { src: '../../assets/images/galeria/g2025/atlas9.jpeg', alt: 'Atlas X', caption: 'Atlas X: Hidrocohetes', activity: 'Hidrocohetes' },
+    { src: '../../assets/images/galeria/g2025/atlas10.jpeg', alt: 'Atlas X', caption: 'Atlas X: Hidrocohetes', activity: 'Hidrocohetes' },
+    { src: '../../assets/images/galeria/g2025/flylejon1.jpeg', alt: 'Flylejon', caption: 'Flylejon: Hidrocohetes', activity: 'Hidrocohetes 2' },
+    { src: '../../assets/images/galeria/g2025/flylejon2.jpeg', alt: 'Flylejon', caption: 'Flylejon: Hidrocohetes', activity: 'Hidrocohetes 2' },
+    { src: '../../assets/images/galeria/g2025/flylejon3.jpeg', alt: 'Flylejon', caption: 'Flylejon: Hidrocohetes', activity: 'Hidrocohetes 2' },
+    { src: '../../assets/images/galeria/g2025/flylejon4.jpeg', alt: 'Flylejon', caption: 'Flylejon: Hidrocohetes', activity: 'Hidrocohetes 2' },
+    { src: '../../assets/images/galeria/g2025/flylejon5.jpeg', alt: 'Flylejon', caption: 'Flylejon: Hidrocohetes', activity: 'Hidrocohetes 2' },
+    { src: '../../assets/images/galeria/g2025/flylejon6.jpeg', alt: 'Flylejon', caption: 'Flylejon: Hidrocohetes', activity: 'Hidrocohetes 2' },
+    { src: '../../assets/images/galeria/g2025/tulcan1.jpeg', alt: 'Tulcan-Sat', caption: 'Tulcan-Sat', activity: 'Cansats' },
+    { src: '../../assets/images/galeria/g2025/tulcan2.jpeg', alt: 'Tulcan-Sat', caption: 'Tulcan-Sat', activity: 'Cansats' },
+    { src: '../../assets/images/galeria/g2025/tulcan3.jpeg', alt: 'Tulcan-Sat', caption: 'Tulcan-Sat', activity: 'Cansats' },
+    { src: '../../assets/images/galeria/g2025/tulcan4.jpeg', alt: 'Tulcan-Sat', caption: 'Tulcan-Sat', activity: 'Cansats' },
+    { src: '../../assets/images/galeria/g2025/tulcan5.jpeg', alt: 'Tulcan-Sat', caption: 'Tulcan-Sat', activity: 'Cansats' },
+    { src: '../../assets/images/galeria/g2025/tulcan6.jpeg', alt: 'Tulcan-Sat', caption: 'Tulcan-Sat', activity: 'Cansats' },
+    { src: '../../assets/images/galeria/g2025/tulcan7.jpeg', alt: 'Tulcan-Sat', caption: 'Tulcan-Sat', activity: 'Cansats' },
+    { src: '../../assets/images/galeria/g2025/tulcan8.jpeg', alt: 'Tulcan-Sat', caption: 'Tulcan-Sat', activity: 'Cansats' },
+    { src: '../../assets/images/galeria/g2025/tulcan9.jpeg', alt: 'Tulcan-Sat', caption: 'Tulcan-Sat', activity: 'Cansats' },
+    { src: '../../assets/images/galeria/g2025/tulcan10.jpeg', alt: 'Tulcan-Sat', caption: 'Tulcan-Sat', activity: 'Cansats' },
+    { src: '../../assets/images/galeria/g2025/tulcan11.jpeg', alt: 'Tulcan-Sat', caption: 'Tulcan-Sat', activity: 'Cansats' },
+    { src: '../../assets/images/galeria/g2025/tulcan12.jpeg', alt: 'Tulcan-Sat', caption: 'Tulcan-Sat', activity: 'Cansats' },
+    { src: '../../assets/images/galeria/g2025/tulcan13.jpeg', alt: 'Tulcan-Sat', caption: 'Tulcan-Sat', activity: 'Cansats' },
+    { src: '../../assets/images/galeria/g2025/tulcan14.jpeg', alt: 'Tulcan-Sat', caption: 'Tulcan-Sat', activity: 'Cansats' },
+    { src: '../../assets/images/galeria/g2025/air1.jpeg', alt: 'Air-Sat', caption: 'Air-Sat', activity: 'Cansats1' },
+    { src: '../../assets/images/galeria/g2025/air2.jpeg', alt: 'Air-Sat', caption: 'Air-Sat', activity: 'Cansats1' },
+    { src: '../../assets/images/galeria/g2025/air3.jpeg', alt: 'Air-Sat', caption: 'Air-Sat', activity: 'Cansats1' },
+    { src: '../../assets/images/galeria/g2025/astrek1.jpeg', alt: 'Astrek', caption: 'Astrek', activity: 'Rovers' },
+    { src: '../../assets/images/galeria/g2025/astrek2.jpeg', alt: 'Astrek', caption: 'Astrek', activity: 'Rovers' },
+    { src: '../../assets/images/galeria/g2025/astrek3.jpeg', alt: 'Astrek', caption: 'Astrek', activity: 'Rovers' },
+    { src: '../../assets/images/galeria/g2025/sia1.jpeg', alt: 'Actividad AESS 2025', caption: 'Reconocimiento', activity: 'actividades' },
+    { src: '../../assets/images/galeria/g2025/sia2.jpeg', alt: 'Actividad AESS 2025', caption: 'Reconocimiento', activity: 'actividades' },
+    { src: '../../assets/images/galeria/g2025/sia3.jpeg', alt: 'Actividad AESS 2025', caption: 'Reconocimiento', activity: 'actividades' },
+    { src: '../../assets/images/galeria/g2025/congreso1.jpeg', alt: 'Congreso Nacional de Ingeniería Física', caption: 'Congreso Nacional de Ingeniería Física', activity: 'Congreso', span: 'span-2x2' },
+    { src: '../../assets/images/galeria/g2025/congreso2.jpeg', alt: 'Congreso Nacional de Ingeniería Física', caption: 'Congreso Nacional de Ingeniería Física', activity: 'Congreso', span: 'span-2x2' },
+    { src: '../../assets/images/galeria/g2025/congreso3.jpeg', alt: 'Congreso Nacional de Ingeniería Física', caption: 'Congreso Nacional de Ingeniería Física', activity: 'Congreso', span: 'span-2x2' },
+    { src: '../../assets/images/galeria/g2025/congreso4.jpeg', alt: 'Congreso Nacional de Ingeniería Física', caption: 'Congreso Nacional de Ingeniería Física', activity: 'Congreso', span: 'span-2x2' },
+    { src: '../../assets/images/galeria/g2025/congreso5.jpeg', alt: 'Congreso Nacional de Ingeniería Física', caption: 'Congreso Nacional de Ingeniería Física', activity: 'Congreso', span: 'span-2x2' },
+    { src: '../../assets/images/galeria/g2025/casa1.jpeg', alt: 'Casa abierta Ingeniería Física', caption: 'Casa abierta Ingeniería Física', activity: 'Casa', span: 'span-2x1' },
+    { src: '../../assets/images/galeria/g2025/casa2.jpeg', alt: 'Casa abierta Ingeniería Física', caption: 'Casa abierta Ingeniería Física', activity: 'Casa', span: 'span-2x1' },
+    { src: '../../assets/images/galeria/g2025/casa3.jpeg', alt: 'Casa abierta Ingeniería Física', caption: 'Casa abierta Ingeniería Física', activity: 'Casa', span: 'span-2x1' },
+    { src: '../../assets/images/galeria/g2025/parque1.jpeg', alt: 'Ciencia al parque', caption: 'Ciencia al parque', activity: 'Parque', span: 'span-2x1' },
+    { src: '../../assets/images/galeria/g2025/parque2.jpeg', alt: 'Ciencia al parque', caption: 'Ciencia al parque', activity: 'Parque', span: 'span-2x1' }
+]
     </script>
     <script src="../../shared/scripts/memory-gallery.js"></script>
-
-    
-
     <script src="../../shared/scripts/nav.js"></script>
     <footer id="site-footer" data-root="../"></footer>
     <script src="../../shared/scripts/footer.js"></script>
