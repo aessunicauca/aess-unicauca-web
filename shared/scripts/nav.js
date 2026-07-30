@@ -147,3 +147,71 @@
   window.addEventListener('load', scheduleInitialResets, { once: true });
   window.addEventListener('pageshow', scheduleInitialResets);
 })();
+
+/* ==========================================================
+   MASCOTA FLOTANTE (Scroll Buddy)
+   Un rover que se desplaza horizontalmente según cuánto has
+   bajado en la página, y "camina" de lado (como cangrejo)
+   mientras haces scroll.
+   ========================================================== */
+(function () {
+  const buddy = document.createElement('div');
+  buddy.id = 'scroll-buddy';
+  buddy.setAttribute('aria-hidden', 'true');
+  buddy.innerHTML = `
+    <svg viewBox="0 0 120 90">
+      <g class="rover-leg rover-leg--l">
+        <line x1="38" y1="50" x2="20" y2="72"/>
+        <circle cx="18" cy="76" r="9"/>
+      </g>
+      <g class="rover-leg rover-leg--r">
+        <line x1="82" y1="50" x2="100" y2="72"/>
+        <circle cx="102" cy="76" r="9"/>
+      </g>
+      <rect class="rover-body" x="30" y="34" width="60" height="26" rx="4"/>
+      <circle class="rover-dot" cx="45" cy="47" r="4"/>
+      <circle class="rover-dot" cx="60" cy="47" r="4"/>
+      <circle class="rover-dot" cx="75" cy="47" r="4"/>
+      <rect class="rover-mast" x="55" y="14" width="4" height="20"/>
+      <rect class="rover-body" x="46" y="4" width="28" height="12" rx="2"/>
+      <circle class="rover-eye" cx="66" cy="10" r="3"/>
+    </svg>
+  `;
+  document.body.appendChild(buddy);
+
+  const SIDEBAR_WIDTH = 220;
+  const MARGIN = 24;
+  let hideTimer = null;
+  let lastScrollTop = window.scrollY;
+
+  function isMobile() {
+    return window.matchMedia('(max-width:768px)').matches;
+  }
+
+  function updatePosition() {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = docHeight > 0 ? scrollTop / docHeight : 0;
+
+    const leftBound = isMobile() ? MARGIN : SIDEBAR_WIDTH + MARGIN;
+    const rightBound = window.innerWidth - MARGIN - 40;
+    const left = leftBound + progress * Math.max(0, rightBound - leftBound);
+
+    buddy.style.left = `${left}px`;
+    return scrollTop;
+  }
+
+  function onScroll() {
+    const scrollTop = updatePosition();
+    buddy.classList.toggle('facing-left', scrollTop < lastScrollTop);
+    lastScrollTop = scrollTop;
+
+    buddy.classList.add('walking');
+    if (hideTimer) clearTimeout(hideTimer);
+    hideTimer = setTimeout(() => buddy.classList.remove('walking'), 400);
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', updatePosition);
+  updatePosition();
+})();

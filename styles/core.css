@@ -2982,3 +2982,89 @@ nav{
     }
 
 }
+
+/* ==========================================================
+   MASCOTA FLOTANTE (Scroll Buddy)
+   ========================================================== */
+
+#scroll-buddy{
+    position:fixed;
+    bottom:18px;
+    left:240px;
+    z-index:200;
+    width:56px;
+    pointer-events:none;
+    user-select:none;
+    transition:left 0.35s ease-out;
+    filter:drop-shadow(0 4px 8px rgba(0,0,0,0.35));
+}
+
+#scroll-buddy svg{
+    display:block;
+    width:100%;
+    height:auto;
+    transition:transform 0.35s ease-out;
+}
+
+#scroll-buddy.facing-left svg{
+    transform:scaleX(-1);
+}
+
+#scroll-buddy .rover-body{
+    fill:#c7c9d1;
+    stroke:#050510;
+    stroke-width:1.5;
+}
+
+#scroll-buddy .rover-dot,
+#scroll-buddy .rover-eye{
+    fill:#d14b2c;
+}
+
+#scroll-buddy .rover-mast{
+    fill:#8b8d96;
+}
+
+#scroll-buddy .rover-leg line{
+    stroke:#8b8d96;
+    stroke-width:5;
+    stroke-linecap:round;
+}
+
+#scroll-buddy .rover-leg circle{
+    fill:#050510;
+}
+
+#scroll-buddy .rover-leg{
+    transform-box:fill-box;
+    transform-origin:center;
+}
+
+#scroll-buddy.walking .rover-leg--l{
+    animation:rover-leg-swing 0.4s ease-in-out infinite;
+}
+
+#scroll-buddy.walking .rover-leg--r{
+    animation:rover-leg-swing 0.4s ease-in-out infinite reverse;
+}
+
+#scroll-buddy.walking svg{
+    animation:rover-bob 0.4s ease-in-out infinite;
+}
+
+@keyframes rover-leg-swing{
+    0%,100%{ transform:rotate(-12deg); }
+    50%{ transform:rotate(12deg); }
+}
+
+@keyframes rover-bob{
+    0%,100%{ transform:translateY(0); }
+    50%{ transform:translateY(-4px); }
+}
+
+@media(max-width:768px){
+    #scroll-buddy{
+        bottom:14px;
+        width:44px;
+    }
+}
