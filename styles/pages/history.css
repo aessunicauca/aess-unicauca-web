@@ -181,8 +181,6 @@
     flex-direction:column;
     padding:30px;
     border-radius:14px;
-    background:#0c0c17;
-    border:1px solid rgba(255,255,255,.07);
     transition:.35s;
 
 }
@@ -849,7 +847,6 @@
             gap:1px;
             margin-top:24px;
             margin-bottom:24px;
-            background:rgba(246,241,234,.08);
             border:1px solid rgba(246,241,234,.08);
             border-radius:8px;
             overflow:hidden;

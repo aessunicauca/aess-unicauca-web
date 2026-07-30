@@ -7,3 +7,35 @@
 @import url("./pages/noticias.css");
 @import url("./pages/nasa.css");
 @import url("./pages/proyectos.css");
+@import url("./pages/not-found.css");
+
+/* Quitar de aqui despues. */
+:root {
+    --page-top-spacing: 64px;
+}
+
+.proyectos-page,
+.noticias-page,
+.nosotros-page,
+.eventos-page,
+.nasa-page,
+.historia-page,
+.year-page,
+.divpage,
+.division-page,
+.galeria-page,
+.gyear-page {
+    padding-top: var(--page-top-spacing);
+}
+
+.divpage-intro,
+.division-page__intro,
+.hero-split {
+    padding-top: 0;
+}
+
+@media (max-width: 600px) {
+    :root {
+        --page-top-spacing: 40px;
+    }
+}

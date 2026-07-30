@@ -198,7 +198,7 @@
 
                         <span class="slideshow-mark">&ldquo;</span>
 
-                        <p class="slideshow-quote is-active" data-slide="0">
+                        <p class="slideshow-quote is-active" data-slide="0" aria-live="polite">
                             Esta Junta Directiva guía el rumbo de AESS Unicauca con un mismo propósito: que la
                             ingeniería, la ciencia y el trabajo en equipo transformen nuestro entorno.
                         </p>
@@ -232,13 +232,13 @@
                                 </svg>
                             </button>
 
-                            <div class="slideshow-dots" id="boardDots">
-                                <button type="button" class="slideshow-dot is-active" data-slide="0" aria-label="Ir a la foto 1"></button>
-                                <button type="button" class="slideshow-dot" data-slide="1" aria-label="Ir a la foto 2"></button>
-                                <button type="button" class="slideshow-dot" data-slide="2" aria-label="Ir a la foto 3"></button>
-                                <button type="button" class="slideshow-dot" data-slide="3" aria-label="Ir a la foto 4"></button>
-                                <button type="button" class="slideshow-dot" data-slide="4" aria-label="Ir a la foto 5"></button>
-                                <button type="button" class="slideshow-dot" data-slide="5" aria-label="Ir a la foto 6"></button>
+                            <div class="slideshow-dots" id="boardDots" role="group" aria-label="Seleccionar foto">
+                                <button type="button" class="slideshow-dot is-active" data-slide="0" aria-label="Ir a la foto 1" aria-pressed="true"></button>
+                                <button type="button" class="slideshow-dot" data-slide="1" aria-label="Ir a la foto 2" aria-pressed="false"></button>
+                                <button type="button" class="slideshow-dot" data-slide="2" aria-label="Ir a la foto 3" aria-pressed="false"></button>
+                                <button type="button" class="slideshow-dot" data-slide="3" aria-label="Ir a la foto 4" aria-pressed="false"></button>
+                                <button type="button" class="slideshow-dot" data-slide="4" aria-label="Ir a la foto 5" aria-pressed="false"></button>
+                                <button type="button" class="slideshow-dot" data-slide="5" aria-label="Ir a la foto 6" aria-pressed="false"></button>
                             </div>
 
                             <button type="button" class="slideshow-arrow slideshow-arrow--next" id="boardNext" aria-label="Foto siguiente">
@@ -260,6 +260,7 @@
 
     <footer id="site-footer"></footer>
     <script src="../shared/scripts/footer.js"></script>
+    <script src="../shared/scripts/board-slideshow.js"></script>
 </body>
 
 </html>

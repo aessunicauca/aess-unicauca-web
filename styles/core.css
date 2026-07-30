@@ -23,6 +23,10 @@
     box-sizing:border-box;
 }
 
+a {
+    text-decoration:none;
+}
+
 
 /* ==========================================================
    02. BODY
@@ -37,7 +41,7 @@ html{
     width:0;
     height:0;
     display:none;
-} 
+}
 
 body{
     font-family:'Inter', Arial, Helvetica, sans-serif;
@@ -45,7 +49,6 @@ body{
     color:white;
     overflow-x:hidden;
 }
-
 
 /* ==========================================================
    03. HERO
@@ -2092,9 +2095,6 @@ nav{
 
     padding:22px;
 
-    background:#08081a;
-
-    border:1px solid rgba(255,255,255,.08);
 
     border-radius:8px;
 
@@ -2817,8 +2817,6 @@ nav{
 
     padding:28px 24px;
 
-    background:#101019;
-
     transition:all .35s ease;
 
     clip-path:polygon(
@@ -2915,6 +2913,7 @@ nav{
     letter-spacing:1px;
 
 }
+
 
 
 /* ==========================================================
