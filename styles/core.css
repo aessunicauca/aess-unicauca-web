@@ -27,6 +27,17 @@
 /* ==========================================================
    02. BODY
    ========================================================== */
+/* Scroll invisible (Firefox) */
+html{
+    scrollbar-width:none;
+}
+
+/* Scroll invisible (Chrome, Edge, Safari) */
+::-webkit-scrollbar{
+    width:0;
+    height:0;
+    display:none;
+} 
 
 body{
     font-family:'Inter', Arial, Helvetica, sans-serif;
@@ -230,14 +241,11 @@ nav{
 /* ---------- Redes sociales ---------- */
 
 .socials{
-
-    display:flex;
-    flex-wrap:wrap;
+    display:grid;
+    grid-template-columns:repeat(2, 42px);
     gap:16px;
-
     margin-top:auto;
     padding-top:28px;
-
 }
 
 .socials a{
